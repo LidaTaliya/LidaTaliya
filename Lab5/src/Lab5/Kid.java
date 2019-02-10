@@ -1,40 +1,40 @@
 package Lab5;
 
 public class Kid  extends MenCreature{
-Double AttractPudels;
-Boolean WantDog;
+    Double AttractPudels;
+    Boolean WantDog;
     Kid(String name1, double AttractPudels1,boolean WantDog1){this.name=name1;this.AttractPudels=AttractPudels1;this.WantDog=WantDog1;}
- public void BeHappy(Friend[] friends,  Carlson carlson) {
-     boolean AllMeetCarlson = true;
+    public void BeHappy(Friend[] friends,  Carlson carlson) {
+        boolean AllMeetCarlson = true;
         try{
             if (friends.length!=0){
-         for (int i = 0; i < friends.length; i++) {
-             if (friends[i].MeetCarlson) {
-                 AllMeetCarlson = AllMeetCarlson && true;
-             } else {
-                 AllMeetCarlson = AllMeetCarlson && false;
-             }
-         }
-         if (AllMeetCarlson) {
-             System.out.print(this.name + " радовался, потому что теперь ребята тоже были знакомы с " + carlson.name + "ом.");
-         } else {
-             System.out.print(this.name + " не радовался, потому что ");
-             for (int i = 0; i < friends.length; i++) {
-                 if (!friends[i].MeetCarlson) {
-                     System.out.print(friends[i].name + " ");
-                 }
-             }
-             System.out.print("не были знакомы с " + carlson.name + "ом.");
-         }
+                for (int i = 0; i < friends.length; i++) {
+                    if (friends[i].MeetCarlson) {
+                        AllMeetCarlson = AllMeetCarlson && true;
+                    } else {
+                        AllMeetCarlson = AllMeetCarlson && false;
+                    }
                 }
-                else {
+                if (AllMeetCarlson) {
+                    System.out.print(this.name + " радовался, потому что теперь ребята тоже были знакомы с " + carlson.name + "ом.");
+                } else {
+                    System.out.print(this.name + " не радовался, потому что ");
+                    for (int i = 0; i < friends.length; i++) {
+                        if (!friends[i].MeetCarlson) {
+                            System.out.print(friends[i].name + " ");
+                        }
+                    }
+                    System.out.print("не были знакомы с " + carlson.name + "ом.");
+                }
+            }
+            else {
                 throw new NullPointerException();
             }}catch(NullPointerException e){
-                System.out.print(this.name + " не радовался, потому что ему некого было познакомить с "+ carlson.name + "ом.");
-     }
- }
+            System.out.print(this.name + " не радовался, потому что ему некого было познакомить с "+ carlson.name + "ом.");
+        }
+    }
     public boolean walk(){return true;}
-public void BeHappyWithDog(Dog pudel) throws KidNoLoveDogs{
+    public void BeHappyWithDog(Dog pudel) throws KidNoLoveDogs{
         if (this.WantDog){
             System.out.print(this.name+" был бы счастлив переводить "+pudel.WhoIsit+" через все перекрёстки города. ");
         }else{
@@ -42,21 +42,21 @@ public void BeHappyWithDog(Dog pudel) throws KidNoLoveDogs{
         }
     }
     public void LoveDog(Dog pudel){
-            System.out.print("И "+this.name+" полюбил этого "+pudel.WhoIsit+". О, как он его полюбил! ");
+        System.out.print("И "+this.name+" полюбил этого "+pudel.WhoIsit+". О, как он его полюбил! ");
     }
     public void ActionsWithDog(Dog pudel){
-    System.out.print("Он нагнулся к "+pudel.WhoIsit+" и принялся ");
-    double k=Math.random();
-    if (k>0.7){
-        System.out.print("ласкать его ");
-    }else if(k>0.5){
-        System.out.print("гладить его ");
-    }else if(k>0.3){
-        System.out.print("тихонько присвистывать ");
-    }else{
-        System.out.print("причмокивать ");
-    }
-    System.out.print(". ");
+        System.out.print("Он нагнулся к "+pudel.WhoIsit+" и принялся ");
+        double k=Math.random();
+        if (k>0.7){
+            System.out.print("ласкать его ");
+        }else if(k>0.5){
+            System.out.print("гладить его ");
+        }else if(k>0.3){
+            System.out.print("тихонько присвистывать ");
+        }else{
+            System.out.print("причмокивать ");
+        }
+        System.out.print(". ");
     }
     public void Sounds(Dog pudel){
         System.out.print("Эти нежные звуки должны были означать, что "+pudel.color+" "+pudel.Breed+" - ");
@@ -68,7 +68,7 @@ public void BeHappyWithDog(Dog pudel) throws KidNoLoveDogs{
     }
 
 
-     }
+}
 
 
 

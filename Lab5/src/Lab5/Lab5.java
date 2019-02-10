@@ -1,5 +1,8 @@
 package Lab5;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 public class Lab5{
 
 
@@ -18,7 +21,18 @@ public class Lab5{
         g.AddPudel(pudel);
         g.AddCarlson(carlson);
 
-        Friend[] friends={new Friend("Гунилла", carlson, 0.7),new Friend("Кристер", carlson, 0.8)};
+        //Friend[] friends={new Friend("Гунилла", carlson, 0.7),new Friend("Кристер", carlson, 0.8)};
+        Map<String,Friend> friends1=new TreeMap<String,Friend>();
+        friends1.put("Гунилла",new Friend("Гунилла", carlson, 0.7));
+        friends1.put("Кристер",new Friend("Кристер", carlson, 0.8));
+
+        Friend[] friends=new Friend[(friends1.size())];
+        int i=0;
+        for(Map.Entry<String,Friend> e : friends1.entrySet()){
+            friends[i]= e.getValue();
+            i=i+1;
+        }
+
         g.AddFriends(friends);
         Friend[] FriendsWhoGo=g.WhoIsGoing();
 

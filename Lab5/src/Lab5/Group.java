@@ -37,23 +37,23 @@ public class Group {
     public Friend[] WhoIsGoing(){
         int j=0;
         Friend[] FriendsWhoGo=new Friend[AllFriends.length];
-            for (int i = 0; i < AllFriends.length; i++) {
-                if (AllFriends[i].walk()) {
-                    FriendsWhoGo[j]=AllFriends[i];
-                    j++;
-                }}
-                return FriendsWhoGo;
+        for (int i = 0; i < AllFriends.length; i++) {
+            if (AllFriends[i].walk()) {
+                FriendsWhoGo[j]=AllFriends[i];
+                j++;
+            }}
+        return FriendsWhoGo;
     }
 
     private String NamesOfFriends(){
         String s = "с ";
-            for (int i = 0; i < FriendsWhoGo.length; i++) {
-                if (FriendsWhoGo[i]!=null){
+        for (int i = 0; i < FriendsWhoGo.length; i++) {
+            if (FriendsWhoGo[i]!=null){
                 s = s + FriendsWhoGo[i].name + " ";
             }else break;
-            }
-            if (s=="с "){s="один ";}
-    return s;
+        }
+        if (s=="с "){s="один ";}
+        return s;
     }
 
     public void AllWalk() {
