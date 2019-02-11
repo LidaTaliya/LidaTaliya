@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="org">
+    <ANNOTATIONS>
+      <root url="jar://$PROJECT_DIR$/lib/json-20140107.jar!/META-INF/maven/org.json" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/json-20140107.jar!/META-INF/maven/org.json" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/json-20140107.jar!/META-INF/maven/org.json" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="jar://$PROJECT_DIR$/lib/json-20140107.jar!/META-INF/maven/org.json" />
+    </NATIVE>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/json-20140107.jar!/META-INF/maven/org.json" />
+    </SOURCES>
+    <jarDirectory url="jar://$PROJECT_DIR$/lib/json-20140107.jar!/META-INF/maven/org.json" recursive="false" />
+    <jarDirectory url="jar://$PROJECT_DIR$/lib/json-20140107.jar!/META-INF/maven/org.json" recursive="false" type="SOURCES" />
+  </library>
+</component>
