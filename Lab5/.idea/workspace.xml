@@ -7,9 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc9a5bfa-5d9d-44e6-b2c9-1d608f12fc48" name="Default Changelist" comment=":))">
-      <change beforePath="$PROJECT_DIR$/../Friends.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Friends.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab5/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Friend.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Lab5/Lab5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Lab5.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,12 +27,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Lab5/Lab5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="909">
-              <caret line="140" column="10" selection-start-line="140" selection-start-column="10" selection-end-line="140" selection-end-column="10" />
+            <state relative-caret-position="-1801">
+              <caret line="82" column="33" lean-forward="true" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#486#502#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Lab5/Friend.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -59,9 +66,9 @@
         <option value="$PROJECT_DIR$/src/Lab5/Size.java" />
         <option value="$PROJECT_DIR$/src/Lab5/StrangeMenCreature.java" />
         <option value="$PROJECT_DIR$/src/Lab5/Group.java" />
-        <option value="$PROJECT_DIR$/src/Lab5/Friend.java" />
         <option value="$PROJECT_DIR$/src/Lab5/Kid.java" />
         <option value="$USER_HOME$/IdeaProjects/untitled/src/Lab3/Lab3.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Friend.java" />
         <option value="$PROJECT_DIR$/src/Lab5/Lab5.java" />
       </list>
     </option>
@@ -80,7 +87,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549908737545" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549965980598" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -131,6 +138,7 @@
       <workItem from="1549903317254" duration="139000" />
       <workItem from="1549903635667" duration="105000" />
       <workItem from="1549903762129" duration="4961000" />
+      <workItem from="1549963092312" duration="2803000" />
     </task>
     <task id="LOCAL-00001" summary=":)">
       <created>1549803792504</created>
@@ -150,11 +158,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17905000" />
+    <option name="totallyTimeSpent" value="20708000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2536349" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -165,7 +172,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.07637907" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.6195191" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -320,18 +327,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Lab5/Friend.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        <state relative-caret-position="210">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Lab5/Lab5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="909">
-          <caret line="140" column="10" selection-start-line="140" selection-start-column="10" selection-end-line="140" selection-end-column="10" />
+        <state relative-caret-position="-1801">
+          <caret line="82" column="33" lean-forward="true" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#486#502#0" expanded="true" />
           </folding>
         </state>
       </provider>
