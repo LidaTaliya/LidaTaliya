@@ -2,11 +2,11 @@ package Lab5;
 
 public class Friend extends MenCreature {
     double ChanceToWalk;
-    String age;
-    Friend ( String name1, String carlson, double k, String years){
+    String number;
+    Friend ( String name1, String carlson, double k, String num){
         this.name=name1;
         this.ChanceToWalk=k;
-        this.age = years;
+        this.number = num;
         if (carlson=="Карлсон"){
             this.MeetCarlson=true;
         }
