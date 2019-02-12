@@ -170,7 +170,7 @@ public class Lab5 {
         try {
             friends1=AddFromFile(file, (TreeMap)friends1);
         } catch (FileNotFoundException e) {
-            System.out.println("Файл не найден :(");
+            System.out.println("Файл с друзьями не найден :(");
 
         } catch (ParseException e) {
             e.printStackTrace();
