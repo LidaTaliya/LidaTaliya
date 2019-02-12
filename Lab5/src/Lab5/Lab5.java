@@ -17,12 +17,15 @@ import java.util.TreeMap;
 
 
 public class Lab5 {
-    //объявление нашей будущей коллекции друзей(за ключ берём возраст друга)
+    //объявление нашей будущей коллекции друзей
     static Map<String, Friend> friends1 = new TreeMap<String, Friend>();
+    static Scanner scan = new Scanner(System.in);
+    static Date date;
     //метод, чтобы прочитать json с помощью scanner(возвращает список, состоящий из json объектов)
     public static ArrayList<JSONObject> ReadJSON(File file) throws FileNotFoundException, ParseException {
         Scanner scanner = new Scanner(file);
         ArrayList<JSONObject> json = new ArrayList<JSONObject>();
+        date= new Date();
         while (scanner.hasNext()) {
             JSONObject obj = (JSONObject) new JSONParser().parse(scanner.nextLine());
             json.add(obj);
@@ -43,7 +46,7 @@ public class Lab5 {
 
     public static void menu() {
         System.out.println("Выберите команду");
-        System.out.println("1 - внести в коллекцию друга по ключу(возрасту)");
+        System.out.println("1 - внести в коллекцию друга по ключу");
         System.out.println("2 - удалить из коллекции друзей, превышающие заданные");
         System.out.println("3 - вывести в строковом представление всех друзей в коллекции");
         System.out.println("4 - добавить в коллекцию все данные из файла");
@@ -70,11 +73,11 @@ public class Lab5 {
     //метод, удаляющий из коллекции элементы, превышающий заданный
     public static void remove_greater(Map<String, Friend> ourMap) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Введите возраст ребенка(ключ)");
-        int age = sc.nextInt();
+        System.out.println("Введите ключ ребенка: ");
+        int num = sc.nextInt();
         for (Iterator<Map.Entry<String, Friend>> element = ourMap.entrySet().iterator(); element.hasNext();) {
             Map.Entry<String, Friend> it = element.next();
-            if (String.valueOf(age).equals(it.getValue().age))
+            if (String.valueOf(num).equals(it.getValue().number))
                 break;
             else
                 element.remove();
@@ -106,7 +109,7 @@ public class Lab5 {
 
     //метод, выводящий информацию о коллекции
     public static void info(Map<String, Friend> ourMap){
-        System.out.println("В коллекции типа TreeMap хранятся данные о " + ourMap.size()+" друзьях. Ключом является возраст детей, а значением сам ребенок");
+        System.out.println("В коллекции типа TreeMap хранятся данные о " + ourMap.size()+" друзьях. Дата заполнения коллекции из файла json: "+date+" .Значениями являются экземпляры класса детей.");
     }
 
     //метод, удаляющий элемент по ключу
@@ -118,28 +121,40 @@ public class Lab5 {
     //метод, удаляющий все элементы, ключ которых превышает заданный
     public static void remove_greater_key(Map<String, Friend> ourMap) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Введите возраст ребенка(ключ)");
-        int age = sc.nextInt();
+        System.out.println("Введите ключ ребенка");
+        int number = sc.nextInt();
         for (Iterator<Map.Entry<String, Friend>> element = ourMap.entrySet().iterator(); element.hasNext();) {
             Map.Entry<String, Friend> it = element.next();
-            if (age < Integer.parseInt(it.getKey()))
+            if (number < Integer.parseInt(it.getKey()))
                 element.remove();
         }
+        System.out.println("Удаление успешно завершено.");
     }
     public static TreeMap AddFromFile(File file, TreeMap friends1) throws FileNotFoundException, ParseException{
         ArrayList<JSONObject> jsons = ReadJSON(file);
         for (JSONObject obj : jsons) {
-            Friend fr = new Friend((String) obj.get("name"), (String) obj.get("carlson"), Double.parseDouble((String) obj.get("ChanceToWalk")), (String) obj.get("age"));
-            friends1.put((String) obj.get("age"), fr);
+            Friend fr = new Friend((String) obj.get("name"), (String) obj.get("carlson"), Double.parseDouble((String) obj.get("ChanceToWalk")), (String) obj.get("number"));
+            friends1.put((String) obj.get("number"), fr);
     }
     return friends1;
     }
-
+    public static int KidsKey(){
+        System.out.println("Введите ключ ребенка");
+        int number = scan.nextInt();
+        for (Iterator<Map.Entry<String, Friend>> element = friends1.entrySet().iterator(); element.hasNext();) {
+            Map.Entry<String, Friend> it = element.next();
+            if (number==Integer.parseInt(it.getKey())){
+                System.out.println("Ребёнок с таким ключем уже есть.");
+                KidsKey();
+            }
+    }
+        return number;
+    }
     public static void main(String[] args) {
 
         //указание путь к json файлу
-        //String path="/Users/lida/Desktop/ITMO/джафка/LidaTaliya/Friends2.json";
-        String path="C:\\IDE\\LidaTaliya\\Friends.json";
+        String path="/Users/lida/Desktop/ITMO/джафка/LidaTaliya/Friends.json";
+        //String path="C:\\IDE\\LidaTaliya\\Friends.json";
 
         File file= new File(path);
         Friend[] friends=MakeArray();
@@ -159,15 +174,11 @@ public class Lab5 {
 
 
         //консольное приложение
-        Scanner scan = new Scanner(System.in);
         menu();
         int a = scan.nextInt();
         while (a != 8) {
-            if (a == 1) {
-                System.out.println("Введите ключ(возраст ребенка)");
-                int age = scan.nextInt();
-                insert(String.valueOf(age), friends1);
-            }
+            if (a == 1)
+                insert(String.valueOf(KidsKey()), friends1);
             if (a == 2)
                 remove_greater(friends1);
             if (a==3)
@@ -177,16 +188,15 @@ public class Lab5 {
             if (a==5)
                 info(friends1);
             if (a==6){
-                System.out.println("Введите возраст(ключ) ребенка");
-                int age = scan.nextInt();
-                remove(String.valueOf(age), friends1);
+                System.out.println("Введите ключ ребенка");
+                int number = scan.nextInt();
+                remove(String.valueOf(number), friends1);
             }
-            if (a==7) {
+            if (a==7){
                 remove_greater_key(friends1);
             }
             menu();
             a = scan.nextInt();
-
         }
         if (a==8){
             try {
@@ -204,7 +214,7 @@ public class Lab5 {
                     }else{
                         carl="не Карлсон";
                     }
-                    String fr= "{\"name\": \""+friends[j].name+"\",\"Carlson\":\""+carl+"\",\"ChanceToWalk\":\""+friends[j].ChanceToWalk+"\",\"age\":\""+friends[j].age+"\"}";
+                    String fr= "{\"name\": \""+friends[j].name+"\",\"Carlson\":\""+carl+"\",\"ChanceToWalk\":\""+friends[j].ChanceToWalk+"\",\"number\":\""+friends[j].number+"\"}";
                     stream.write(fr.getBytes());
                     stream.write(System.lineSeparator().getBytes());
                 }
@@ -219,12 +229,8 @@ public class Lab5 {
             System.exit(0);
 
         }
-        for (Map.Entry<String, Friend> e : friends1.entrySet()) {
-            System.out.println(e.getValue().name);
-        }
-
-
-
+        //for (Map.Entry<String, Friend> e : friends1.entrySet()) {
+            //System.out.println(e.getValue().name);
 
 
         /*Parent mother= new Parent("Мама", false);
