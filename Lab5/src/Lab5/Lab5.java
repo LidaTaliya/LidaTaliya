@@ -50,13 +50,14 @@ public class Lab5 {
 
     public static void menu() {
         System.out.println("Выберите команду");
+        System.out.println("1 - добавить нового друга по ключу");
         System.out.println("2 - удалить из коллекции друзей, превышающие заданные");
         System.out.println("3 - вывести в строковом представление всех друзей в коллекции");
         System.out.println("4 - добавить в коллекцию все данные из файла");
         System.out.println("5 - вывести информацию о коллекции");
         System.out.println("6 - удалить из коллекции друга по ключу");
         System.out.println("7 - удалить из коллекции друзей, ключ которых превышает заданный");
-        System.out.println("8 - выход из приложения");
+        System.out.println("8 - выход из меню (запуск программы)");
     }
 
     //метод для добавления в коллекцию элемента с заданным ключом
@@ -231,56 +232,50 @@ public class Lab5 {
             } catch (IOException e){
                 e.printStackTrace();
             }
-            System.out.println("Изменения в коллекции друзей успешно сохранены в файл. Еще увидимся:)");
+            System.out.println("Изменения в коллекции друзей успешно сохранены в файл.");
+
+            Parent mother = new Parent("Мама", false);
+            Kid kid = new Kid("Малыш", 0.8, true);
+            Dog pudel = new Dog(Size.S, Color.Black, "пудель", 0.9);
+            Carlson carlson = new Carlson("Карлсон", true);
+            mother.Breathe(kid);
+            mother.AttitudeToCarlson(kid);
+            Group g = new Group();
+            g.AddKid(kid);
+            g.AddPudel(pudel);
+            g.AddCarlson(carlson);
+            g.AddFriends(friends);
+            Friend[] FriendsWhoGo = g.WhoIsGoing();
+            g.AddFriendsWhoGo(FriendsWhoGo);
+            g.BeHappyToGoToSchool();
+            g.AllWalk();
+            kid.BeHappy(friends, carlson);
+            pudel.appear();
+            pudel.wantToGo(kid);
+            g.CrossTheStreet();
+            pudel.goToKid(kid);
+            pudel.toSniffTheKnees(kid);
+            pudel.toYelp();
+            try {
+                kid.BeHappyWithDog(pudel);
+            } catch (KidNoLoveDogs e) {
+                System.out.print(e.getMessage());
+            }
+            pudel.FeelTheAttitude(kid);
+            pudel.LoveEveryone(kid);
+            kid.LoveDog(pudel);
+            kid.ActionsWithDog(pudel);
+            kid.Sounds(pudel);
+            try {
+                pudel.ThinkSo();
+            } catch (NoThinkSo e) {
+                System.out.print(e.getMessage());
+            }
+            pudel.JumpAndYelp();
+            g.TurnToStreet();
+            pudel.Run();
             System.exit(0);
 
         }
-
-
-
-
-        /*Parent mother= new Parent("Мама", false);
-        Parent mother= new Parent("Мама", false);
-        Kid kid=new Kid("Малыш",0.8,true);
-        Dog pudel=new Dog(Size.S,Color.Black,"пудель",0.9);
-        Carlson carlson=new Carlson("Карлсон", true);
-        mother.Breathe(kid);
-        mother.AttitudeToCarlson(kid);
-        Group g=new Group();
-        g.AddKid(kid);
-        g.AddPudel(pudel);
-        g.AddCarlson(carlson);
-        g.AddFriends(friends);
-        Friend[] FriendsWhoGo=g.WhoIsGoing();
-        g.AddFriendsWhoGo(FriendsWhoGo);
-        g.BeHappyToGoToSchool();
-        g.AllWalk();
-        kid.BeHappy(friends, carlson);
-        pudel.appear();
-        pudel.wantToGo(kid);
-        g.CrossTheStreet();
-        pudel.goToKid(kid);
-        pudel.toSniffTheKnees(kid);
-        pudel.toYelp();
-        try{
-            kid.BeHappyWithDog(pudel);}
-        catch (KidNoLoveDogs e){
-            System.out.print(e.getMessage());
-        }
-        pudel.FeelTheAttitude(kid);
-        pudel.LoveEveryone(kid);
-        kid.LoveDog(pudel);
-        kid.ActionsWithDog(pudel);
-        kid.Sounds(pudel);
-        try{
-            pudel.ThinkSo();
-        } catch(NoThinkSo e){
-            System.out.print(e.getMessage());
-        }
-        pudel.JumpAndYelp();
-        g.TurnToStreet();
-        pudel.Run();*/
-
-
     }
 }
