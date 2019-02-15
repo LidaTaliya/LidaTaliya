@@ -24,9 +24,13 @@ public class Lab5 {
     static Map<String, Friend> friends1 = new TreeMap<String, Friend>();
     static Scanner scan = new Scanner(System.in);
     static Date date;
+    //указание путь к json файлу через переменную окружения
+    static Path path = Paths.get(System.getenv("Friendss"));
+
+    static File file= path.toFile();
 
     //метод, чтобы прочитать json с помощью scanner(возвращает список, состоящий из json объектов)
-    public static ArrayList<JSONObject> ReadJSON(File file) throws FileNotFoundException, ParseException {
+    private static ArrayList<JSONObject> ReadJSON(File file) throws FileNotFoundException, ParseException {
         Scanner scanner = new Scanner(file);
         ArrayList<JSONObject> json = new ArrayList<JSONObject>();
         date= new Date();
@@ -37,7 +41,7 @@ public class Lab5 {
         scanner.close();
         return json;
     }
-    public static Friend[] MakeArray(){
+    private static Friend[] MakeArray(){
         //создание массива друзей на основе коллекции(чтоб не переписывать большую часть кода, которая была расчитана на массив)
         Friend[] friends = new Friend[(friends1.size())];
         int i = 0;
@@ -47,8 +51,26 @@ public class Lab5 {
         }
         return friends;
     }
+    private static boolean isNumber(String str){
+        try{
+            double d =Double.parseDouble(str);
+        }catch(NumberFormatException e){
+            return false;
+        }
+        return true;
+    }
+    private static boolean isLetters(String str){
+        char[] chars=str.toCharArray();
+        for (char c: chars){
+            if (!Character.isLetter(c)){
+                return false;
+            }
+        }
+        return true;
+    }
 
-    public static void menu() {
+
+    private static void menu() {
         System.out.println("Выберите команду");
         System.out.println("1 - добавить нового друга по ключу");
         System.out.println("2 - удалить из коллекции друзей, превышающие заданные");
@@ -61,6 +83,7 @@ public class Lab5 {
     }
 
     //метод для добавления в коллекцию элемента с заданным ключом
+    /** add new element with a concrete key */
     public static void insert(String key, Map<String, Friend> ourMap) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите имя ребенка");
@@ -75,22 +98,29 @@ public class Lab5 {
     }
 
     //метод, удаляющий из коллекции элементы, превышающий заданный
+    /** remove all elements bigger than a concrete element*/
     public static void remove_greater(Map<String, Friend> ourMap) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Введите ключ ребенка");
-        int num = sc.nextInt();
-        for (Iterator<Map.Entry<String, Friend>> element = ourMap.entrySet().iterator(); element.hasNext();) {
-            Map.Entry<String, Friend> it = element.next();
-            if (String.valueOf(num).equals(it.getValue().number))
-                break;
-            else
-                element.remove();
+        System.out.println("Введите строку JSON");
+        String str=sc.nextLine();
+        
+        try {
+            scan = new Scanner(file);
+            while (scan.hasNextLine()){
+                String st=scan.nextLine();
+                if (str.equals(st)){
+                    break;
+                }else{
+
+                }
+            }
         }
         System.out.println("Ребенок успешно удален из коллекции");
     }
 
 
     //метод, выводящий элементы коллекции
+    /** show all elements*/
     public static void show(Map<String, Friend> ourMap) {
         for (Map.Entry<String, Friend> element : ourMap.entrySet()) {
             System.out.println(element.getValue().name);
@@ -98,6 +128,7 @@ public class Lab5 {
     }
 
     //метод, добавляющий элементы из файла в коллекцию
+    /** import all elements from file*/
     public static void imports(String path){
         File file= new File(path);
         try {
@@ -112,17 +143,20 @@ public class Lab5 {
     }
 
     //метод, выводящий информацию о коллекции
+    /** show information about collection */
     public static void info(Map<String, Friend> ourMap){
         System.out.println("В коллеции типа TreeMap хранятся данные о " + ourMap.size()+" друзьях . Дата заполнения из файла json: "+date+" .Значениями являются экхемпляры класса детей.");
     }
 
     //метод, удаляющий элемент по ключу
+    /**  remove element with a concrete key*/
     public static void remove(String key, Map<String, Friend> ourMap) {
         ourMap.remove(key);
         System.out.println("Удаление успешно завершено");
     }
 
     //метод, удаляющий все элементы, ключ которых превышает заданный
+    /** remove all elements with a key bigger than a concrete key*/
     public static void remove_greater_key(Map<String, Friend> ourMap) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите ключ ребенка");
@@ -136,7 +170,7 @@ public class Lab5 {
     }
 
 
-    public static TreeMap AddFromFile(File file, TreeMap friends1) throws FileNotFoundException, ParseException{
+    private static TreeMap AddFromFile(File file, TreeMap friends1) throws FileNotFoundException, ParseException{
         ArrayList<JSONObject> jsons = ReadJSON(file);
         for (JSONObject obj : jsons) {
             Friend fr = new Friend((String) obj.get("name"), (String) obj.get("carlson"), Double.parseDouble((String) obj.get("ChanceToWalk")), (String) obj.get("number"));
@@ -145,7 +179,7 @@ public class Lab5 {
         return friends1;
     }
 
-    public static int KidsKey(){
+    private static int KidsKey(){
         System.out.println("Введите ключ ребенка");
         int number = scan.nextInt();
         for (Iterator<Map.Entry<String, Friend>> element = friends1.entrySet().iterator(); element.hasNext();) {
@@ -160,10 +194,7 @@ public class Lab5 {
 
     public static void main(String[] args) {
 
-        //указание путь к json файлу через переменную окружения
-        Path path = Paths.get(System.getenv("Friendss"));
 
-        File file= path.toFile();
         Friend[] friends=MakeArray();
 
 
