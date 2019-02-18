@@ -87,11 +87,22 @@ public class Lab5 {
     public static void insert(String key, Map<String, Friend> ourMap) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите имя ребенка");
-        String name = sc.nextLine();
-        System.out.println("Введите Карлсон или не Карлсон");
+        String name=sc.nextLine();
+        while (!isLetters(name)){
+            System.out.println("Вы ввели некорректное имя. Введите заново:");
+            name=sc.nextLine();
+        }
+        System.out.println("Введите \"Карлсон\", если ребёнок знаком с Карлсоном");
         String carl = sc.nextLine();
+
         System.out.println("Введите его возможность пойти с Малышом(через запятую)");
-        double chance = Double.parseDouble(sc.nextLine());
+        String chance1 = sc.nextLine();
+        while (!isNumber(chance1)){
+            System.out.println("Вы ввели неккоректную возможность. Введите заново:");
+            chance1=sc.nextLine();
+        }
+        double chance=Double.parseDouble(chance1);
+
         Friend newFriend = new Friend(name, carl, chance, key);
         ourMap.put(key, newFriend);
         System.out.println("Друг добавлен");
@@ -104,7 +115,7 @@ public class Lab5 {
         System.out.println("Введите строку JSON");
         String str=sc.nextLine();
         
-        try {
+        /*try {
             scan = new Scanner(file);
             while (scan.hasNextLine()){
                 String st=scan.nextLine();
@@ -115,7 +126,7 @@ public class Lab5 {
                 }
             }
         }
-        System.out.println("Ребенок успешно удален из коллекции");
+        System.out.println("Ребенок успешно удален из коллекции");*/
     }
 
 
@@ -150,23 +161,41 @@ public class Lab5 {
 
     //метод, удаляющий элемент по ключу
     /**  remove element with a concrete key*/
-    public static void remove(String key, Map<String, Friend> ourMap) {
-        ourMap.remove(key);
-        System.out.println("Удаление успешно завершено");
+    public static void remove(Map<String, Friend> ourMap) {
+        scan.nextLine();
+        System.out.println("Введите ключ ребенка");
+        String number = scan.nextLine();
+        Friend fr=ourMap.remove(number);
+        while (fr==null||!isNumber(number)) {
+            System.out.println("Ребёнок с таким ключом не найден. Введите ключ заново:");
+            number=scan.nextLine();
+            fr=ourMap.remove(number);
+        }
+        System.out.println("Удаление успешно завершено.");
     }
 
     //метод, удаляющий все элементы, ключ которых превышает заданный
     /** remove all elements with a key bigger than a concrete key*/
     public static void remove_greater_key(Map<String, Friend> ourMap) {
+        int count=0;
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите ключ ребенка");
-        int number = sc.nextInt();
+        String number = sc.nextLine();
+        while (!isNumber(number)) {
+            System.out.println("Вы ввели некорректный ключ. Введите заново:");
+            number=sc.nextLine();
+        }
         for (Iterator<Map.Entry<String, Friend>> element = ourMap.entrySet().iterator(); element.hasNext();) {
             Map.Entry<String, Friend> it = element.next();
-            if (number < Integer.parseInt(it.getKey()))
+            if (Integer.parseInt(number) < Integer.parseInt(it.getKey())){
                 element.remove();
+                count++;
+        }}
+        if (count!=0){
+        System.out.println("Удаление успешно завершено.");}
+        else{
+            System.out.println("Нет друзей с ключом больше введенного.");
         }
-        System.out.println("Удаление успешно завершено.");
     }
 
 
@@ -179,13 +208,16 @@ public class Lab5 {
         return friends1;
     }
 
-    private static int KidsKey(){
-        System.out.println("Введите ключ ребенка");
-        int number = scan.nextInt();
+    private static String KidsKey(){
+        String number = scan.nextLine();
+        while (!isNumber(number)) {
+            System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует. Введите заново:");
+            number= scan.nextLine();
+        }
         for (Iterator<Map.Entry<String, Friend>> element = friends1.entrySet().iterator(); element.hasNext();) {
             Map.Entry<String, Friend> it = element.next();
-            if (number==Integer.parseInt(it.getKey())){
-                System.out.println("Ребенок с таким ключем уже есть");
+            if (Integer.parseInt(number)==Integer.parseInt(it.getKey())){
+                System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует. Введите заново:");
                 KidsKey();
             }
         }
@@ -215,8 +247,10 @@ public class Lab5 {
         menu();
         int a = scan.nextInt();
         while (a != 8) {
-            if (a == 1)
-                insert(String.valueOf(KidsKey()), friends1);
+            if (a == 1){
+                scan.nextLine();
+                System.out.println("Введите ключ ребенка");
+                insert(KidsKey(), friends1);}
             if (a == 2)
                 remove_greater(friends1);
             if (a==3)
@@ -225,11 +259,8 @@ public class Lab5 {
                 imports(path.toString());
             if (a==5)
                 info(friends1);
-            if (a==6){
-                System.out.println("Введите ключ ребенка");
-                int number = scan.nextInt();
-                remove(String.valueOf(number), friends1);
-            }
+            if (a==6)
+                remove(friends1);
             if (a==7){
                 remove_greater_key(friends1);
             }
@@ -263,7 +294,7 @@ public class Lab5 {
             } catch (IOException e){
                 e.printStackTrace();
             }
-            System.out.println("Изменения в коллекции друзей успешно сохранены в файл.");
+            //System.out.println("Изменения в коллекции друзей успешно сохранены в файл.");
 
             Parent mother = new Parent("Мама", false);
             Kid kid = new Kid("Малыш", 0.8, true);
