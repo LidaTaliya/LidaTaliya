@@ -7,7 +7,7 @@ public class Friend extends MenCreature {
         this.name=name1;
         this.ChanceToWalk=k;
         this.number = num;
-        if (carlson=="Карлсон"){
+        if (carlson.equals("Карлсон")){
             this.MeetCarlson=true;
         }
     }

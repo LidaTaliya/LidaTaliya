@@ -69,6 +69,26 @@ public class Lab5 {
         return true;
     }
 
+    public static <K extends Comparable,V extends Comparable> Map<K,V> sortByValues(TreeMap<K,V> map){
+        List<Map.Entry<K,V>> entries = new LinkedList<Map.Entry<K,V>>(map.entrySet());
+
+        Collections.sort(entries, new Comparator<Map.Entry<K,V>>() {
+
+            @Override
+            public int compare(Map.Entry<K, V> o1, Map.Entry<K, V> o2) {
+                Friend fr1=(Friend)o1.getValue();
+                Friend fr2=(Friend)o2.getValue();
+                return fr1.name.compareTo(fr2.name);
+            }
+        });
+        Map<K,V> sortedMap = new LinkedHashMap<K,V>();
+
+        for(Map.Entry<K,V> entry: entries){
+            sortedMap.put(entry.getKey(), entry.getValue());
+        }
+
+        return sortedMap;
+    }
 
     private static void menu() {
         System.out.println("Выберите команду");
@@ -95,7 +115,7 @@ public class Lab5 {
         System.out.println("Введите \"Карлсон\", если ребёнок знаком с Карлсоном");
         String carl = sc.nextLine();
 
-        System.out.println("Введите его возможность пойти с Малышом(через запятую)");
+        System.out.println("Введите его возможность пойти с Малышом");
         String chance1 = sc.nextLine();
         while (!isNumber(chance1)){
             System.out.println("Вы ввели неккоректную возможность. Введите заново:");
@@ -110,25 +130,21 @@ public class Lab5 {
 
     //метод, удаляющий из коллекции элементы, превышающий заданный
     /** remove all elements bigger than a concrete element*/
-    public static void remove_greater(Map<String, Friend> ourMap) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Введите строку JSON");
-        String str=sc.nextLine();
-        
-        /*try {
-            scan = new Scanner(file);
-            while (scan.hasNextLine()){
-                String st=scan.nextLine();
-                if (str.equals(st)){
-                    break;
-                }else{
-
+    public static void remove_greater(String name,Map<String, Friend> ourMap) {
+        int count=0;
+        for (Iterator<Map.Entry<String, Friend>> element = ourMap.entrySet().iterator(); element.hasNext();) {
+                Map.Entry<String, Friend> it = element.next();
+                if (it.getValue().name.compareTo(name)>0){
+                    element.remove();
+                    count++;
                 }
             }
+        if (count!=0){
+        System.out.println("Удаление успешно завершено.");}
+        else{
+            System.out.println("Детей с именем больше заданного нет.");
         }
-        System.out.println("Ребенок успешно удален из коллекции");*/
     }
-
 
     //метод, выводящий элементы коллекции
     /** show all elements*/
@@ -143,7 +159,7 @@ public class Lab5 {
     public static void imports(String path){
         File file= new File(path);
         try {
-            friends1=AddFromFile(file, (TreeMap)friends1);
+            friends1=AddFromFile(file, friends1);
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден :(");
 
@@ -156,7 +172,7 @@ public class Lab5 {
     //метод, выводящий информацию о коллекции
     /** show information about collection */
     public static void info(Map<String, Friend> ourMap){
-        System.out.println("В коллеции типа TreeMap хранятся данные о " + ourMap.size()+" друзьях . Дата заполнения из файла json: "+date+" .Значениями являются экхемпляры класса детей.");
+        System.out.println("В коллеции типа TreeMap хранятся данные о " + ourMap.size()+" друзьях . Дата заполнения из файла json: "+date+" .Значениями являются экземпляры класса детей.");
     }
 
     //метод, удаляющий элемент по ключу
@@ -199,10 +215,10 @@ public class Lab5 {
     }
 
 
-    private static TreeMap AddFromFile(File file, TreeMap friends1) throws FileNotFoundException, ParseException{
+    private static Map AddFromFile(File file, Map friends1) throws FileNotFoundException, ParseException{
         ArrayList<JSONObject> jsons = ReadJSON(file);
         for (JSONObject obj : jsons) {
-            Friend fr = new Friend((String) obj.get("name"), (String) obj.get("carlson"), Double.parseDouble((String) obj.get("ChanceToWalk")), (String) obj.get("number"));
+            Friend fr = new Friend((String) obj.get("name"), (String) obj.get("Carlson"), Double.parseDouble((String) obj.get("ChanceToWalk")), (String) obj.get("number"));
             friends1.put((String) obj.get("number"), fr);
         }
         return friends1;
@@ -223,12 +239,24 @@ public class Lab5 {
         }
         return number;
     }
+    private static String KidsName(){
+        String name = scan.nextLine();
+        boolean name1=false;
+        for (Iterator<Map.Entry<String, Friend>> element = friends1.entrySet().iterator(); element.hasNext();) {
+            Map.Entry<String, Friend> it = element.next();
+            if (name.equals(it.getValue().name)){
+                name1=true;
+                break;
+            }
+        }
+        if (!name1){
+            System.out.println("Вы ввели некорректное имя или ребёнка с таким именем не существует. Введите заново:");
+            KidsName();
+        }
+        return name;
+    }
 
     public static void main(String[] args) {
-
-
-        Friend[] friends=MakeArray();
-
 
         //само чтение json и добавление экземпляров друзей
         try {
@@ -240,8 +268,8 @@ public class Lab5 {
             e.printStackTrace();
         }
 
-
-
+        friends1=sortByValues((TreeMap)friends1);
+        Friend[] friends=MakeArray();
 
         //консольное приложение
         menu();
@@ -251,8 +279,10 @@ public class Lab5 {
                 scan.nextLine();
                 System.out.println("Введите ключ ребенка");
                 insert(KidsKey(), friends1);}
-            if (a == 2)
-                remove_greater(friends1);
+            if (a == 2){
+                scan.nextLine();
+                System.out.println("Введите имя ребёнка");
+                remove_greater(KidsName(),friends1);}
             if (a==3)
                 show(friends1);
             if (a==4)
