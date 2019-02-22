@@ -69,7 +69,8 @@ public class Lab5 {
         return true;
     }
 
-    public static <K extends Comparable,V extends Comparable> Map<K,V> sortByValues(TreeMap<K,V> map){
+
+    private static <K extends Comparable,V extends Comparable> Map<K,V> sortByValues(TreeMap<K,V> map){
         List<Map.Entry<K,V>> entries = new LinkedList<Map.Entry<K,V>>(map.entrySet());
 
         Collections.sort(entries, new Comparator<Map.Entry<K,V>>() {
@@ -103,7 +104,7 @@ public class Lab5 {
     }
 
     //метод для добавления в коллекцию элемента с заданным ключом
-    /** add new element with a concrete key */
+    /** Данный метод используется для того, чтобы добавить новый элемент коллекции по заданному ключу. Для добавления мы вводим имя ребенка, "Карлсон", если ребенок знаком с Карлсоном, вероятность пойти с Малышом.*/
     public static void insert(String key, Map<String, Friend> ourMap) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите имя ребенка");
@@ -129,7 +130,7 @@ public class Lab5 {
     }
 
     //метод, удаляющий из коллекции элементы, превышающий заданный
-    /** remove all elements bigger than a concrete element*/
+    /**Данный метод используется для того, чтобы удалить из коллекции друзей, имена которых по алфавиту позже введенного имени, если ребенок с введенным именем имеется. */
     public static void remove_greater(String name,Map<String, Friend> ourMap) {
         int count=0;
         for (Iterator<Map.Entry<String, Friend>> element = ourMap.entrySet().iterator(); element.hasNext();) {
@@ -147,7 +148,7 @@ public class Lab5 {
     }
 
     //метод, выводящий элементы коллекции
-    /** show all elements*/
+    /** Данный метод используется для того, чтобы вывести имена всех друзей, находящихся в коллекции.*/
     public static void show(Map<String, Friend> ourMap) {
         for (Map.Entry<String, Friend> element : ourMap.entrySet()) {
             System.out.println(element.getValue().name);
@@ -155,7 +156,7 @@ public class Lab5 {
     }
 
     //метод, добавляющий элементы из файла в коллекцию
-    /** import all elements from file*/
+    /** Данный метод используется для того, чтобы импортировать всех друзей из JSON файла в коллекцию.*/
     public static void imports(String path){
         File file= new File(path);
         try {
@@ -170,28 +171,31 @@ public class Lab5 {
     }
 
     //метод, выводящий информацию о коллекции
-    /** show information about collection */
+    /** Данный метод используется для того, чтобы вывести информацию о коллекции. */
     public static void info(Map<String, Friend> ourMap){
         System.out.println("В коллеции типа TreeMap хранятся данные о " + ourMap.size()+" друзьях . Дата заполнения из файла json: "+date+" .Значениями являются экземпляры класса детей.");
     }
 
     //метод, удаляющий элемент по ключу
-    /**  remove element with a concrete key*/
+    /** Данный метод используется для того, чтобы удалить из коллекции ребенка с конкретным ключом.*/
     public static void remove(Map<String, Friend> ourMap) {
-        scan.nextLine();
-        System.out.println("Введите ключ ребенка");
-        String number = scan.nextLine();
-        Friend fr=ourMap.remove(number);
-        while (fr==null||!isNumber(number)) {
-            System.out.println("Ребёнок с таким ключом не найден. Введите ключ заново:");
-            number=scan.nextLine();
-            fr=ourMap.remove(number);
-        }
-        System.out.println("Удаление успешно завершено.");
+        if (ourMap.isEmpty()) {
+            System.out.println("Коллекция пустая");
+        } else {
+            scan.nextLine();
+            System.out.println("Введите ключ ребенка");
+            String number = scan.nextLine();
+            Friend fr = ourMap.remove(number);
+            if (fr == null || !isNumber(number)) {
+                System.out.println("Ребёнок с таким ключом не найден.");
+                //number = scan.nextLine();
+               // fr = ourMap.remove(number);
+            }else{
+            System.out.println("Удаление успешно завершено.");
+        }}
     }
-
     //метод, удаляющий все элементы, ключ которых превышает заданный
-    /** remove all elements with a key bigger than a concrete key*/
+    /** Данный метод используется для того, чтобы удалить из коллекции друзей, ключ которых больше введенного.*/
     public static void remove_greater_key(Map<String, Friend> ourMap) {
         int count=0;
         Scanner sc = new Scanner(System.in);
@@ -227,14 +231,14 @@ public class Lab5 {
     private static String KidsKey(){
         String number = scan.nextLine();
         while (!isNumber(number)) {
-            System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует. Введите заново:");
+            System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
             number= scan.nextLine();
         }
         for (Iterator<Map.Entry<String, Friend>> element = friends1.entrySet().iterator(); element.hasNext();) {
             Map.Entry<String, Friend> it = element.next();
             if (Integer.parseInt(number)==Integer.parseInt(it.getKey())){
-                System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует. Введите заново:");
-                KidsKey();
+                System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
+               // KidsKey();
             }
         }
         return number;
@@ -250,8 +254,8 @@ public class Lab5 {
             }
         }
         if (!name1){
-            System.out.println("Вы ввели некорректное имя или ребёнка с таким именем не существует. Введите заново:");
-            KidsName();
+            System.out.println("Вы ввели некорректное имя или ребёнка с таким именем не существует.");
+            //menu();
         }
         return name;
     }
