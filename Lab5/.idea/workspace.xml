@@ -12,42 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc9a5bfa-5d9d-44e6-b2c9-1d608f12fc48" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5/Lab5.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5/Lab5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/allclasses-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/allclasses-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/allclasses-noframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/allclasses-noframe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/index-files/index-5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/overview-tree.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Lab5/Lab5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Lab5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/Lab5/Lab5.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Lab5/Lab5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/Lab5/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Lab5/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/Lab5/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Lab5/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/Lab5/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Lab5/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/allclasses-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/allclasses-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/allclasses-noframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/allclasses-noframe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/index-files/index-5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/overview-tree.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,11 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Lab5/Lab5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37">
-              <caret line="276" lean-forward="true" selection-start-line="276" selection-end-line="276" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="335">
+              <caret line="235" column="12" selection-start-line="235" selection-start-column="12" selection-end-line="235" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -79,6 +43,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Lab5/Group.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -112,10 +85,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="638" />
-    <option name="y" value="24" />
-    <option name="width" value="642" />
-    <option name="height" value="721" />
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -190,6 +161,10 @@
       <workItem from="1550584708744" duration="8292000" />
       <workItem from="1550817668682" duration="10000" />
       <workItem from="1550838274601" duration="2919000" />
+      <workItem from="1550947613732" duration="4906000" />
+      <workItem from="1551024285039" duration="4546000" />
+      <workItem from="1551097261684" duration="5700000" />
+      <workItem from="1551103828201" duration="476000" />
     </task>
     <task id="LOCAL-00001" summary=":)">
       <created>1549803792504</created>
@@ -216,7 +191,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44674000" />
+    <option name="totallyTimeSpent" value="60302000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -231,7 +206,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.39745402" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28429985" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -272,6 +247,18 @@
     <MESSAGE value=":))" />
     <MESSAGE value="remove age" />
     <option name="LAST_COMMIT_MESSAGE" value="remove age" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Lab5/Lab5.java</url>
+          <line>193</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Lab5/Color.java">
@@ -358,13 +345,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lab5/Group.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/src.zip!/java/util/Scanner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -398,11 +378,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Lab5/Lab5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="276" lean-forward="true" selection-start-line="276" selection-end-line="276" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="335">
+          <caret line="235" column="12" selection-start-line="235" selection-start-column="12" selection-end-line="235" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -410,6 +387,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lab5/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>

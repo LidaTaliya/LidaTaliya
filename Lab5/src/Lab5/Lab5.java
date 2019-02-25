@@ -1,6 +1,7 @@
 package Lab5;
 
 import com.sun.xml.internal.ws.server.ServerRtException;
+import org.json.JSONException;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
+import java.util.stream.IntStream;
 
 
 public class Lab5 {
@@ -26,16 +28,13 @@ public class Lab5 {
     static Scanner scan = new Scanner(System.in);
     static Date date;
 
-    //создание массива, где будут храниться названия переменных окружения, чьи файловые данные уже были добавлены в коллекцию
-
-
     //указание путь к json файлу через переменную окружения
     static Path path = Paths.get(System.getenv("Friendss"));
 
     static File file = path.toFile();
 
     //метод, чтобы прочитать json с помощью scanner(возвращает список, состоящий из json объектов)
-    private static ArrayList<JSONObject> ReadJSON(File file) throws FileNotFoundException, ParseException {
+    private static ArrayList<JSONObject> ReadJSON(File file) throws FileNotFoundException, ParseException{
         Scanner scanner = new Scanner(file);
         ArrayList<JSONObject> json = new ArrayList<JSONObject>();
         date = new Date();
@@ -99,7 +98,7 @@ public class Lab5 {
         return sortedMap;
     }
 
-    private static boolean checkPath(ArrayList<String> arrayOfPaths, String newPath) {
+   /* private static boolean checkPath(ArrayList<String> arrayOfPaths, String newPath) {
         boolean result = true;
         for (String path : arrayOfPaths) {
             if (path.equals(newPath)) {
@@ -110,11 +109,11 @@ public class Lab5 {
         if (result)
             arrayOfPaths.add(newPath);
         return result;
-    }
+    }*/
 
 
     private static void menu() {
-        System.out.println("Выберите команду");
+        System.out.println("Выберите команду - введите число от 1 до 8:");
         System.out.println("1 - добавить нового друга по ключу");
         System.out.println("2 - удалить из коллекции друзей, превышающие заданные");
         System.out.println("3 - вывести в строковом представление всех друзей в коллекции");
@@ -131,30 +130,32 @@ public class Lab5 {
      * Для добавления элемента пользователю будет предложено ввести имя ребенка, "Карлсон", если ребенок знаком с Карлсоном, вероятность пойти с Малышом.
      */
     public static void insert(String key, Map<String, Friend> ourMap) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Введите имя ребенка");
-        String name = sc.nextLine();
-        while (!isLetters(name)) {
-            System.out.println("Вы ввели некорректное имя. Введите заново:");
-            name = sc.nextLine();
-        }
-        System.out.println("Введите \"Карлсон\", если ребёнок знаком с Карлсоном");
-        String carl = sc.nextLine();
+        //Scanner sc = new Scanner(System.in);
+        if (key.equals("нет ключа")) {
+        } else {
+            System.out.println("Введите имя ребенка");
+            String name = scan.nextLine();
+            if (!isLetters(name)) {
+                System.out.println("Вы ввели некорректное имя.");
+                //name = sc.nextLine();
+            } else {
+                System.out.println("Введите \"Карлсон\", если ребёнок знаком с Карлсоном");
+                String carl = scan.nextLine();
 
-        System.out.println("Введите его возможность пойти с Малышом");
-        String chance1 = sc.nextLine();
-        while (!isNumber(chance1)) {
-            System.out.println("Вы ввели неккоректную возможность. Введите заново:");
-            chance1 = sc.nextLine();
+                System.out.println("Введите его возможность пойти с Малышом");
+                String chance1 = scan.nextLine();
+                if (!isNumber(chance1)) {
+                    System.out.println("Вы ввели неккоректную возможность.");
+                    //chance1 = scan.nextLine();
+                } else {
+                    double chance = Double.parseDouble(chance1);
+                    Friend newFriend = new Friend(name, carl, chance, key);
+                    ourMap.put(key, newFriend);
+                    System.out.println("Друг добавлен");
+                }
+            }
         }
-        double chance = Double.parseDouble(chance1);
-
-        Friend newFriend = new Friend(name, carl, chance, key);
-        ourMap.put(key, newFriend);
-        System.out.println("Друг добавлен");
     }
-
-
     /**
      * Данный метод используется для того, чтобы удалить из коллекции друзей, имена которых по алфавиту позже введенного имени, если ребенок с введенным именем имеется.
      * Чтобы совершить данную команду, пользователю будет предложено ввести имя ребенка
@@ -180,35 +181,75 @@ public class Lab5 {
      * Данный метод используется для того, чтобы вывести имена всех друзей, находящихся в коллекции.
      */
     public static void show(Map<String, Friend> ourMap) {
+        if (ourMap.isEmpty()){
+            System.out.println("Коллекция пустая");
+        }else {
         for (Map.Entry<String, Friend> element : ourMap.entrySet()) {
             System.out.println(element.getValue().name);
         }
+        }
     }
 
+    private static boolean ContainsCollections(Map<String,Friend> MapFromFile, Map<String,Friend> MapFromProgram){
+        String [] ArrayFromFile= new String[MapFromFile.size()];
+        String [] ArrayFromProgram=new String[MapFromProgram.size()];
+        int i=0;
+        int i2=0;
+        for (Iterator<Map.Entry<String, Friend>> element = MapFromFile.entrySet().iterator(); element.hasNext(); ) {
+            Map.Entry<String, Friend> it1 = element.next();
+            ArrayFromFile[i]=it1.getKey();
+            i++;
+        }
+        for (Iterator<Map.Entry<String, Friend>> element = MapFromProgram.entrySet().iterator(); element.hasNext(); ) {
+            Map.Entry<String, Friend> it2 = element.next();
+            ArrayFromProgram[i2]=it2.getKey();
+            i2++;
+        }
+        Set<String> FromFile = new HashSet<>(Arrays.asList(ArrayFromFile));
+        Set<String> FromProgram = new HashSet<>(Arrays.asList(ArrayFromProgram));
+        if (FromFile.containsAll(FromProgram)){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
 
     /**
      * Данный метод используется для того, чтобы импортировать всех друзей из JSON файла в коллекцию.
      * Чтобы выполнить эту команду, пользователю будет предложено ввети название переменной окружения
      */
-    public static void imports(String newPath) {
-        Path ourNewPath = Paths.get(System.getenv(newPath));
-        File file = ourNewPath.toFile();
+    //public static void imports(String newPath) {
+    public static void imports(Map<String,Friend> newMap) {
+        //Path ourNewPath = Paths.get(System.getenv(newPath));
+        //File file = ourNewPath.toFile();
         try {
-            friends1 = AddFromFile(file, friends1);
+            //friends1 = AddFromFile(file,friends1);
+            /*if (friends1.isEmpty()){
+                System.out.println();
+            }*/
+            if (ContainsCollections(AddFromFile(file,friends1),newMap)){
+                System.out.println("В коллекцию ничего не добавлено.");
+            }else {
+                System.out.println("Добавление успешно завершено.");
+            }
+            friends1=AddFromFile(file,friends1);
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден :(");
 
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
     }
+
 
 
     /**
      * Данный метод используется для того, чтобы вывести информацию о коллекции.
      */
     public static void info(Map<String, Friend> ourMap) {
-        System.out.println("В коллеции типа TreeMap хранятся данные о " + ourMap.size() + " друзьях . Дата заполнения из файла json: " + date + " .Значениями являются экземпляры класса детей.");
+        System.out.println("В коллеции типа TreeMap хранятся данные о " + ourMap.size() + " друзьях . Дата заполнения из файла json: " + date + " .Значениями являются экземпляры класса детей. Обратите внимание на то, что конкретному ребёнку соответствует конкретный ключ.");
     }
 
 
@@ -220,7 +261,6 @@ public class Lab5 {
         if (ourMap.isEmpty()) {
             System.out.println("Коллекция пустая");
         } else {
-            scan.nextLine();
             System.out.println("Введите ключ ребенка");
             String number = scan.nextLine();
             Friend fr = ourMap.remove(number);
@@ -266,28 +306,36 @@ public class Lab5 {
     }
 
 
-    private static Map AddFromFile(File file, Map friends1) throws FileNotFoundException, ParseException {
+    private static Map AddFromFile(File file, Map<String,Friend> ourMap) throws FileNotFoundException, ParseException{
         ArrayList<JSONObject> jsons = ReadJSON(file);
         for (JSONObject obj : jsons) {
             Friend fr = new Friend((String) obj.get("name"), (String) obj.get("Carlson"), Double.parseDouble((String) obj.get("ChanceToWalk")), (String) obj.get("number"));
-            friends1.put((String) obj.get("number"), fr);
+            boolean c=false;
+            for (Iterator<Map.Entry<String, Friend>> element = ourMap.entrySet().iterator(); element.hasNext(); ) {
+                Map.Entry<String, Friend> it = element.next();
+                if (fr.number.equals(it.getKey())){
+                c=true;
+                break;}
+            }
+             if (!c) ourMap.put((String)obj.get("number"), fr);
         }
-
-        return friends1;
+        return ourMap;
     }
 
 
     private static String KidsKey() {
         String number = scan.nextLine();
-        while (!isNumber(number)) {
+        if (!isNumber(number)) {
             System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
-            number = scan.nextLine();
+            //number = scan.nextLine();
+            return "нет ключа";
         }
         for (Iterator<Map.Entry<String, Friend>> element = friends1.entrySet().iterator(); element.hasNext(); ) {
             Map.Entry<String, Friend> it = element.next();
-            if (Integer.parseInt(number) == Integer.parseInt(it.getKey())) {
+            if (number.equals( it.getKey())) {
                 System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
                 // KidsKey();
+                return "нет ключа";
             }
         }
         return number;
@@ -312,18 +360,20 @@ public class Lab5 {
 
     public static void main(String[] args) {
 
-        ArrayList<String> usedPaths = new ArrayList<String>();
+       /* ArrayList<String> usedPaths = new ArrayList<String>();
         String firstPath = "Friendss";
-        usedPaths.add(firstPath);
+        usedPaths.add(firstPath);*/
 
         //само чтение json и добавление экземпляров друзей
         try {
-            friends1 = AddFromFile(file, (TreeMap) friends1);
+            friends1 = AddFromFile(file,friends1);
         } catch (FileNotFoundException e) {
             System.out.println("Файл с друзьями не найден :(");
-
+            System.exit(0);
         } catch (ParseException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            System.out.println("Некорректные данные в файле. Проверьте, что данные записаны в формате JSON.");
+            System.exit(0);
         }
 
         friends1 = sortByValues((TreeMap) friends1);
@@ -332,109 +382,118 @@ public class Lab5 {
 
         //консольное приложение
         menu();
-        int a = scan.nextInt();
-        while (a != 8) {
-            if (a == 1) {
-                scan.nextLine();
+
+        String a = scan.nextLine();
+        while (!a.equals("8")) {
+            if (a.equals("1")) {
                 System.out.println("Введите ключ ребенка");
                 insert(KidsKey(), friends1);
             }
-            if (a == 2) {
+            if (a.equals("2")) {
                 scan.nextLine();
                 System.out.println("Введите имя ребёнка");
                 remove_greater(KidsName(), friends1);
             }
-            if (a == 3)
-                show(friends1);
-            if (a == 4) {
-                System.out.println("Введите название переменной окружения");
-                String newPath = scan.next();
+            if (a.equals("3")){
+                //friends1 = sortByValues((TreeMap) friends1);
+                show(friends1);}
+            if (a.equals("4")){
+                /*System.out.println("Введите название переменной окружения");
+                String newPath=" ";
+                try {
+                    newPath = scan.next();
+                } catch (NullPointerException e){
+                    System.out.println("Вы ввели неккоректное название переменной окружения.");
+                }
                 if (checkPath(usedPaths, newPath)) {
                     imports(newPath);
                     System.out.println("Все друзья из файла успешно добавлены");
-                }
-                if (a == 5)
+                }}*/
+                Map<String,Friend> newMap=friends1;
+                imports(newMap);}
+            if (a.equals("5"))
                     info(friends1);
-                if (a == 6)
-                    remove(friends1);
-                if (a == 7) {
+            if (a.equals("6")){
+                    remove(friends1);}
+            if (a.equals("7")) {
                     remove_greater_key(friends1);
                 }
                 menu();
-                a = scan.nextInt();
-            }
-            if (a == 8) {
-                try {
-                    FileWriter fstream1 = new FileWriter(path.toFile());// конструктор с одним параметром - для перезаписи
-                    BufferedWriter out1 = new BufferedWriter(fstream1); //  создаём буферезированный поток
-                    out1.write(""); // очищаем, перезаписав поверх пустую строку
-                    out1.close(); // закрываем
+                a = scan.nextLine();
+                if (a.equals("8")) {
+                    try {
+                        FileWriter fstream1 = new FileWriter(path.toFile());// конструктор с одним параметром - для перезаписи
+                        BufferedWriter out1 = new BufferedWriter(fstream1); //  создаём буферезированный поток
+                        out1.write(""); // очищаем, перезаписав поверх пустую строку
+                        out1.close(); // закрываем
 
-                    BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(path.toFile()));
-                    friends = MakeArray();
-                    for (int j = 0; j < friends.length; j++) {
-                        String carl;
-                        if (friends[j].MeetCarlson) {
-                            carl = "Карлсон";
-                        } else {
-                            carl = "не Карлсон";
+                        BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(path.toFile()));
+                        friends = MakeArray();
+                        for (int j = 0; j < friends.length; j++) {
+                            String carl;
+                            if (friends[j].MeetCarlson) {
+                                carl = "Карлсон";
+                            } else {
+                                carl = "не Карлсон";
+                            }
+                            String fr = "{\"name\": \"" + friends[j].name + "\",\"Carlson\":\"" + carl + "\",\"ChanceToWalk\":\"" + friends[j].ChanceToWalk + "\",\"number\":\"" + friends[j].number + "\"}";
+                            stream.write(fr.getBytes());
+                            stream.write(System.lineSeparator().getBytes());
                         }
-                        String fr = "{\"name\": \"" + friends[j].name + "\",\"Carlson\":\"" + carl + "\",\"ChanceToWalk\":\"" + friends[j].ChanceToWalk + "\",\"number\":\"" + friends[j].number + "\"}";
-                        stream.write(fr.getBytes());
-                        stream.write(System.lineSeparator().getBytes());
+                        stream.close();
+                    } catch (FileNotFoundException e) {
+                        System.out.println("Файл не найден :(");
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                    stream.close();
-                } catch (FileNotFoundException e) {
-                    System.out.println("Файл не найден :(");
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                //System.out.println("Изменения в коллекции друзей успешно сохранены в файл.");
 
-                Parent mother = new Parent("Мама", false);
-                Kid kid = new Kid("Малыш", 0.8, true);
-                Dog pudel = new Dog(Size.S, Color.Black, "пудель", 0.9);
-                Carlson carlson = new Carlson("Карлсон", true);
-                mother.Breathe(kid);
-                mother.AttitudeToCarlson(kid);
-                Group g = new Group();
-                g.AddKid(kid);
-                g.AddPudel(pudel);
-                g.AddCarlson(carlson);
-                g.AddFriends(friends);
-                Friend[] FriendsWhoGo = g.WhoIsGoing();
-                g.AddFriendsWhoGo(FriendsWhoGo);
-                g.BeHappyToGoToSchool();
-                g.AllWalk();
-                kid.BeHappy(friends, carlson);
-                pudel.appear();
-                pudel.wantToGo(kid);
-                g.CrossTheStreet();
-                pudel.goToKid(kid);
-                pudel.toSniffTheKnees(kid);
-                pudel.toYelp();
-                try {
-                    kid.BeHappyWithDog(pudel);
-                } catch (KidNoLoveDogs e) {
-                    System.out.print(e.getMessage());
-                }
-                pudel.FeelTheAttitude(kid);
-                pudel.LoveEveryone(kid);
-                kid.LoveDog(pudel);
-                kid.ActionsWithDog(pudel);
-                kid.Sounds(pudel);
-                try {
-                    pudel.ThinkSo();
-                } catch (NoThinkSo e) {
-                    System.out.print(e.getMessage());
-                }
-                pudel.JumpAndYelp();
-                g.TurnToStreet();
-                pudel.Run();
-                System.exit(0);
+                    //System.out.println("Изменения в коллекции друзей успешно сохранены в файл.");
 
+                    Parent mother = new Parent("Мама", false);
+                    Kid kid = new Kid("Малыш", 0.8, true);
+                    Dog pudel = new Dog(Size.S, Color.Black, "пудель", 0.9);
+                    Carlson carlson = new Carlson("Карлсон", true);
+                    mother.Breathe(kid);
+                    mother.AttitudeToCarlson(kid);
+                    Group g = new Group();
+                    g.AddKid(kid);
+                    g.AddPudel(pudel);
+                    g.AddCarlson(carlson);
+                    g.AddFriends(friends);
+                    Friend[] FriendsWhoGo = g.WhoIsGoing();
+                    g.AddFriendsWhoGo(FriendsWhoGo);
+                    g.BeHappyToGoToSchool();
+                    g.AllWalk();
+                    kid.BeHappy(friends, carlson);
+                    pudel.appear();
+                    pudel.wantToGo(kid);
+                    g.CrossTheStreet();
+                    pudel.goToKid(kid);
+                    pudel.toSniffTheKnees(kid);
+                    pudel.toYelp();
+                    try {
+                        kid.BeHappyWithDog(pudel);
+                    } catch (KidNoLoveDogs e) {
+                        System.out.print(e.getMessage());
+                    }
+                    pudel.FeelTheAttitude(kid);
+                    pudel.LoveEveryone(kid);
+                    kid.LoveDog(pudel);
+                    kid.ActionsWithDog(pudel);
+                    kid.Sounds(pudel);
+                    try {
+                        pudel.ThinkSo();
+                    } catch (NoThinkSo e) {
+                        System.out.print(e.getMessage());
+                    }
+                    pudel.JumpAndYelp();
+                    g.TurnToStreet();
+                    pudel.Run();
+                    System.exit(0);
+                }
             }
-        }
+
+
     }
 }
