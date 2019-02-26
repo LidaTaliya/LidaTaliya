@@ -30,9 +30,10 @@ public class Lab5 {
     static int countFriends;
 
     //указание путь к json файлу через переменную окружения
-    static Path path = Paths.get(System.getenv("Friendss"));
 
-    static File file = path.toFile();
+
+    static Path path;
+    static File file;
 
     //метод, чтобы прочитать json с помощью scanner(возвращает список, состоящий из json объектов)
     private static ArrayList<JSONObject> ReadJSON(File file) throws FileNotFoundException, ParseException{
@@ -377,7 +378,13 @@ public class Lab5 {
     }
 
     public static void main(String[] args) {
-
+        try{
+        path = Paths.get(System.getenv("Friendss"));
+        file = path.toFile();}
+        catch (NullPointerException e){
+            System.out.println("Проверьте переменную окружения.");
+            System.exit(0);
+        }
        /* ArrayList<String> usedPaths = new ArrayList<String>();
         String firstPath = "Friendss";
         usedPaths.add(firstPath);*/

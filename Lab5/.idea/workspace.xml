@@ -12,7 +12,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc9a5bfa-5d9d-44e6-b2c9-1d608f12fc48" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Lab5_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Lab5_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab5/META-INF/MANIFEST.MF" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Lab5/Lab5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Lab5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Lab5/Lab5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3052">
-              <caret line="242" column="33" lean-forward="true" selection-start-line="242" selection-start-column="33" selection-end-line="242" selection-end-column="33" />
+            <state relative-caret-position="354">
+              <caret line="385" column="25" selection-start-line="385" selection-start-column="25" selection-end-line="385" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -163,7 +168,7 @@
       <workItem from="1551024285039" duration="4546000" />
       <workItem from="1551097261684" duration="5700000" />
       <workItem from="1551103828201" duration="476000" />
-      <workItem from="1551171361726" duration="1578000" />
+      <workItem from="1551171361726" duration="2565000" />
     </task>
     <task id="LOCAL-00001" summary=":)">
       <created>1549803792504</created>
@@ -190,7 +195,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61880000" />
+    <option name="totallyTimeSpent" value="62867000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -205,7 +210,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.47807637" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.056577086" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -252,17 +257,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Lab5/Lab5.java</url>
-          <line>197</line>
+          <line>198</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Lab5/Lab5.java</url>
-          <line>322</line>
-          <properties class="Lab5.Lab5" method="AddFromFile">
+          <line>379</line>
+          <properties class="Lab5.Lab5" method="main">
             <option name="EMULATED" value="true" />
           </properties>
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -385,8 +390,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Lab5/Lab5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3052">
-          <caret line="242" column="33" lean-forward="true" selection-start-line="242" selection-start-column="33" selection-end-line="242" selection-end-column="33" />
+        <state relative-caret-position="354">
+          <caret line="385" column="25" selection-start-line="385" selection-start-column="25" selection-end-line="385" selection-end-column="25" />
         </state>
       </provider>
     </entry>
