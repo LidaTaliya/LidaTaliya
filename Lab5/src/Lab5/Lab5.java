@@ -27,6 +27,7 @@ public class Lab5 {
     static Map<String, Friend> friends1 = new TreeMap<String, Friend>();
     static Scanner scan = new Scanner(System.in);
     static Date date;
+    static int countFriends;
 
     //указание путь к json файлу через переменную окружения
     static Path path = Paths.get(System.getenv("Friendss"));
@@ -128,6 +129,7 @@ public class Lab5 {
     /**
      * Данный метод используется для того, чтобы добавить новый элемент коллекции по заданному ключу.
      * Для добавления элемента пользователю будет предложено ввести имя ребенка, "Карлсон", если ребенок знаком с Карлсоном, вероятность пойти с Малышом.
+     * На вход в метод подаётся заранее проверенный на повторение ключ добавляемого ребёнка и коллекция, в которую ребёнок добавляется.
      */
     public static void insert(String key, Map<String, Friend> ourMap) {
         //Scanner sc = new Scanner(System.in);
@@ -158,7 +160,8 @@ public class Lab5 {
     }
     /**
      * Данный метод используется для того, чтобы удалить из коллекции друзей, имена которых по алфавиту позже введенного имени, если ребенок с введенным именем имеется.
-     * Чтобы совершить данную команду, пользователю будет предложено ввести имя ребенка
+     * Чтобы совершить данную команду, пользователю будет предложено ввести имя ребенка.
+     * На вход в данный метод подаётся имя ребёнка, и коллекция, из которой происходит удаление.
      */
     public static void remove_greater(String name, Map<String, Friend> ourMap) {
         int count = 0;
@@ -179,6 +182,7 @@ public class Lab5 {
 
     /**
      * Данный метод используется для того, чтобы вывести имена всех друзей, находящихся в коллекции.
+     * На вход в данный метод подаётся коллекция, информацию о которой нам необходимо вывести.
      */
     public static void show(Map<String, Friend> ourMap) {
         if (ourMap.isEmpty()){
@@ -190,8 +194,8 @@ public class Lab5 {
         }
     }
 
-    private static boolean ContainsCollections(Map<String,Friend> MapFromFile, Map<String,Friend> MapFromProgram){
-        String [] ArrayFromFile= new String[MapFromFile.size()];
+  /*  private static boolean ContainsCollections(Map<String,Friend> MapFromFile, Map<String,Friend> MapFromProgram){
+        /*String [] ArrayFromFile= new String[MapFromFile.size()];
         String [] ArrayFromProgram=new String[MapFromProgram.size()];
         int i=0;
         int i2=0;
@@ -213,11 +217,12 @@ public class Lab5 {
             return false;
         }
 
-    }
+    }*/
 
     /**
      * Данный метод используется для того, чтобы импортировать всех друзей из JSON файла в коллекцию.
      * Чтобы выполнить эту команду, пользователю будет предложено ввети название переменной окружения
+     * На вход в данный метод подаётся коллекция, в которую мы импортируем данные из файла.
      */
     //public static void imports(String newPath) {
     public static void imports(Map<String,Friend> newMap) {
@@ -228,12 +233,18 @@ public class Lab5 {
             /*if (friends1.isEmpty()){
                 System.out.println();
             }*/
-            if (ContainsCollections(AddFromFile(file,friends1),newMap)){
+            //if (ContainsCollections(AddFromFile(file,friends1),newMap)){
+               // System.out.println("В коллекцию ничего не добавлено.");
+           // }else {
+              //  System.out.println("Добавление успешно завершено.");
+           // }
+          //  friends1=AddFromFile(file,friends1);
+            friends1=AddFromFile(file,friends1);
+            if (countFriends==0){
                 System.out.println("В коллекцию ничего не добавлено.");
-            }else {
+            }else{
                 System.out.println("Добавление успешно завершено.");
             }
-            friends1=AddFromFile(file,friends1);
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден :(");
 
@@ -247,6 +258,7 @@ public class Lab5 {
 
     /**
      * Данный метод используется для того, чтобы вывести информацию о коллекции.
+     * На вход в данный метод подаётся коллекция, информацию о которой нам необходимо вывести.
      */
     public static void info(Map<String, Friend> ourMap) {
         System.out.println("В коллеции типа TreeMap хранятся данные о " + ourMap.size() + " друзьях . Дата заполнения из файла json: " + date + " .Значениями являются экземпляры класса детей. Обратите внимание на то, что конкретному ребёнку соответствует конкретный ключ.");
@@ -255,7 +267,8 @@ public class Lab5 {
 
     /**
      * Данный метод используется для того, чтобы удалить из коллекции ребенка с конкретным ключом.
-     * Чтобы выполнить эту операцию, пользователю будет предложено ввести ключ ребенка, которого он желает удалить
+     * Чтобы выполнить эту операцию, пользователю будет предложено ввести ключ ребенка, которого он желает удалить.
+     * На вход в данный метод подаётся коллекция, из которой происходит удаление.
      */
     public static void remove(Map<String, Friend> ourMap) {
         if (ourMap.isEmpty()) {
@@ -275,7 +288,8 @@ public class Lab5 {
 
     /**
      * Данный метод используется для того, чтобы удалить из коллекции друзей, ключ которых больше введенного.
-     * Чтобы выполнить эту команду, пользователю будет предложено ввести ключ ребенка
+     * Чтобы выполнить эту команду, пользователю будет предложено ввести ключ ребенка.
+     * На вход в данный метод подаётся коллекция, из которой происходит удаление.
      */
     public static void remove_greater_key(Map<String, Friend> ourMap) {
         if (ourMap.isEmpty())
@@ -307,6 +321,7 @@ public class Lab5 {
 
 
     private static Map AddFromFile(File file, Map<String,Friend> ourMap) throws FileNotFoundException, ParseException{
+        countFriends=0;
         ArrayList<JSONObject> jsons = ReadJSON(file);
         for (JSONObject obj : jsons) {
             Friend fr = new Friend((String) obj.get("name"), (String) obj.get("Carlson"), Double.parseDouble((String) obj.get("ChanceToWalk")), (String) obj.get("number"));
@@ -317,7 +332,10 @@ public class Lab5 {
                 c=true;
                 break;}
             }
-             if (!c) ourMap.put((String)obj.get("number"), fr);
+             if (!c){
+                 ourMap.put(fr.number, fr);
+                 countFriends++;
+             }
         }
         return ourMap;
     }
