@@ -244,7 +244,7 @@ public class Lab5 {
             if (countFriends==0){
                 System.out.println("В коллекцию ничего не добавлено.");
             }else{
-                System.out.println("Добавление успешно завершено.");
+                System.out.println("Добавление успешно завершено. В коллекцию добавлено "+countFriends+" друзей.");
             }
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден :(");
@@ -415,7 +415,6 @@ public class Lab5 {
                 insert(KidsKey(), friends1);
             }
             if (a.equals("2")) {
-                scan.nextLine();
                 System.out.println("Введите имя ребёнка");
                 remove_greater(KidsName(), friends1);
             }
