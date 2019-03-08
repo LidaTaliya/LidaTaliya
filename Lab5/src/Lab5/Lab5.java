@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
 
@@ -82,14 +83,10 @@ public class Lab5 {
     private static <K extends Comparable, V extends Comparable> Map<K, V> sortByValues(TreeMap<K, V> map) {
         List<Map.Entry<K, V>> entries = new LinkedList<Map.Entry<K, V>>(map.entrySet());
 
-        Collections.sort(entries, new Comparator<Map.Entry<K, V>>() {
-
-            @Override
-            public int compare(Map.Entry<K, V> o1, Map.Entry<K, V> o2) {
-                Friend fr1 = (Friend) o1.getValue();
-                Friend fr2 = (Friend) o2.getValue();
-                return fr1.name.compareTo(fr2.name);
-            }
+        Collections.sort(entries, (o1, o2) -> {
+            Friend fr1 = (Friend) o1.getValue();
+            Friend fr2 = (Friend) o2.getValue();
+            return  fr1.compareTo(fr2);
         });
         Map<K, V> sortedMap = new LinkedHashMap<K, V>();
 
@@ -99,20 +96,6 @@ public class Lab5 {
 
         return sortedMap;
     }
-
-   /* private static boolean checkPath(ArrayList<String> arrayOfPaths, String newPath) {
-        boolean result = true;
-        for (String path : arrayOfPaths) {
-            if (path.equals(newPath)) {
-                System.out.println("Вы уже использовали данный файл. В коллекцию ничего не добавлено.");
-                result = false;
-            }
-        }
-        if (result)
-            arrayOfPaths.add(newPath);
-        return result;
-    }*/
-
 
     private static void menu() {
         System.out.println("Выберите команду - введите число от 1 до 8:");
@@ -165,11 +148,19 @@ public class Lab5 {
      * На вход в данный метод подаётся имя ребёнка, и коллекция, из которой происходит удаление.
      */
     public static void remove_greater(String name, Map<String, Friend> ourMap) {
-        int count = 0;
-        for (Iterator<Map.Entry<String, Friend>> element = ourMap.entrySet().iterator(); element.hasNext(); ) {
+        int count=0;
+        /*for (Iterator<Map.Entry<String, Friend>> element = ourMap.entrySet().iterator(); element.hasNext(); ) {
             Map.Entry<String, Friend> it = element.next();
             if (it.getValue().name.compareTo(name) > 0) {
                 element.remove();
+                count++;
+            }
+        }*/
+        Iterator<Map.Entry<String, Friend>> it= ourMap.entrySet().iterator();
+        while(it.hasNext()){
+            Map.Entry<String,Friend> element=it.next();
+            if (element.getValue().name.compareTo(name)>0){
+                it.remove();
                 count++;
             }
         }
@@ -189,57 +180,19 @@ public class Lab5 {
         if (ourMap.isEmpty()){
             System.out.println("Коллекция пустая");
         }else {
-        for (Map.Entry<String, Friend> element : ourMap.entrySet()) {
-            System.out.println(element.getValue().name);
-        }
+            ourMap.forEach(
+                    (s, friend) -> System.out.println(friend.name)
+            );
         }
     }
-
-  /*  private static boolean ContainsCollections(Map<String,Friend> MapFromFile, Map<String,Friend> MapFromProgram){
-        /*String [] ArrayFromFile= new String[MapFromFile.size()];
-        String [] ArrayFromProgram=new String[MapFromProgram.size()];
-        int i=0;
-        int i2=0;
-        for (Iterator<Map.Entry<String, Friend>> element = MapFromFile.entrySet().iterator(); element.hasNext(); ) {
-            Map.Entry<String, Friend> it1 = element.next();
-            ArrayFromFile[i]=it1.getKey();
-            i++;
-        }
-        for (Iterator<Map.Entry<String, Friend>> element = MapFromProgram.entrySet().iterator(); element.hasNext(); ) {
-            Map.Entry<String, Friend> it2 = element.next();
-            ArrayFromProgram[i2]=it2.getKey();
-            i2++;
-        }
-        Set<String> FromFile = new HashSet<>(Arrays.asList(ArrayFromFile));
-        Set<String> FromProgram = new HashSet<>(Arrays.asList(ArrayFromProgram));
-        if (FromFile.containsAll(FromProgram)){
-            return true;
-        }else{
-            return false;
-        }
-
-    }*/
 
     /**
      * Данный метод используется для того, чтобы импортировать всех друзей из JSON файла в коллекцию.
      * Чтобы выполнить эту команду, пользователю будет предложено ввети название переменной окружения
      * На вход в данный метод подаётся коллекция, в которую мы импортируем данные из файла.
      */
-    //public static void imports(String newPath) {
     public static void imports(Map<String,Friend> newMap) {
-        //Path ourNewPath = Paths.get(System.getenv(newPath));
-        //File file = ourNewPath.toFile();
         try {
-            //friends1 = AddFromFile(file,friends1);
-            /*if (friends1.isEmpty()){
-                System.out.println();
-            }*/
-            //if (ContainsCollections(AddFromFile(file,friends1),newMap)){
-               // System.out.println("В коллекцию ничего не добавлено.");
-           // }else {
-              //  System.out.println("Добавление успешно завершено.");
-           // }
-          //  friends1=AddFromFile(file,friends1);
             friends1=AddFromFile(file,friends1);
             if (countFriends==0){
                 System.out.println("В коллекцию ничего не добавлено.");
@@ -353,7 +306,6 @@ public class Lab5 {
             Map.Entry<String, Friend> it = element.next();
             if (number.equals( it.getKey())) {
                 System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
-                // KidsKey();
                 return "нет ключа";
             }
         }
@@ -422,17 +374,6 @@ public class Lab5 {
                 //friends1 = sortByValues((TreeMap) friends1);
                 show(friends1);}
             if (a.equals("4")){
-                /*System.out.println("Введите название переменной окружения");
-                String newPath=" ";
-                try {
-                    newPath = scan.next();
-                } catch (NullPointerException e){
-                    System.out.println("Вы ввели неккоректное название переменной окружения.");
-                }
-                if (checkPath(usedPaths, newPath)) {
-                    imports(newPath);
-                    System.out.println("Все друзья из файла успешно добавлены");
-                }}*/
                 Map<String,Friend> newMap=friends1;
                 imports(newMap);}
             if (a.equals("5"))

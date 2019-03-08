@@ -1,6 +1,6 @@
 package Lab5;
 
-public class Friend extends MenCreature {
+public class Friend extends MenCreature implements Comparable<Friend> {
     double ChanceToWalk;
     String number;
     Friend ( String name1, String carlson, double k, String num){
@@ -15,5 +15,16 @@ public class Friend extends MenCreature {
         if (Math.random() <ChanceToWalk ) {
             return true;
         } else {return false;}
+    }
+
+    @Override
+    public int compareTo(Friend o) {
+        if (this.name.compareTo(o.name)==0){
+            return 0;
+        }else if(this.name.compareTo(o.name)<0){
+            return -1;
+        }else{
+            return 1;
+        }
     }
 }
