@@ -50,7 +50,6 @@ public class Lab5 {
     }
 
     private static Friend[] MakeArray() {
-        //создание массива друзей на основе коллекции(чтоб не переписывать большую часть кода, которая была расчитана на массив)
         Friend[] friends = new Friend[(friends1.size())];
         int i = 0;
         for (Map.Entry<String, Friend> e : friends1.entrySet()) {
@@ -80,7 +79,7 @@ public class Lab5 {
     }
 
 
-    private static <K extends Comparable, V extends Comparable> Map<K, V> sortByValues(TreeMap<K, V> map) {
+    private static <K extends Comparable, V extends Comparable> Map<K, V> sortByValues(Map<K, V> map) {
         List<Map.Entry<K, V>> entries = new LinkedList<Map.Entry<K, V>>(map.entrySet());
 
         Collections.sort(entries, (o1, o2) -> {
@@ -93,7 +92,6 @@ public class Lab5 {
         for (Map.Entry<K, V> entry : entries) {
             sortedMap.put(entry.getKey(), entry.getValue());
         }
-
         return sortedMap;
     }
 
@@ -177,6 +175,7 @@ public class Lab5 {
      * На вход в данный метод подаётся коллекция, информацию о которой нам необходимо вывести.
      */
     public static void show(Map<String, Friend> ourMap) {
+        ourMap = sortByValues(ourMap);
         if (ourMap.isEmpty()){
             System.out.println("Коллекция пустая");
         }else {
@@ -328,6 +327,28 @@ public class Lab5 {
         }
         return name;
     }
+    private static void WriteInFile(Map<String,Friend> friends) throws IOException,FileNotFoundException{
+        FileWriter fstream1 = new FileWriter(path.toFile());// конструктор с одним параметром - для перезаписи
+        BufferedWriter out1 = new BufferedWriter(fstream1); //  создаём буферезированный поток
+        out1.write(""); // очищаем, перезаписав поверх пустую строку
+        out1.close(); // закрываем
+
+        BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(path.toFile()));
+        String carl;
+        for (Iterator<Map.Entry<String, Friend>> element = friends.entrySet().iterator(); element.hasNext(); ) {
+            Map.Entry<String, Friend> it = element.next();
+            if (it.getValue().MeetCarlson) {
+                carl = "Карлсон";
+            } else {
+                carl = "не Карлсон";
+            }
+            String fr = "{\"name\": \"" + it.getValue().name + "\",\"Carlson\":\"" + carl + "\",\"ChanceToWalk\":\"" + it.getValue().ChanceToWalk + "\",\"number\":\"" + it.getValue().number + "\"}";
+            stream.write(fr.getBytes());
+            stream.write(System.lineSeparator().getBytes());
+        }
+        stream.close();
+        }
+
 
     public static void main(String[] args) {
         try{
@@ -337,9 +358,6 @@ public class Lab5 {
             System.out.println("Проверьте переменную окружения.");
             System.exit(0);
         }
-       /* ArrayList<String> usedPaths = new ArrayList<String>();
-        String firstPath = "Friendss";
-        usedPaths.add(firstPath);*/
 
         //само чтение json и добавление экземпляров друзей
         try {
@@ -353,9 +371,7 @@ public class Lab5 {
             System.exit(0);
         }
 
-        friends1 = sortByValues((TreeMap) friends1);
         Friend[] friends = MakeArray();
-
 
         //консольное приложение
         menu();
@@ -371,7 +387,7 @@ public class Lab5 {
                 remove_greater(KidsName(), friends1);
             }
             if (a.equals("3")){
-                //friends1 = sortByValues((TreeMap) friends1);
+
                 show(friends1);}
             if (a.equals("4")){
                 Map<String,Friend> newMap=friends1;
@@ -387,33 +403,13 @@ public class Lab5 {
                 a = scan.nextLine();
                 if (a.equals("8")) {
                     try {
-                        FileWriter fstream1 = new FileWriter(path.toFile());// конструктор с одним параметром - для перезаписи
-                        BufferedWriter out1 = new BufferedWriter(fstream1); //  создаём буферезированный поток
-                        out1.write(""); // очищаем, перезаписав поверх пустую строку
-                        out1.close(); // закрываем
-
-                        BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(path.toFile()));
-                        friends = MakeArray();
-                        for (int j = 0; j < friends.length; j++) {
-                            String carl;
-                            if (friends[j].MeetCarlson) {
-                                carl = "Карлсон";
-                            } else {
-                                carl = "не Карлсон";
-                            }
-                            String fr = "{\"name\": \"" + friends[j].name + "\",\"Carlson\":\"" + carl + "\",\"ChanceToWalk\":\"" + friends[j].ChanceToWalk + "\",\"number\":\"" + friends[j].number + "\"}";
-                            stream.write(fr.getBytes());
-                            stream.write(System.lineSeparator().getBytes());
-                        }
-                        stream.close();
+                        WriteInFile(friends1);
                     } catch (FileNotFoundException e) {
                         System.out.println("Файл не найден :(");
                         e.printStackTrace();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-
-                    //System.out.println("Изменения в коллекции друзей успешно сохранены в файл.");
 
                     Parent mother = new Parent("Мама", false);
                     Kid kid = new Kid("Малыш", 0.8, true);
