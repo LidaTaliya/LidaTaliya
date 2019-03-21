@@ -146,7 +146,7 @@ public class Lab5 {
      * На вход в данный метод подаётся имя ребёнка, и коллекция, из которой происходит удаление.
      */
     public static void remove_greater(String name, Map<String, Friend> ourMap) {
-        int count=0;
+        //final AtomicInteger count=new AtomicInteger(0);
         /*for (Iterator<Map.Entry<String, Friend>> element = ourMap.entrySet().iterator(); element.hasNext(); ) {
             Map.Entry<String, Friend> it = element.next();
             if (it.getValue().name.compareTo(name) > 0) {
@@ -154,15 +154,23 @@ public class Lab5 {
                 count++;
             }
         }*/
-        Iterator<Map.Entry<String, Friend>> it= ourMap.entrySet().iterator();
+        /*Iterator<Map.Entry<String, Friend>> it= ourMap.entrySet().iterator();
         while(it.hasNext()){
             Map.Entry<String,Friend> element=it.next();
             if (element.getValue().name.compareTo(name)>0){
                 it.remove();
                 count++;
             }
-        }
-        if (count != 0) {
+        }*/
+       // Map<String,Friend> newmap=ourMap;
+        boolean c;
+        c=ourMap.entrySet().removeIf(element->element.getValue().name.compareTo(name)>0);
+       /* ourMap.forEach((key,element)->{if(element.name.compareTo(name)>0){
+            ourMap.remove(key);
+            count.incrementAndGet();
+        };
+                                        });*/
+        if (c) {
             System.out.println("Удаление успешно завершено.");
         } else {
             System.out.println("Детей с именем больше заданного нет.");
@@ -282,13 +290,13 @@ public class Lab5 {
             for (Iterator<Map.Entry<String, Friend>> element = ourMap.entrySet().iterator(); element.hasNext(); ) {
                 Map.Entry<String, Friend> it = element.next();
                 if (fr.number.equals(it.getKey())){
-                c=true;
-                break;}
+                    c=true;
+                    break;}
             }
-             if (!c){
-                 ourMap.put(fr.number, fr);
-                 countFriends++;
-             }
+            if (!c){
+                ourMap.put(fr.number, fr);
+                countFriends++;
+            }
         }
         return ourMap;
     }
@@ -347,13 +355,13 @@ public class Lab5 {
             stream.write(System.lineSeparator().getBytes());
         }
         stream.close();
-        }
+    }
 
 
     public static void main(String[] args) {
         try{
-        path = Paths.get(System.getenv("Friendss"));
-        file = path.toFile();}
+            path = Paths.get(System.getenv("Friendss"));
+            file = path.toFile();}
         catch (NullPointerException e){
             System.out.println("Проверьте переменную окружения.");
             System.exit(0);
@@ -393,67 +401,67 @@ public class Lab5 {
                 Map<String,Friend> newMap=friends1;
                 imports(newMap);}
             if (a.equals("5"))
-                    info(friends1);
+                info(friends1);
             if (a.equals("6")){
-                    remove(friends1);}
+                remove(friends1);}
             if (a.equals("7")) {
-                    remove_greater_key(friends1);
-                }
-                menu();
-                a = scan.nextLine();
-                if (a.equals("8")) {
-                    try {
-                        WriteInFile(friends1);
-                    } catch (FileNotFoundException e) {
-                        System.out.println("Файл не найден :(");
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                    Parent mother = new Parent("Мама", false);
-                    Kid kid = new Kid("Малыш", 0.8, true);
-                    Dog pudel = new Dog(Size.S, Color.Black, "пудель", 0.9);
-                    Carlson carlson = new Carlson("Карлсон", true);
-                    mother.Breathe(kid);
-                    mother.AttitudeToCarlson(kid);
-                    Group g = new Group();
-                    g.AddKid(kid);
-                    g.AddPudel(pudel);
-                    g.AddCarlson(carlson);
-                    g.AddFriends(friends);
-                    Friend[] FriendsWhoGo = g.WhoIsGoing();
-                    g.AddFriendsWhoGo(FriendsWhoGo);
-                    g.BeHappyToGoToSchool();
-                    g.AllWalk();
-                    kid.BeHappy(friends, carlson);
-                    pudel.appear();
-                    pudel.wantToGo(kid);
-                    g.CrossTheStreet();
-                    pudel.goToKid(kid);
-                    pudel.toSniffTheKnees(kid);
-                    pudel.toYelp();
-                    try {
-                        kid.BeHappyWithDog(pudel);
-                    } catch (KidNoLoveDogs e) {
-                        System.out.print(e.getMessage());
-                    }
-                    pudel.FeelTheAttitude(kid);
-                    pudel.LoveEveryone(kid);
-                    kid.LoveDog(pudel);
-                    kid.ActionsWithDog(pudel);
-                    kid.Sounds(pudel);
-                    try {
-                        pudel.ThinkSo();
-                    } catch (NoThinkSo e) {
-                        System.out.print(e.getMessage());
-                    }
-                    pudel.JumpAndYelp();
-                    g.TurnToStreet();
-                    pudel.Run();
-                    System.exit(0);
-                }
+                remove_greater_key(friends1);
             }
+            menu();
+            a = scan.nextLine();
+            if (a.equals("8")) {
+                try {
+                    WriteInFile(friends1);
+                } catch (FileNotFoundException e) {
+                    System.out.println("Файл не найден :(");
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                Parent mother = new Parent("Мама", false);
+                Kid kid = new Kid("Малыш", 0.8, true);
+                Dog pudel = new Dog(Size.S, Color.Black, "пудель", 0.9);
+                Carlson carlson = new Carlson("Карлсон", true);
+                mother.Breathe(kid);
+                mother.AttitudeToCarlson(kid);
+                Group g = new Group();
+                g.AddKid(kid);
+                g.AddPudel(pudel);
+                g.AddCarlson(carlson);
+                g.AddFriends(friends);
+                Friend[] FriendsWhoGo = g.WhoIsGoing();
+                g.AddFriendsWhoGo(FriendsWhoGo);
+                g.BeHappyToGoToSchool();
+                g.AllWalk();
+                kid.BeHappy(friends, carlson);
+                pudel.appear();
+                pudel.wantToGo(kid);
+                g.CrossTheStreet();
+                pudel.goToKid(kid);
+                pudel.toSniffTheKnees(kid);
+                pudel.toYelp();
+                try {
+                    kid.BeHappyWithDog(pudel);
+                } catch (KidNoLoveDogs e) {
+                    System.out.print(e.getMessage());
+                }
+                pudel.FeelTheAttitude(kid);
+                pudel.LoveEveryone(kid);
+                kid.LoveDog(pudel);
+                kid.ActionsWithDog(pudel);
+                kid.Sounds(pudel);
+                try {
+                    pudel.ThinkSo();
+                } catch (NoThinkSo e) {
+                    System.out.print(e.getMessage());
+                }
+                pudel.JumpAndYelp();
+                g.TurnToStreet();
+                pudel.Run();
+                System.exit(0);
+            }
+        }
 
 
     }
