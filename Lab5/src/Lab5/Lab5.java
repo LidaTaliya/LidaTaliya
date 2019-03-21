@@ -1,5 +1,6 @@
 package Lab5;
 
+import com.sun.source.tree.SynchronizedTree;
 import com.sun.xml.internal.ws.server.ServerRtException;
 import org.json.JSONException;
 import org.json.simple.JSONObject;
@@ -18,14 +19,16 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
+import java.util.concurrent.ConcurrentMap;
 
 
 public class Lab5 {
 
     //объявление нашей будущей коллекции друзей
-    static Map<String, Friend> friends1 = new TreeMap<String, Friend>();
+    static Map<String, Friend> friends1=new HashMap<String, Friend>() {};
     static Scanner scan = new Scanner(System.in);
     static Date date;
     static int countFriends;
@@ -121,7 +124,6 @@ public class Lab5 {
             String name = scan.nextLine();
             if (!isLetters(name)) {
                 System.out.println("Вы ввели некорректное имя.");
-                //name = sc.nextLine();
             } else {
                 System.out.println("Введите \"Карлсон\", если ребёнок знаком с Карлсоном");
                 String carl = scan.nextLine();
@@ -130,7 +132,6 @@ public class Lab5 {
                 String chance1 = scan.nextLine();
                 if (!isNumber(chance1)) {
                     System.out.println("Вы ввели неккоректную возможность.");
-                    //chance1 = scan.nextLine();
                 } else {
                     double chance = Double.parseDouble(chance1);
                     Friend newFriend = new Friend(name, carl, chance, key);
@@ -146,30 +147,8 @@ public class Lab5 {
      * На вход в данный метод подаётся имя ребёнка, и коллекция, из которой происходит удаление.
      */
     public static void remove_greater(String name, Map<String, Friend> ourMap) {
-        //final AtomicInteger count=new AtomicInteger(0);
-        /*for (Iterator<Map.Entry<String, Friend>> element = ourMap.entrySet().iterator(); element.hasNext(); ) {
-            Map.Entry<String, Friend> it = element.next();
-            if (it.getValue().name.compareTo(name) > 0) {
-                element.remove();
-                count++;
-            }
-        }*/
-        /*Iterator<Map.Entry<String, Friend>> it= ourMap.entrySet().iterator();
-        while(it.hasNext()){
-            Map.Entry<String,Friend> element=it.next();
-            if (element.getValue().name.compareTo(name)>0){
-                it.remove();
-                count++;
-            }
-        }*/
-       // Map<String,Friend> newmap=ourMap;
         boolean c;
         c=ourMap.entrySet().removeIf(element->element.getValue().name.compareTo(name)>0);
-       /* ourMap.forEach((key,element)->{if(element.name.compareTo(name)>0){
-            ourMap.remove(key);
-            count.incrementAndGet();
-        };
-                                        });*/
         if (c) {
             System.out.println("Удаление успешно завершено.");
         } else {
@@ -187,8 +166,8 @@ public class Lab5 {
         if (ourMap.isEmpty()){
             System.out.println("Коллекция пустая");
         }else {
-            ourMap.forEach(
-                    (s, friend) -> System.out.println(friend.name)
+            ourMap.entrySet().stream().forEach(
+                    (friend) -> System.out.println(friend.getValue().name)
             );
         }
     }
@@ -232,16 +211,18 @@ public class Lab5 {
      * На вход в данный метод подаётся коллекция, из которой происходит удаление.
      */
     public static void remove(Map<String, Friend> ourMap) {
+        boolean c;
         if (ourMap.isEmpty()) {
             System.out.println("Коллекция пустая");
         } else {
             System.out.println("Введите ключ ребенка");
             String number = scan.nextLine();
-            Friend fr = ourMap.remove(number);
-            if (fr == null || !isNumber(number)) {
-                System.out.println("Ребёнок с таким ключом не найден.");
-            } else {
+            c=ourMap.entrySet().stream().anyMatch(fr->fr.getKey().equals(number));
+            if (c){
+                ourMap.remove(number);
                 System.out.println("Удаление успешно завершено.");
+            }else{
+                System.out.println("Ребёнок с таким ключом не найден.");
             }
         }
     }
@@ -253,6 +234,8 @@ public class Lab5 {
      * На вход в данный метод подаётся коллекция, из которой происходит удаление.
      */
     public static void remove_greater_key(Map<String, Friend> ourMap) {
+        long c;
+        int c1=ourMap.size();
         if (ourMap.isEmpty())
             System.out.println("Коллеция пуста");
         else {
@@ -262,16 +245,11 @@ public class Lab5 {
             String number = sc.nextLine();
             if (!isNumber(number)) {
                 System.out.println("Вы ввели некорректный ключ.");
-                //number=sc.nextLine();
             } else {
-                for (Iterator<Map.Entry<String, Friend>> element = ourMap.entrySet().iterator(); element.hasNext(); ) {
-                    Map.Entry<String, Friend> it = element.next();
-                    if (Integer.parseInt(number) < Integer.parseInt(it.getKey())) {
-                        element.remove();
-                        count++;
-                    }
-                }
-                if (count != 0) {
+                c=ourMap.entrySet().stream()
+                                    .filter(x->Integer.parseInt(x.getKey())<=Integer.parseInt(number))
+                                    .count();
+                if (c<c1) {
                     System.out.println("Удаление успешно завершено.");
                 } else {
                     System.out.println("Нет друзей с ключом больше введенного.");
@@ -287,12 +265,8 @@ public class Lab5 {
         for (JSONObject obj : jsons) {
             Friend fr = new Friend((String) obj.get("name"), (String) obj.get("Carlson"), Double.parseDouble((String) obj.get("ChanceToWalk")), (String) obj.get("number"));
             boolean c=false;
-            for (Iterator<Map.Entry<String, Friend>> element = ourMap.entrySet().iterator(); element.hasNext(); ) {
-                Map.Entry<String, Friend> it = element.next();
-                if (fr.number.equals(it.getKey())){
-                    c=true;
-                    break;}
-            }
+            c=ourMap.entrySet().stream()
+                    .anyMatch(x->x.getKey().equals(fr.number));
             if (!c){
                 ourMap.put(fr.number, fr);
                 countFriends++;
@@ -303,47 +277,40 @@ public class Lab5 {
 
 
     private static String KidsKey() {
+        boolean c;
         String number = scan.nextLine();
         if (!isNumber(number)) {
             System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
-            //number = scan.nextLine();
             return "нет ключа";
         }
-        for (Iterator<Map.Entry<String, Friend>> element = friends1.entrySet().iterator(); element.hasNext(); ) {
-            Map.Entry<String, Friend> it = element.next();
-            if (number.equals( it.getKey())) {
-                System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
-                return "нет ключа";
-            }
-        }
+       c=friends1.entrySet().stream()
+               .anyMatch(x->x.getKey().equals(number));
+       if (c){
+           System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
+           return "нет ключа";
+       }
         return number;
     }
 
     private static String KidsName() {
         String name = scan.nextLine();
         boolean name1 = false;
-        for (Iterator<Map.Entry<String, Friend>> element = friends1.entrySet().iterator(); element.hasNext(); ) {
-            Map.Entry<String, Friend> it = element.next();
-            if (name.equals(it.getValue().name)) {
-                name1 = true;
-                break;
-            }
-        }
+        name1=friends1.entrySet().stream()
+                .anyMatch(x->x.getValue().name.equals(name));
         if (!name1) {
             System.out.println("Вы ввели некорректное имя или ребёнка с таким именем не существует.");
-            //menu();
         }
         return name;
     }
-    private static void WriteInFile(Map<String,Friend> friends) throws IOException,FileNotFoundException{
+    private static void WriteInFile(Map<String,Friend> ourMap) throws IOException,FileNotFoundException{
         FileWriter fstream1 = new FileWriter(path.toFile());// конструктор с одним параметром - для перезаписи
         BufferedWriter out1 = new BufferedWriter(fstream1); //  создаём буферезированный поток
         out1.write(""); // очищаем, перезаписав поверх пустую строку
         out1.close(); // закрываем
 
         BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(path.toFile()));
-        String carl;
-        for (Iterator<Map.Entry<String, Friend>> element = friends.entrySet().iterator(); element.hasNext(); ) {
+        //String carl;
+        /*for (Iterator<Map.Entry<String, Friend>> element = friends.entrySet().iterator(); element.hasNext(); ) {
             Map.Entry<String, Friend> it = element.next();
             if (it.getValue().MeetCarlson) {
                 carl = "Карлсон";
@@ -353,12 +320,31 @@ public class Lab5 {
             String fr = "{\"name\": \"" + it.getValue().name + "\",\"Carlson\":\"" + carl + "\",\"ChanceToWalk\":\"" + it.getValue().ChanceToWalk + "\",\"number\":\"" + it.getValue().number + "\"}";
             stream.write(fr.getBytes());
             stream.write(System.lineSeparator().getBytes());
-        }
+        }*/
+        ourMap.entrySet().stream()
+                .forEach(x->{if (x.getValue().MeetCarlson){
+                    String fr = "{\"name\": \"" + x.getValue().name + "\",\"Carlson\":\"" + "Карлсон" + "\",\"ChanceToWalk\":\"" + x.getValue().ChanceToWalk + "\",\"number\":\"" + x.getValue().number + "\"}";
+                    try{
+                    stream.write(fr.getBytes());
+                    stream.write(System.lineSeparator().getBytes()); }
+                catch(IOException e){
+                        e.printStackTrace();
+                }}
+                    else{
+                    String fr = "{\"name\": \"" + x.getValue().name + "\",\"Carlson\":\"" + "не Карлсон" + "\",\"ChanceToWalk\":\"" + x.getValue().ChanceToWalk + "\",\"number\":\"" + x.getValue().number + "\"}";
+                    try{
+                        stream.write(fr.getBytes());
+                        stream.write(System.lineSeparator().getBytes()); }
+                    catch(IOException e){
+                        e.printStackTrace();
+                    }}
+                });
         stream.close();
     }
 
 
     public static void main(String[] args) {
+        friends1=new ConcurrentHashMap<String, Friend>() {};
         try{
             path = Paths.get(System.getenv("Friendss"));
             file = path.toFile();}
