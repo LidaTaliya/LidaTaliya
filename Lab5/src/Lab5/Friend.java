@@ -18,7 +18,7 @@ public class Friend extends MenCreature implements Comparable<Friend> {
             return true;
         } else {return false;}
     }
-    Friend(){};
+    Friend(){}
     @Override
     public int compareTo(Friend o) {
         if (this.name.compareTo(o.name)==0){

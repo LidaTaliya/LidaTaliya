@@ -1,6 +1,5 @@
 package Lab5;
 
-import com.sun.source.tree.SynchronizedTree;
 import com.sun.xml.internal.ws.server.ServerRtException;
 import org.json.JSONException;
 import org.json.simple.JSONObject;
@@ -10,6 +9,8 @@ import org.json.simple.parser.ParseException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
@@ -28,10 +29,12 @@ import java.util.concurrent.ConcurrentMap;
 public class Lab5 {
 
     //объявление нашей будущей коллекции друзей
-    static Map<String, Friend> friends1=new HashMap<String, Friend>() {};
+    static Map<String, Friend> friends1 = new HashMap<String, Friend>() {
+    };
     static Scanner scan = new Scanner(System.in);
     static Date date;
     static int countFriends;
+
 
     //указание путь к json файлу через переменную окружения
 
@@ -40,7 +43,7 @@ public class Lab5 {
     static File file;
 
     //метод, чтобы прочитать json с помощью scanner(возвращает список, состоящий из json объектов)
-    private static ArrayList<JSONObject> ReadJSON(File file) throws FileNotFoundException, ParseException{
+    private static ArrayList<JSONObject> ReadJSON(File file) throws FileNotFoundException, ParseException {
         Scanner scanner = new Scanner(file);
         ArrayList<JSONObject> json = new ArrayList<JSONObject>();
         date = new Date();
@@ -88,7 +91,7 @@ public class Lab5 {
         Collections.sort(entries, (o1, o2) -> {
             Friend fr1 = (Friend) o1.getValue();
             Friend fr2 = (Friend) o2.getValue();
-            return  fr1.compareTo(fr2);
+            return fr1.compareTo(fr2);
         });
         Map<K, V> sortedMap = new LinkedHashMap<K, V>();
 
@@ -98,7 +101,7 @@ public class Lab5 {
         return sortedMap;
     }
 
-    private static void menu() {
+ /*   private static void menu() {
         System.out.println("Выберите команду - введите число от 1 до 8:");
         System.out.println("1 - добавить нового друга по ключу");
         System.out.println("2 - удалить из коллекции друзей, превышающие заданные");
@@ -108,7 +111,7 @@ public class Lab5 {
         System.out.println("6 - удалить из коллекции друга по ключу");
         System.out.println("7 - удалить из коллекции друзей, ключ которых превышает заданный");
         System.out.println("8 - выход из меню (запуск программы)");
-    }
+    }*/
 
 
     /**
@@ -141,6 +144,7 @@ public class Lab5 {
             }
         }
     }
+
     /**
      * Данный метод используется для того, чтобы удалить из коллекции друзей, имена которых по алфавиту позже введенного имени, если ребенок с введенным именем имеется.
      * Чтобы совершить данную команду, пользователю будет предложено ввести имя ребенка.
@@ -148,7 +152,7 @@ public class Lab5 {
      */
     public static void remove_greater(String name, Map<String, Friend> ourMap) {
         boolean c;
-        c=ourMap.entrySet().removeIf(element->element.getValue().name.compareTo(name)>0);
+        c = ourMap.entrySet().removeIf(element -> element.getValue().name.compareTo(name) > 0);
         if (c) {
             System.out.println("Удаление успешно завершено.");
         } else {
@@ -163,9 +167,9 @@ public class Lab5 {
      */
     public static void show(Map<String, Friend> ourMap) {
         ourMap = sortByValues(ourMap);
-        if (ourMap.isEmpty()){
+        if (ourMap.isEmpty()) {
             System.out.println("Коллекция пустая");
-        }else {
+        } else {
             ourMap.entrySet().stream().forEach(
                     (friend) -> System.out.println(friend.getValue().name)
             );
@@ -177,13 +181,13 @@ public class Lab5 {
      * Чтобы выполнить эту команду, пользователю будет предложено ввети название переменной окружения
      * На вход в данный метод подаётся коллекция, в которую мы импортируем данные из файла.
      */
-    public static void imports(Map<String,Friend> newMap) {
+    public static void imports(Map<String, Friend> newMap) {
         try {
-            friends1=AddFromFile(file,friends1);
-            if (countFriends==0){
+            friends1 = AddFromFile(file, friends1);
+            if (countFriends == 0) {
                 System.out.println("В коллекцию ничего не добавлено.");
-            }else{
-                System.out.println("Добавление успешно завершено. В коллекцию добавлено "+countFriends+" друзей.");
+            } else {
+                System.out.println("Добавление успешно завершено. В коллекцию добавлено " + countFriends + " друзей.");
             }
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден :(");
@@ -193,7 +197,6 @@ public class Lab5 {
         }
 
     }
-
 
 
     /**
@@ -217,11 +220,11 @@ public class Lab5 {
         } else {
             System.out.println("Введите ключ ребенка");
             String number = scan.nextLine();
-            c=ourMap.entrySet().stream().anyMatch(fr->fr.getKey().equals(number));
-            if (c){
+            c = ourMap.entrySet().stream().anyMatch(fr -> fr.getKey().equals(number));
+            if (c) {
                 ourMap.remove(number);
                 System.out.println("Удаление успешно завершено.");
-            }else{
+            } else {
                 System.out.println("Ребёнок с таким ключом не найден.");
             }
         }
@@ -235,7 +238,7 @@ public class Lab5 {
      */
     public static void remove_greater_key(Map<String, Friend> ourMap) {
         long c;
-        int c1=ourMap.size();
+        int c1 = ourMap.size();
         if (ourMap.isEmpty())
             System.out.println("Коллеция пуста");
         else {
@@ -246,10 +249,10 @@ public class Lab5 {
             if (!isNumber(number)) {
                 System.out.println("Вы ввели некорректный ключ.");
             } else {
-                c=ourMap.entrySet().stream()
-                                    .filter(x->Integer.parseInt(x.getKey())<=Integer.parseInt(number))
-                                    .count();
-                if (c<c1) {
+                c = ourMap.entrySet().stream()
+                        .filter(x -> Integer.parseInt(x.getKey()) <= Integer.parseInt(number))
+                        .count();
+                if (c < c1) {
                     System.out.println("Удаление успешно завершено.");
                 } else {
                     System.out.println("Нет друзей с ключом больше введенного.");
@@ -259,15 +262,15 @@ public class Lab5 {
     }
 
 
-    private static Map AddFromFile(File file, Map<String,Friend> ourMap) throws FileNotFoundException, ParseException{
-        countFriends=0;
+    private static Map AddFromFile(File file, Map<String, Friend> ourMap) throws FileNotFoundException, ParseException {
+        countFriends = 0;
         ArrayList<JSONObject> jsons = ReadJSON(file);
         for (JSONObject obj : jsons) {
             Friend fr = new Friend((String) obj.get("name"), (String) obj.get("Carlson"), Double.parseDouble((String) obj.get("ChanceToWalk")), (String) obj.get("number"));
-            boolean c=false;
-            c=ourMap.entrySet().stream()
-                    .anyMatch(x->x.getKey().equals(fr.number));
-            if (!c){
+            boolean c = false;
+            c = ourMap.entrySet().stream()
+                    .anyMatch(x -> x.getKey().equals(fr.number));
+            if (!c) {
                 ourMap.put(fr.number, fr);
                 countFriends++;
             }
@@ -283,26 +286,27 @@ public class Lab5 {
             System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
             return "нет ключа";
         }
-       c=friends1.entrySet().stream()
-               .anyMatch(x->x.getKey().equals(number));
-       if (c){
-           System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
-           return "нет ключа";
-       }
+        c = friends1.entrySet().stream()
+                .anyMatch(x -> x.getKey().equals(number));
+        if (c) {
+            System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
+            return "нет ключа";
+        }
         return number;
     }
 
     private static String KidsName() {
         String name = scan.nextLine();
         boolean name1 = false;
-        name1=friends1.entrySet().stream()
-                .anyMatch(x->x.getValue().name.equals(name));
+        name1 = friends1.entrySet().stream()
+                .anyMatch(x -> x.getValue().name.equals(name));
         if (!name1) {
             System.out.println("Вы ввели некорректное имя или ребёнка с таким именем не существует.");
         }
         return name;
     }
-    private static void WriteInFile(Map<String,Friend> ourMap) throws IOException,FileNotFoundException{
+
+    private static void WriteInFile(Map<String, Friend> ourMap) throws IOException, FileNotFoundException {
         FileWriter fstream1 = new FileWriter(path.toFile());// конструктор с одним параметром - для перезаписи
         BufferedWriter out1 = new BufferedWriter(fstream1); //  создаём буферезированный поток
         out1.write(""); // очищаем, перезаписав поверх пустую строку
@@ -322,37 +326,118 @@ public class Lab5 {
             stream.write(System.lineSeparator().getBytes());
         }*/
         ourMap.entrySet().stream()
-                .forEach(x->{if (x.getValue().MeetCarlson){
-                    String fr = "{\"name\": \"" + x.getValue().name + "\",\"Carlson\":\"" + "Карлсон" + "\",\"ChanceToWalk\":\"" + x.getValue().ChanceToWalk + "\",\"number\":\"" + x.getValue().number + "\"}";
-                    try{
-                    stream.write(fr.getBytes());
-                    stream.write(System.lineSeparator().getBytes()); }
-                catch(IOException e){
-                        e.printStackTrace();
-                }}
-                    else{
-                    String fr = "{\"name\": \"" + x.getValue().name + "\",\"Carlson\":\"" + "не Карлсон" + "\",\"ChanceToWalk\":\"" + x.getValue().ChanceToWalk + "\",\"number\":\"" + x.getValue().number + "\"}";
-                    try{
-                        stream.write(fr.getBytes());
-                        stream.write(System.lineSeparator().getBytes()); }
-                    catch(IOException e){
-                        e.printStackTrace();
-                    }}
+                .forEach(x -> {
+                    if (x.getValue().MeetCarlson) {
+                        String fr = "{\"name\": \"" + x.getValue().name + "\",\"Carlson\":\"" + "Карлсон" + "\",\"ChanceToWalk\":\"" + x.getValue().ChanceToWalk + "\",\"number\":\"" + x.getValue().number + "\"}";
+                        try {
+                            stream.write(fr.getBytes());
+                            stream.write(System.lineSeparator().getBytes());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        String fr = "{\"name\": \"" + x.getValue().name + "\",\"Carlson\":\"" + "не Карлсон" + "\",\"ChanceToWalk\":\"" + x.getValue().ChanceToWalk + "\",\"number\":\"" + x.getValue().number + "\"}";
+                        try {
+                            stream.write(fr.getBytes());
+                            stream.write(System.lineSeparator().getBytes());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
                 });
         stream.close();
     }
 
 
-    public static void main(String[] args) {
-        friends1=new ConcurrentHashMap<String, Friend>() {};
+    public static void main(String[] args) throws IOException {
+
+        /**
+         *
+         */
+
+
+        ServerSocket servers = null;
+        try {
+            servers = new ServerSocket(4444);
+        } catch (IOException e) {
+            System.out.println("Couldn't listen to port 4444");
+            System.exit(-1);
+        }
+
+        Socket fromclient = null;
+        try {
+            System.out.print("Waiting for a client...");
+            fromclient = servers.accept();
+            System.out.println("Client connected");
+        } catch (IOException e) {
+            System.out.println("Can't accept");
+            System.exit(-1);
+        }
+
+        BufferedReader in = new BufferedReader(new InputStreamReader(fromclient.getInputStream()));
+        PrintWriter out = new PrintWriter(fromclient.getOutputStream(), true);
+
+        String input, output;
+        System.out.println("Wait for messages");
+        while ((input = in.readLine()) != null) {
+            if (input.equalsIgnoreCase("exit")) break;
+            //out.println("S ::: "+input);
+            System.out.println(input);
+            while (!input.equals("8")) {
+                if (input.equals("1")) {
+                    System.out.println("Введите ключ ребенка");
+                    insert(KidsKey(), friends1);
+                }
+                if (input.equals("2")) {
+                    System.out.println("Введите имя ребёнка");
+                    remove_greater(KidsName(), friends1);
+                }
+                if (input.equals("3")) {
+                    show(friends1);
+                }
+                if (input.equals("4")) {
+                    Map<String, Friend> newMap = friends1;
+                    imports(newMap);
+                }
+                if (input.equals("5"))
+                    info(friends1);
+                if (input.equals("6")) {
+                    remove(friends1);
+                }
+                if (input.equals("7")) {
+                    remove_greater_key(friends1);
+                }
+                if (input.equals("8")) {
+                    try {
+                        WriteInFile(friends1);
+                    } catch (FileNotFoundException e) {
+                        System.out.println("Файл не найден :(");
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+                out.close();
+                in.close();
+                fromclient.close();
+                servers.close();
+
+
+                /**
+                 *
+                 */
+
+
+     /*   friends1=new ConcurrentHashMap<String, Friend>() {};
         try{
             path = Paths.get(System.getenv("Friendss"));
             file = path.toFile();}
         catch (NullPointerException e){
             System.out.println("Проверьте переменную окружения.");
             System.exit(0);
-        }
-
+        }*/
+/*
         //само чтение json и добавление экземпляров друзей
         try {
             friends1 = AddFromFile(file,friends1);
@@ -449,6 +534,8 @@ public class Lab5 {
             }
         }
 
-
+*/
+            }
+        }
     }
 }
