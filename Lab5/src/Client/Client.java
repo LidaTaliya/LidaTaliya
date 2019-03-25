@@ -4,9 +4,21 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
 import java.net.Socket;
 
 public class Client {
+
+    private static boolean isNumber(String str) {
+        try {
+            double d = Double.parseDouble(str);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+        return true;
+    }
 
     private static void menu() {
         System.out.println("Выберите команду - введите число от 1 до 8:");
@@ -24,10 +36,26 @@ public class Client {
 
     public static void main(String[] args) throws IOException {
 
-        Socket fromserver = null;
+        DatagramSocket fromserver = new DatagramSocket();
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        while (true) {
+            menu();
+            String s = in.readLine();
+            byte[] b = s.getBytes();
+            DatagramPacket dp = new DatagramPacket(b, b.length, InetAddress.getByName("localhost"), 4444);
+            fromserver.send(dp);
+
+            byte[] buffer=new byte[65536];
+            DatagramPacket reply=new DatagramPacket(buffer,buffer.length);
+
+            fromserver.receive(reply);
+            byte[] data=reply.getData();
+            s=new String(data,0,reply.getLength());
+            System.out.println(s);
+        }
        //fromserver = new Socket("localhost", 4444);
        //для запуска через терминал
-        fromserver = new Socket(args[0],4444);
+       /* fromserver = new DatagramSocket(args[0],4444);
 
         if (args.length==0) {
             System.out.println("use: client hostname");
@@ -45,19 +73,20 @@ public class Client {
         String fuser,fserver;
         menu();
         while ((fuser = inu.readLine())!=null) {
-            menu();
-            out.println(fuser);
-            fserver = in.readLine();
-            out.println(fuser);
-            System.out.println(fserver);
-            if (fuser.equalsIgnoreCase("close")) break;
-            if (fuser.equalsIgnoreCase("exit")) break;
+            if (fuser.equalsIgnoreCase("exit")){ break;}else{
+                //menu();
+                out.println(fuser);
+                fserver = in.readLine();
+                out.println(fuser);
+                System.out.println(fserver);
+            }
         }
 
         out.close();
         in.close();
         inu.close();
-        fromserver.close();
+        fromserver.close();*/
+
 
     }
 }

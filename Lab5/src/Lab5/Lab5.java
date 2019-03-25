@@ -9,6 +9,8 @@ import org.json.simple.parser.ParseException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.file.Path;
@@ -64,7 +66,6 @@ public class Lab5 {
         }
         return friends;
     }
-
     private static boolean isNumber(String str) {
         try {
             double d = Double.parseDouble(str);
@@ -73,6 +74,7 @@ public class Lab5 {
         }
         return true;
     }
+
 
     private static boolean isLetters(String str) {
         char[] chars = str.toCharArray();
@@ -119,7 +121,7 @@ public class Lab5 {
      * Для добавления элемента пользователю будет предложено ввести имя ребенка, "Карлсон", если ребенок знаком с Карлсоном, вероятность пойти с Малышом.
      * На вход в метод подаётся заранее проверенный на повторение ключ добавляемого ребёнка и коллекция, в которую ребёнок добавляется.
      */
-    public static void insert(String key, Map<String, Friend> ourMap) {
+   /* public static void insert(String key, Map<String, Friend> ourMap) {
         //Scanner sc = new Scanner(System.in);
         if (key.equals("нет ключа")) {
         } else {
@@ -143,6 +145,19 @@ public class Lab5 {
                 }
             }
         }
+
+    }*/
+    public static boolean insert(String fr){
+        String[] fr1=fr.split(",");
+        String key=KidsKey(fr1[3]);
+        if (!key.equals("нет ключа")||isLetters(fr1[0])||isNumber(fr1[2])){
+            Friend newFriend=new Friend(fr1[0],fr1[1],Double.parseDouble(fr1[2]),key);
+            friends1.put(key,newFriend);
+            return true;
+        }else{
+           return false;
+        }
+
     }
 
     /**
@@ -279,17 +294,17 @@ public class Lab5 {
     }
 
 
-    private static String KidsKey() {
+    private static String KidsKey(String number) {
         boolean c;
-        String number = scan.nextLine();
+       // String number = scan.nextLine();
         if (!isNumber(number)) {
-            System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
+           // System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
             return "нет ключа";
         }
         c = friends1.entrySet().stream()
                 .anyMatch(x -> x.getKey().equals(number));
         if (c) {
-            System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
+           // System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
             return "нет ключа";
         }
         return number;
@@ -356,15 +371,28 @@ public class Lab5 {
          */
 
 
-        ServerSocket servers = null;
+        DatagramSocket servers = null;
         try {
-            servers = new ServerSocket(4444);
+            servers = new DatagramSocket(4444);
+            byte[] buffer = new byte[65536];
+            DatagramPacket incoming=new DatagramPacket(buffer, buffer.length);
+            System.out.println("Ожидаем данные...");
+            while (true) {
+                servers.receive(incoming);
+                byte[] data = incoming.getData();
+                String s = new String(data, 0, incoming.getLength());
+                System.out.println(s);
+
+                DatagramPacket dp=new DatagramPacket(s.getBytes(),s.getBytes().length,incoming.getAddress(),incoming.getPort());
+                servers.send(dp);
+
+            }
         } catch (IOException e) {
             System.out.println("Couldn't listen to port 4444");
             System.exit(-1);
         }
 
-        Socket fromclient = null;
+        /*Socket fromclient = null;
         try {
             System.out.print("Waiting for a client...");
             fromclient = servers.accept();
@@ -385,9 +413,22 @@ public class Lab5 {
             System.out.println(input);
             while (!input.equals("8")) {
                 if (input.equals("1")) {
-                    System.out.println("Введите ключ ребенка");
-                    insert(KidsKey(), friends1);
+                   // System.out.println("Введите ключ ребенка");
+                    BufferedReader in1 = new BufferedReader(new InputStreamReader(fromclient.getInputStream()));
+                    PrintWriter out1 = new PrintWriter(fromclient.getOutputStream(),true);
+                    out1.println("Введите через запятую информацию о добавляемом ребёнке: его имя,\"Карлсон\"(если он знаком с Карлсоном), вероятность пойти с Малышом, ключ. ");
+                    //boolean b=insert(in1.readLine(), friends1);
+                    if (in1.readLine()!=null||insert(in1.readLine())){
+                        out1.println("Друг добавлен");
+                        out1.flush();
+                    }else {
+                        out1.println("Проверьте корректность введенных данных.");
+                        out1.flush();
+                    }
+                    in1.close();
+
                 }
+
                 if (input.equals("2")) {
                     System.out.println("Введите имя ребёнка");
                     remove_greater(KidsName(), friends1);
@@ -421,7 +462,7 @@ public class Lab5 {
                 out.close();
                 in.close();
                 fromclient.close();
-                servers.close();
+                servers.close();*/
 
 
                 /**
@@ -537,5 +578,5 @@ public class Lab5 {
 */
             }
         }
-    }
-}
+    //}
+//}
