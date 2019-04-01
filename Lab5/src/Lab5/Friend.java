@@ -4,11 +4,13 @@ public class Friend extends MenCreature implements Comparable<Friend> {
     double ChanceToWalk;
     String number;
     boolean isTheBestFriend;
-    Friend ( String name1, String carlson, double k, String num){
+    double DistanceFromSchool;
+    Friend ( String name1, String carlson, double k, String num,double dist){
         this.name=name1;
         this.ChanceToWalk=k;
         this.number = num;
         this.isTheBestFriend = false;
+        this.DistanceFromSchool=dist;
         if (carlson.equals("Карлсон")){
             this.MeetCarlson=true;
         }

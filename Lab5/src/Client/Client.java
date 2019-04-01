@@ -1,15 +1,16 @@
 package Client;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Client {
+   static Path path;
+   static File file;
 
     private static boolean isNumber(String str) {
         try {
@@ -36,23 +37,54 @@ public class Client {
 
     public static void main(String[] args) throws IOException {
 
+        try{
+            path= Paths.get(System.getenv("Friendss"));
+            file = path.toFile();}
+        catch (NullPointerException e){
+            System.out.println("Проверьте переменную окружения.");
+            System.exit(0);
+        }
+
+
         DatagramSocket fromserver = new DatagramSocket();
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        while (true) {
+
             menu();
-            String s = in.readLine();
-            byte[] b = s.getBytes();
-            DatagramPacket dp = new DatagramPacket(b, b.length, InetAddress.getByName("localhost"), 4444);
-            fromserver.send(dp);
+        String s;
+            while ((s=in.readLine())!=null) {
+                if (s.equalsIgnoreCase("exit")) break;
+                if (s.equals("4")){
+                    try{
+                    FileInputStream fr=new FileInputStream(file);
+                    byte[] str=new byte[65536];
+                    int c;
+                    if((c=fr.read(str))>0){
+                        DatagramPacket export = new DatagramPacket(str, str.length, InetAddress.getByName("localhost"), 4444);
+                        fromserver.send(export);
+                        }
+                    }
+                    catch (FileNotFoundException e){
+                      System.out.println("Файл не найден");
+                      System.exit(0);
+                    }
 
-            byte[] buffer=new byte[65536];
-            DatagramPacket reply=new DatagramPacket(buffer,buffer.length);
+                }
+                byte[] b = s.getBytes();
+                DatagramPacket dp = new DatagramPacket(b, b.length, InetAddress.getByName("localhost"), 4444);
+                fromserver.send(dp);
 
-            fromserver.receive(reply);
-            byte[] data=reply.getData();
-            s=new String(data,0,reply.getLength());
-            System.out.println(s);
-        }
+
+                byte[] buffer = new byte[65536];
+                DatagramPacket reply = new DatagramPacket(buffer, buffer.length);
+                fromserver.receive(reply);
+                byte[] data = reply.getData();
+                String s1 = new String(data, 0, reply.getLength());
+                if(s1.equals("menu")) {menu();}
+                else{
+                    System.out.println(s1); }
+            }
+
+
        //fromserver = new Socket("localhost", 4444);
        //для запуска через терминал
        /* fromserver = new DatagramSocket(args[0],4444);
