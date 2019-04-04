@@ -13,14 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bc9a5bfa-5d9d-44e6-b2c9-1d608f12fc48" name="Default Changelist" comment="remove age">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Client/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Friend.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Friend.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Friend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/Lab5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Lab5.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,29 +27,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Lab5/Lab5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-142">
-              <caret line="408" column="69" selection-start-line="408" selection-start-column="69" selection-end-line="408" selection-end-column="69" />
+            <state relative-caret-position="265">
+              <caret line="445" lean-forward="true" selection-start-line="445" selection-end-line="445" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/src.zip!/java/io/FileInputStream.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="137" selection-start-line="137" selection-end-line="137" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="68" column="21" lean-forward="true" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
+            <state relative-caret-position="855">
+              <caret line="63" column="25" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,8 +87,8 @@
         <option value="$PROJECT_DIR$/src/Lab5/BestFriendDecorator.java" />
         <option value="$PROJECT_DIR$/src/Lab5/Client.java" />
         <option value="$PROJECT_DIR$/src/Lab5/Friend.java" />
-        <option value="$PROJECT_DIR$/src/Lab5/Lab5.java" />
         <option value="$PROJECT_DIR$/src/Client/Client.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Lab5.java" />
       </list>
     </option>
   </component>
@@ -193,7 +176,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553450117042" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="terminal" />
@@ -298,7 +281,8 @@
       <workItem from="1553509164973" duration="2319000" />
       <workItem from="1553520734303" duration="4014000" />
       <workItem from="1553599377745" duration="6794000" />
-      <workItem from="1554124674563" duration="5323000" />
+      <workItem from="1554124674563" duration="5641000" />
+      <workItem from="1554398424895" duration="529000" />
     </task>
     <task id="LOCAL-00001" summary=":)">
       <created>1549803792504</created>
@@ -325,7 +309,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120171000" />
+    <option name="totallyTimeSpent" value="121018000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -338,6 +322,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.13731825" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -640,22 +625,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Lab5/Lab5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-142">
-          <caret line="408" column="69" selection-start-line="408" selection-start-column="69" selection-end-line="408" selection-end-column="69" />
+        <state relative-caret-position="265">
+          <caret line="445" lean-forward="true" selection-start-line="445" selection-end-line="445" />
         </state>
       </provider>
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/src.zip!/java/io/FileInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
+        <state relative-caret-position="1695">
           <caret line="137" selection-start-line="137" selection-end-line="137" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="68" column="21" lean-forward="true" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
+        <state relative-caret-position="855">
+          <caret line="63" column="25" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -217,8 +217,8 @@ public class Lab5 {
      * Данный метод используется для того, чтобы вывести информацию о коллекции.
      * На вход в данный метод подаётся коллекция, информацию о которой нам необходимо вывести.
      */
-    public static void info(Map<String, Friend> ourMap) {
-        System.out.println("В коллеции типа TreeMap хранятся данные о " + ourMap.size() + " друзьях . Дата заполнения из файла json: " + date + " .Значениями являются экземпляры класса детей. Обратите внимание на то, что конкретному ребёнку соответствует конкретный ключ.");
+    public static String info() {
+        return "В коллеции типа TreeMap хранятся данные о " + friends1.size() + " друзьях . Дата заполнения из файла json: " + date + " .Значениями являются экземпляры класса детей. Обратите внимание на то, что конкретному ребёнку соответствует конкретный ключ.";
     }
 
 
@@ -227,22 +227,17 @@ public class Lab5 {
      * Чтобы выполнить эту операцию, пользователю будет предложено ввести ключ ребенка, которого он желает удалить.
      * На вход в данный метод подаётся коллекция, из которой происходит удаление.
      */
-    public static void remove(Map<String, Friend> ourMap) {
+    public static boolean remove(String key) {
         boolean c;
-        if (ourMap.isEmpty()) {
-            System.out.println("Коллекция пустая");
-        } else {
             System.out.println("Введите ключ ребенка");
-            String number = scan.nextLine();
-            c = ourMap.entrySet().stream().anyMatch(fr -> fr.getKey().equals(number));
+            c = friends1.entrySet().stream().anyMatch(fr -> fr.getKey().equals(key));
             if (c) {
-                ourMap.remove(number);
-                System.out.println("Удаление успешно завершено.");
+                friends1.remove(key);
+                return true;
             } else {
-                System.out.println("Ребёнок с таким ключом не найден.");
+                return false;
             }
         }
-    }
 
 
     /**
@@ -435,10 +430,28 @@ private static void Sending(String str,DatagramSocket server,DatagramPacket inco
                         } else {
                             sout3="Детей с именем больше заданного нет.";
                         }
-                        Sending(sout3,servers,incoming,incoming.getAddress(),incoming.getPort());
-                    }else if(s.equals("3")){}
+                        Sending(sout3,servers,incoming,incoming.getAddress(),incoming.getPort());}
+                    else if(s.equals("3")){}
                     else if (s.equals("4")){
                         //c этим траблы какие-то
+                    }
+                    else if(s.equals("5")){
+                        Sending(info(),servers,incoming,incoming.getAddress(),incoming.getPort());}
+                    else if(s.equals("6")) {
+                        String sout6;
+                        if (friends1.isEmpty()) {
+                            sout6="Коллекция пустая";
+                        } else {
+                            String sout7="Введите ключ ребенка:";
+                            String s6=Exchange(sout7,servers,incoming,incoming.getAddress(),incoming.getPort());
+                            boolean b6=remove(s6);
+                            if (b6){
+                                sout6="Удаление успешно завершено.";
+                            }else{
+                                sout6="Ребёнок с таким ключом не найден.";
+                            }
+                        }
+                        Sending(sout6,servers,incoming,incoming.getAddress(),incoming.getPort());
                     }
 
 
