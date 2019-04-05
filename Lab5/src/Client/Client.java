@@ -33,7 +33,29 @@ public class Client {
         System.out.println("8 - выход из меню (запуск программы)");
     }
 
+private static void importFromFile(DatagramSocket fromserver) throws IOException{
+    try{
+        FileInputStream fr=new FileInputStream(file);
+        BufferedReader br = new BufferedReader(new InputStreamReader(fr));
 
+        byte[] str;
+        String strLine;
+        while((strLine = br.readLine()) != null){
+            str=strLine.getBytes();
+            DatagramPacket export = new DatagramPacket(str, str.length, InetAddress.getByName("localhost"), 4444);
+            fromserver.send(export);
+        }
+        String EndSending="EndSending";
+        str=EndSending.getBytes();
+        DatagramPacket end=new DatagramPacket(str,str.length,InetAddress.getByName("localhost"),4444);
+        fromserver.send(end);
+
+    }
+    catch (FileNotFoundException e){
+        System.out.println("Файл не найден");
+        System.exit(0);
+    }
+    }
 
     public static void main(String[] args) throws IOException {
 
@@ -49,30 +71,22 @@ public class Client {
         DatagramSocket fromserver = new DatagramSocket();
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
-            menu();
-        String s;
-            while ((s=in.readLine())!=null) {
-                if (s.equalsIgnoreCase("exit")) break;
-                if (s.equals("4")){
-                    try{
-                    FileInputStream fr=new FileInputStream(file);
-                    byte[] str=new byte[65536];
-                    int c;
-                    if((c=fr.read(str))>0){
-                        DatagramPacket export = new DatagramPacket(str, str.length, InetAddress.getByName("localhost"), 4444);
-                        fromserver.send(export);
-                        }
-                    }
-                    catch (FileNotFoundException e){
-                      System.out.println("Файл не найден");
-                      System.exit(0);
-                    }
+       /* byte[] b4 = "4".getBytes();
+        DatagramPacket dp4 = new DatagramPacket(b4, b4.length, InetAddress.getByName("localhost"), 4444);
+        fromserver.send(dp4);
+            importFromFile(fromserver);*/
 
-                }
+           // menu();
+        String s="4";
+            while (s!=null) {
                 byte[] b = s.getBytes();
                 DatagramPacket dp = new DatagramPacket(b, b.length, InetAddress.getByName("localhost"), 4444);
                 fromserver.send(dp);
 
+                if (s.equalsIgnoreCase("exit")) break;
+                if (s.equals("4")){
+                    importFromFile(fromserver);
+                }
 
                 byte[] buffer = new byte[65536];
                 DatagramPacket reply = new DatagramPacket(buffer, buffer.length);
@@ -82,6 +96,7 @@ public class Client {
                 if(s1.equals("menu")) {menu();}
                 else{
                     System.out.println(s1); }
+                s=in.readLine();
             }
 
 

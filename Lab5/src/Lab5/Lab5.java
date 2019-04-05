@@ -33,6 +33,7 @@ public class Lab5 {
     static Scanner scan = new Scanner(System.in);
     static Date date;
     static int countFriends;
+    static ArrayList<String> StrFriends= new ArrayList<String>();
 
 
     //указание путь к json файлу через переменную окружения
@@ -100,50 +101,11 @@ public class Lab5 {
         return sortedMap;
     }
 
- /*   private static void menu() {
-        System.out.println("Выберите команду - введите число от 1 до 8:");
-        System.out.println("1 - добавить нового друга по ключу");
-        System.out.println("2 - удалить из коллекции друзей, превышающие заданные");
-        System.out.println("3 - вывести в строковом представление всех друзей в коллекции");
-        System.out.println("4 - добавить в коллекцию все данные из файла");
-        System.out.println("5 - вывести информацию о коллекции");
-        System.out.println("6 - удалить из коллекции друга по ключу");
-        System.out.println("7 - удалить из коллекции друзей, ключ которых превышает заданный");
-        System.out.println("8 - выход из меню (запуск программы)");
-    }*/
-
-
     /**
      * Данный метод используется для того, чтобы добавить новый элемент коллекции по заданному ключу.
      * Для добавления элемента пользователю будет предложено ввести имя ребенка, "Карлсон", если ребенок знаком с Карлсоном, вероятность пойти с Малышом.
      * На вход в метод подаётся заранее проверенный на повторение ключ добавляемого ребёнка и коллекция, в которую ребёнок добавляется.
      */
-   /* public static void insert(String key, Map<String, Friend> ourMap) {
-        //Scanner sc = new Scanner(System.in);
-        if (key.equals("нет ключа")) {
-        } else {
-            System.out.println("Введите имя ребенка");
-            String name = scan.nextLine();
-            if (!isLetters(name)) {
-                System.out.println("Вы ввели некорректное имя.");
-            } else {
-                System.out.println("Введите \"Карлсон\", если ребёнок знаком с Карлсоном");
-                String carl = scan.nextLine();
-
-                System.out.println("Введите его возможность пойти с Малышом");
-                String chance1 = scan.nextLine();
-                if (!isNumber(chance1)) {
-                    System.out.println("Вы ввели неккоректную возможность.");
-                } else {
-                    double chance = Double.parseDouble(chance1);
-                    Friend newFriend = new Friend(name, carl, chance, key);
-                    ourMap.put(key, newFriend);
-                    System.out.println("Друг добавлен");
-                }
-            }
-        }
-
-    }*/
     public static boolean insert(String fr){
         try {String[] fr1=fr.split(",");
         String key=KidsKey(fr1[4]);
@@ -179,15 +141,18 @@ public class Lab5 {
      * Данный метод используется для того, чтобы вывести имена всех друзей, находящихся в коллекции.
      * На вход в данный метод подаётся коллекция, информацию о которой нам необходимо вывести.
      */
-    public static void show() {
+    public static String show() {
         friends1 = sortByValues(friends1);
+        String result;
         if (friends1.isEmpty()) {
-            System.out.println("Коллекция пустая");
+            result = "Коллекция пустая";
         } else {
-            friends1.entrySet().stream().forEach(
-                    (friend) -> System.out.println(friend.getValue().name)
-            );
+            result = "На данный момент в коллекции находятся:";
+            for (Map.Entry<String, Friend> entry : friends1.entrySet()){
+                result = result + " " + entry.getValue().name;
+            }
         }
+        return result;
     }
 
     /**
@@ -195,7 +160,7 @@ public class Lab5 {
      * Чтобы выполнить эту команду, пользователю будет предложено ввети название переменной окружения
      * На вход в данный метод подаётся коллекция, в которую мы импортируем данные из файла.
      */
-    public static void imports(Map<String, Friend> newMap) {
+  /*  public static void imports(Map<String, Friend> newMap) {
         try {
             friends1 = AddFromFile(file, friends1);
             if (countFriends == 0) {
@@ -210,7 +175,7 @@ public class Lab5 {
             e.printStackTrace();
         }
 
-    }
+    }*/
 
 
     /**
@@ -245,36 +210,34 @@ public class Lab5 {
      * Чтобы выполнить эту команду, пользователю будет предложено ввести ключ ребенка.
      * На вход в данный метод подаётся коллекция, из которой происходит удаление.
      */
-    public static void remove_greater_key(Map<String, Friend> ourMap) {
+    public static boolean remove_greater_key(String number,Map<String, Friend> ourMap) {
         long c;
         int c1 = ourMap.size();
-        if (ourMap.isEmpty())
-            System.out.println("Коллеция пуста");
-        else {
-            int count = 0;
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Введите ключ ребенка");
-            String number = sc.nextLine();
-            if (!isNumber(number)) {
-                System.out.println("Вы ввели некорректный ключ.");
-            } else {
-                c = ourMap.entrySet().stream()
-                        .filter(x -> Integer.parseInt(x.getKey()) <= Integer.parseInt(number))
-                        .count();
-                if (c < c1) {
-                    System.out.println("Удаление успешно завершено.");
+        if (ourMap.isEmpty()) {
+            return false;
+        }else {
+                int count = 0;
+                if (!isNumber(number)) {
+                    return false;
                 } else {
-                    System.out.println("Нет друзей с ключом больше введенного.");
+                    c = ourMap.entrySet().stream()
+                            .filter(x -> Integer.parseInt(x.getKey()) <= Integer.parseInt(number))
+                            .count();
+                    //надо сюда добавить удаление элементов из самой коллекции
+                    if (c < c1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
                 }
             }
         }
-    }
 
 
-    private static Map AddFromFile(File file, Map<String, Friend> ourMap) throws FileNotFoundException, ParseException {
+    private static boolean AddFromFile(ArrayList<String> strfr){
         countFriends = 0;
-        ArrayList<JSONObject> jsons = ReadJSON(file);
-        for (JSONObject obj : jsons) {
+        //ArrayList<JSONObject> jsons = ReadJSON(file);
+      /*  for (JSONObject obj : jsons) {
             Friend fr = new Friend((String) obj.get("name"), (String) obj.get("Carlson"), Double.parseDouble((String) obj.get("ChanceToWalk")), (String) obj.get("number"),Double.parseDouble((String) obj.get("DistanceFromSchool")));
             boolean c = false;
             c = ourMap.entrySet().stream()
@@ -283,8 +246,34 @@ public class Lab5 {
                 ourMap.put(fr.number, fr);
                 countFriends++;
             }
-        }
-        return ourMap;
+        }*/
+      int name;
+      int carl;
+      int ctw;
+      int num;
+      int dfs;
+      for (String str: strfr){
+          name=str.lastIndexOf("name");
+          carl=str.lastIndexOf("Carlson");
+          ctw=str.lastIndexOf("ChanceToWalk");
+          num=str.lastIndexOf("number");
+          dfs=str.lastIndexOf("DistanceFromSchool");
+
+          Friend fr=new Friend(str.substring(name+7,carl-3),str.substring(carl+10,ctw-3),Double.parseDouble(str.substring(ctw+15,num-3)),str.substring(num+9,dfs-3),Double.parseDouble(str.substring(dfs+21,str.length()-3)));
+          boolean c=false;
+          c = friends1.entrySet().stream()
+                  .anyMatch(x -> x.getKey().equals(fr.number));
+          if (!c) {
+              friends1.put(fr.number, fr);
+              countFriends++;
+          }
+      }
+      if (countFriends>0){
+          return true;
+      }else{
+          return false;
+      }
+
     }
 
 
@@ -404,7 +393,7 @@ private static void Sending(String str,DatagramSocket server,DatagramPacket inco
                 String s = new String(data, 0, incoming.getLength());
 
                 if (s.equalsIgnoreCase("exit")) break;
-                System.out.println(s);
+                System.out.println("Клиент выбрал команду " + s + ". Ожидаем выполнения...");
 
                     if (s.equals("1")){
                         String sout = "Введите через запятую информацию о добавляемом ребёнке: его имя,\"Карлсон\"(если он знаком с Карлсоном), вероятность пойти с Малышом, расстояние до школы и ключ. ";
@@ -431,9 +420,32 @@ private static void Sending(String str,DatagramSocket server,DatagramPacket inco
                             sout3="Детей с именем больше заданного нет.";
                         }
                         Sending(sout3,servers,incoming,incoming.getAddress(),incoming.getPort());}
-                    else if(s.equals("3")){}
+                    else if(s.equals("3")){
+                        Sending(show(), servers, incoming, incoming.getAddress(), incoming.getPort());
+                    }
                     else if (s.equals("4")){
-                        //c этим траблы какие-то
+                        while (true){
+                            servers.receive(incoming);
+                             byte[] data1 = incoming.getData();
+                             String s1 = new String(data1, 0, incoming.getLength());
+                             System.out.println(s1);
+                             if(!s1.equals("EndSending")){
+                                 StrFriends.add(s1);}
+                             else{
+                            break;}
+                        }
+                        boolean b4=AddFromFile(StrFriends);
+                        friends1=sortByValues(friends1);
+                        friends1.entrySet().stream().forEach(
+                                (friend) -> System.out.println(friend.getValue().name)
+                        );
+                        String imp;
+                        if (b4){
+                            imp="Добавление успешно завершено. В коллекцию добавлено " + countFriends + " друзей.";}else{
+                            imp="В коллекцию ничего не добавлено";
+                        }
+                    Sending(imp,servers,incoming,incoming.getAddress(),incoming.getPort());
+
                     }
                     else if(s.equals("5")){
                         Sending(info(),servers,incoming,incoming.getAddress(),incoming.getPort());}
@@ -452,7 +464,18 @@ private static void Sending(String str,DatagramSocket server,DatagramPacket inco
                             }
                         }
                         Sending(sout6,servers,incoming,incoming.getAddress(),incoming.getPort());
-                    }
+                    } else if(s.equals("7")) {
+                String sout6 = "Введите ключ ребенка";
+                String s6 = Exchange(sout6, servers, incoming, incoming.getAddress(), incoming.getPort());
+                boolean b6 = remove_greater_key(s6, friends1);
+                String sout7;
+                if (b6) {
+                    sout7 = "Удаление успешно завершено.";
+                } else {
+                    sout7 = "Возникла ошибка(Коллекция пуста, некорректный ключ или нет детей с ключом, выше заданного)";
+                }
+                Sending(sout7, servers, incoming, incoming.getAddress(), incoming.getPort());
+            }
 
 
             }
