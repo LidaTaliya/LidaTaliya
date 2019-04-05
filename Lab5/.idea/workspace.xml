@@ -11,15 +11,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc9a5bfa-5d9d-44e6-b2c9-1d608f12fc48" name="Default Changelist" comment="remove age">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Client/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/Lab5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Lab5.java" afterDir="false" />
-    </list>
+    <list default="true" id="bc9a5bfa-5d9d-44e6-b2c9-1d608f12fc48" name="Default Changelist" comment="remove age" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,8 +28,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Lab5/Lab5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="229" column="37" lean-forward="true" selection-start-line="229" selection-start-column="37" selection-end-line="229" selection-end-column="37" />
+            <state relative-caret-position="2864">
+              <caret line="681" column="35" lean-forward="true" selection-start-line="681" selection-start-column="35" selection-end-line="681" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#984#992#0" expanded="true" />
+                <element signature="e#1407#1419#0" expanded="true" />
+                <element signature="e#2577#2594#0" expanded="true" />
+                <element signature="e#2857#2863#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
-              <caret line="78" column="13" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
+            <state relative-caret-position="180">
+              <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,7 +64,7 @@
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_CHANGES_POLICY" value="SHELVE" />
-    <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
@@ -290,7 +289,7 @@
       <workItem from="1554124674563" duration="5641000" />
       <workItem from="1554398424895" duration="2619000" />
       <workItem from="1554446443679" duration="8080000" />
-      <workItem from="1554454906162" duration="502000" />
+      <workItem from="1554454906162" duration="1111000" />
     </task>
     <task id="LOCAL-00001" summary=":)">
       <created>1549803792504</created>
@@ -317,7 +316,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131690000" />
+    <option name="totallyTimeSpent" value="132299000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -349,7 +348,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32956153" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49919224" visible="true" weight="0.12305516" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49919224" visible="true" weight="0.14710042" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50080776" side_tool="true" weight="0.48514852" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.38330975" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -420,7 +419,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Lab5/Lab5.java</url>
-          <line>371</line>
+          <line>413</line>
           <properties class="Lab5.Lab5" method="main">
             <option name="EMULATED" value="true" />
           </properties>
@@ -646,19 +645,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lab5/Lab5.java">
+    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="229" column="37" lean-forward="true" selection-start-line="229" selection-start-column="37" selection-end-line="229" selection-end-column="37" />
+        <state relative-caret-position="180">
+          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/Lab5/Lab5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="78" column="13" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
+        <state relative-caret-position="2864">
+          <caret line="681" column="35" lean-forward="true" selection-start-line="681" selection-start-column="35" selection-end-line="681" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#984#992#0" expanded="true" />
+            <element signature="e#1407#1419#0" expanded="true" />
+            <element signature="e#2577#2594#0" expanded="true" />
+            <element signature="e#2857#2863#0" expanded="true" />
           </folding>
         </state>
       </provider>
