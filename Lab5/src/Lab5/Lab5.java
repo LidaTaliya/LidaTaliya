@@ -101,11 +101,50 @@ public class Lab5 {
         return sortedMap;
     }
 
+ /*   private static void menu() {
+        System.out.println("Выберите команду - введите число от 1 до 8:");
+        System.out.println("1 - добавить нового друга по ключу");
+        System.out.println("2 - удалить из коллекции друзей, превышающие заданные");
+        System.out.println("3 - вывести в строковом представление всех друзей в коллекции");
+        System.out.println("4 - добавить в коллекцию все данные из файла");
+        System.out.println("5 - вывести информацию о коллекции");
+        System.out.println("6 - удалить из коллекции друга по ключу");
+        System.out.println("7 - удалить из коллекции друзей, ключ которых превышает заданный");
+        System.out.println("8 - выход из меню (запуск программы)");
+    }*/
+
+
     /**
      * Данный метод используется для того, чтобы добавить новый элемент коллекции по заданному ключу.
      * Для добавления элемента пользователю будет предложено ввести имя ребенка, "Карлсон", если ребенок знаком с Карлсоном, вероятность пойти с Малышом.
      * На вход в метод подаётся заранее проверенный на повторение ключ добавляемого ребёнка и коллекция, в которую ребёнок добавляется.
      */
+   /* public static void insert(String key, Map<String, Friend> ourMap) {
+        //Scanner sc = new Scanner(System.in);
+        if (key.equals("нет ключа")) {
+        } else {
+            System.out.println("Введите имя ребенка");
+            String name = scan.nextLine();
+            if (!isLetters(name)) {
+                System.out.println("Вы ввели некорректное имя.");
+            } else {
+                System.out.println("Введите \"Карлсон\", если ребёнок знаком с Карлсоном");
+                String carl = scan.nextLine();
+
+                System.out.println("Введите его возможность пойти с Малышом");
+                String chance1 = scan.nextLine();
+                if (!isNumber(chance1)) {
+                    System.out.println("Вы ввели неккоректную возможность.");
+                } else {
+                    double chance = Double.parseDouble(chance1);
+                    Friend newFriend = new Friend(name, carl, chance, key);
+                    ourMap.put(key, newFriend);
+                    System.out.println("Друг добавлен");
+                }
+            }
+        }
+
+    }*/
     public static boolean insert(String fr){
         try {String[] fr1=fr.split(",");
         String key=KidsKey(fr1[4]);
@@ -175,7 +214,7 @@ public class Lab5 {
             e.printStackTrace();
         }
 
-    }*/
+    }
 
 
     /**
@@ -194,15 +233,15 @@ public class Lab5 {
      */
     public static boolean remove(String key) {
         boolean c;
-            System.out.println("Введите ключ ребенка");
-            c = friends1.entrySet().stream().anyMatch(fr -> fr.getKey().equals(key));
-            if (c) {
-                friends1.remove(key);
-                return true;
-            } else {
-                return false;
-            }
+        System.out.println("Введите ключ ребенка");
+        c = friends1.entrySet().stream().anyMatch(fr -> fr.getKey().equals(key));
+        if (c) {
+            friends1.remove(key);
+            return true;
+        } else {
+            return false;
         }
+    }
 
 
     /**
@@ -215,23 +254,22 @@ public class Lab5 {
         int c1 = ourMap.size();
         if (ourMap.isEmpty()) {
             return false;
-        }else {
-                int count = 0;
-                if (!isNumber(number)) {
-                    return false;
+        } else {
+            int count = 0;
+            if (!isNumber(number)) {
+                return false;
+            } else {
+                c = ourMap.entrySet().stream()
+                        .filter(x -> Integer.parseInt(x.getKey()) <= Integer.parseInt(number))
+                        .count();
+                if (c < c1) {
+                    return true;
                 } else {
-                    c = ourMap.entrySet().stream()
-                            .filter(x -> Integer.parseInt(x.getKey()) <= Integer.parseInt(number))
-                            .count();
-                    //надо сюда добавить удаление элементов из самой коллекции
-                    if (c < c1) {
-                        return true;
-                    } else {
-                        return false;
-                    }
+                    return false;
                 }
             }
         }
+    }
 
 
     private static boolean AddFromFile(ArrayList<String> strfr){
@@ -279,15 +317,15 @@ public class Lab5 {
 
     private static String KidsKey(String number) {
         boolean c;
-       // String number = scan.nextLine();
+        // String number = scan.nextLine();
         if (!isNumber(number)) {
-           // System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
+            // System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
             return "нет ключа";
         }
         c = friends1.entrySet().stream()
                 .anyMatch(x -> x.getKey().equals(number));
         if (c) {
-           // System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
+            // System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
             return "нет ключа";
         }
         return number;
@@ -345,48 +383,53 @@ public class Lab5 {
                 });
         stream.close();
     }
-private static String Exchange(String str,DatagramSocket server,DatagramPacket incoming,InetAddress address,int port){
-    String s1=null;
-    DatagramPacket dp=new DatagramPacket(str.getBytes(),str.getBytes().length, address,port );
-    try{server.send(dp);
-    server.receive(incoming);
-    byte[] data1 = incoming.getData();
-    s1 = new String(data1, 0, incoming.getLength());
+
+    private static String Exchange(String str, DatagramSocket server, DatagramPacket incoming, InetAddress address, int port) {
+        String s1 = null;
+        DatagramPacket dp = new DatagramPacket(str.getBytes(), str.getBytes().length, address, port);
+        try {
+            server.send(dp);
+            server.receive(incoming);
+            byte[] data1 = incoming.getData();
+            s1 = new String(data1, 0, incoming.getLength());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return s1;
     }
-    catch(IOException e){
-        e.printStackTrace();
+
+    private static void Sending(String str, DatagramSocket server, DatagramPacket incoming, InetAddress address, int port) {
+        try {
+            DatagramPacket Menu = new DatagramPacket("menu".getBytes(), 4, incoming.getAddress(), incoming.getPort());
+            System.out.println(str);
+            DatagramPacket dp2 = new DatagramPacket(str.getBytes(), str.getBytes().length, incoming.getAddress(), incoming.getPort());
+            server.send(dp2);
+            server.send(Menu);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-    return s1;
-}
-private static void Sending(String str,DatagramSocket server,DatagramPacket incoming,InetAddress address,int port){
-   try{ DatagramPacket Menu = new DatagramPacket("menu".getBytes(), 4, incoming.getAddress(), incoming.getPort());
-    System.out.println(str);
-    DatagramPacket dp2 = new DatagramPacket(str.getBytes(), str.getBytes().length, incoming.getAddress(), incoming.getPort());
-    server.send(dp2);
-    server.send(Menu);}
-   catch(IOException e){
-       e.printStackTrace();
-   }
-}
-//static String menu="menu";
+    //static String menu="menu";
+
     public static void main(String[] args) throws IOException {
 
         /**
          *
          */
-        friends1=new ConcurrentHashMap<String, Friend>() {};
+        friends1 = new ConcurrentHashMap<String, Friend>() {
+        };
 
         DatagramSocket servers = null;
         try {
             servers = new DatagramSocket(4444);
             byte[] buffer = new byte[65536];
-            DatagramPacket incoming=new DatagramPacket(buffer, buffer.length);
+            DatagramPacket incoming = new DatagramPacket(buffer, buffer.length);
 
 
             System.out.println("Ожидаем данные...");
 
 
-            while (incoming!=null) {
+            while (incoming != null) {
 
                 servers.receive(incoming);
                 byte[] data = incoming.getData();
@@ -395,17 +438,17 @@ private static void Sending(String str,DatagramSocket server,DatagramPacket inco
                 if (s.equalsIgnoreCase("exit")) break;
                 System.out.println("Клиент выбрал команду " + s + ". Ожидаем выполнения...");
 
-                    if (s.equals("1")){
-                        String sout = "Введите через запятую информацию о добавляемом ребёнке: его имя,\"Карлсон\"(если он знаком с Карлсоном), вероятность пойти с Малышом, расстояние до школы и ключ. ";
-                        String s1 = Exchange(sout, servers, incoming, incoming.getAddress(), incoming.getPort());
-                        String sout1;
-                        boolean b = insert(s1);
-                        if (b) {
-                            sout1 = "Друг добавлен";
-                        } else {
-                            sout1 = "Проверьте корректность введенных данных.";
-                        }
-                        Sending(sout1,servers,incoming,incoming.getAddress(),incoming.getPort());
+                if (s.equals("1")) {
+                    String sout = "Введите через запятую информацию о добавляемом ребёнке: его имя,\"Карлсон\"(если он знаком с Карлсоном), вероятность пойти с Малышом, расстояние до школы и ключ. ";
+                    String s1 = Exchange(sout, servers, incoming, incoming.getAddress(), incoming.getPort());
+                    String sout1;
+                    boolean b = insert(s1);
+                    if (b) {
+                        sout1 = "Друг добавлен";
+                    } else {
+                        sout1 = "Проверьте корректность введенных данных.";
+                    }
+                    Sending(sout1, servers, incoming, incoming.getAddress(), incoming.getPort());
 
                         }
 
