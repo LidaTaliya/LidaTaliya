@@ -1,16 +1,23 @@
 package Lab5;
 
-public class Friend extends MenCreature implements Comparable<Friend> {
-    double ChanceToWalk;
-    String number;
+import java.io.Serializable;
+import java.util.Date;
+
+public class Friend extends MenCreature implements Comparable<Friend>, Serializable {
+    private static final long serialVersionUID = 1L;
+
+   public double ChanceToWalk;
+    public String number;
     boolean isTheBestFriend;
-    double DistanceFromSchool;
-    Friend ( String name1, String carlson, double k, String num,double dist){
+   public double DistanceFromSchool;
+   public Date date;
+    Friend ( String name1, String carlson, double k, String num,double dist,Date date){
         this.name=name1;
         this.ChanceToWalk=k;
         this.number = num;
         this.isTheBestFriend = false;
         this.DistanceFromSchool=dist;
+        this.date=date;
         if (carlson.equals("Карлсон")){
             this.MeetCarlson=true;
         }

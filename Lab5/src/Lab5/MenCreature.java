@@ -1,5 +1,5 @@
 package  Lab5;
 abstract class MenCreature implements Creature{
-     boolean MeetCarlson;
-     String name;
+    public boolean MeetCarlson;
+    public String name;
 }

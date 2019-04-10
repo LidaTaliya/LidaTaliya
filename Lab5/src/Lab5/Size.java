@@ -1,5 +1,5 @@
 package Lab5;
-enum Size{
+public enum Size{
     B("большой"),
     M("среднего размера"),
     S("маленький");

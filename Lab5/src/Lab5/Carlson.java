@@ -1,7 +1,7 @@
 package Lab5;
 
 public class Carlson extends StrangeMenCreature {
-    Carlson(String name1, boolean fly){
+   public Carlson(String name1, boolean fly){
         this.AbilityToFly=fly;
         this.name=name1;
     }

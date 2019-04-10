@@ -3,7 +3,7 @@ package Lab5;
 public class Kid  extends MenCreature{
     Double AttractPudels;
     Boolean WantDog;
-    Kid(String name1, double AttractPudels1,boolean WantDog1){this.name=name1;this.AttractPudels=AttractPudels1;this.WantDog=WantDog1;}
+   public Kid(String name1, double AttractPudels1,boolean WantDog1){this.name=name1;this.AttractPudels=AttractPudels1;this.WantDog=WantDog1;}
     public void BeHappy(Friend[] friends,  Carlson carlson) {
         boolean AllMeetCarlson = true;
         try{

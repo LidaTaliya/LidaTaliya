@@ -1,5 +1,5 @@
 package Lab5;
-enum Color {
+public enum Color {
     Black("чёрный"),
     White("белый"),
     Brown("коричневый"),

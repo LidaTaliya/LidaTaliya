@@ -1,7 +1,7 @@
 package Lab5;
 
 public class Parent extends MenCreature{
-    Parent(String name1, boolean meetCarlson){
+   public Parent(String name1, boolean meetCarlson){
         this.name=name1;
         this.MeetCarlson=meetCarlson;
     }

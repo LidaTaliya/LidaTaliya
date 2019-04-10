@@ -11,7 +11,26 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc9a5bfa-5d9d-44e6-b2c9-1d608f12fc48" name="Default Changelist" comment="remove age" />
+    <list default="true" id="bc9a5bfa-5d9d-44e6-b2c9-1d608f12fc48" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Client/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Friend.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Friend.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/MenCreature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/MenCreature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab5/Carlson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Carlson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab5/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab5/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab5/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Friend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab5/Group.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab5/Kid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Kid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab5/Lab5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Lab5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab5/MenCreature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/MenCreature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab5/Parent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Parent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab5/Size.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Size.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,17 +44,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Lab5/Lab5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2864">
-              <caret line="681" column="35" lean-forward="true" selection-start-line="681" selection-start-column="35" selection-end-line="681" selection-end-column="35" />
+            <state relative-caret-position="-5466">
+              <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#984#992#0" expanded="true" />
-                <element signature="e#1407#1419#0" expanded="true" />
-                <element signature="e#2577#2594#0" expanded="true" />
-                <element signature="e#2857#2863#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Lab5/Friend.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="72" lean-forward="true" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -44,8 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+            <state relative-caret-position="-546">
+              <caret line="172" column="36" lean-forward="true" selection-start-line="172" selection-start-column="36" selection-end-line="172" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,19 +99,12 @@
       <list>
         <option value="$PROJECT_DIR$/src/Lab5/Main.java" />
         <option value="$PROJECT_DIR$/src/Lab5/Animal.java" />
-        <option value="$PROJECT_DIR$/src/Lab5/Color.java" />
         <option value="$PROJECT_DIR$/src/Lab5/Creature.java" />
-        <option value="$PROJECT_DIR$/src/Lab5/Dog.java" />
         <option value="$PROJECT_DIR$/src/Lab5/KidNoLoveDogs.java" />
-        <option value="$PROJECT_DIR$/src/Lab5/MenCreature.java" />
         <option value="$PROJECT_DIR$/src/Lab5/NoThinkSo.java" />
-        <option value="$PROJECT_DIR$/src/Lab5/Parent.java" />
-        <option value="$PROJECT_DIR$/src/Lab5/Size.java" />
         <option value="$PROJECT_DIR$/src/Lab5/StrangeMenCreature.java" />
         <option value="$PROJECT_DIR$/src/Lab5/Group.java" />
-        <option value="$PROJECT_DIR$/src/Lab5/Kid.java" />
         <option value="$USER_HOME$/IdeaProjects/untitled/src/Lab3/Lab3.java" />
-        <option value="$PROJECT_DIR$/src/Lab5/Carlson.java" />
         <option value="$PROJECT_DIR$/src/Lab5/DataSource.java" />
         <option value="$PROJECT_DIR$/src/Lab5/FileDataSource.java" />
         <option value="$PROJECT_DIR$/src/Lab5/BedtFriendDecorator.java" />
@@ -92,8 +112,16 @@
         <option value="$PROJECT_DIR$/src/Lab5/BestFriendDecorator.java" />
         <option value="$PROJECT_DIR$/src/Lab5/Client.java" />
         <option value="$PROJECT_DIR$/src/Lab5/Friend.java" />
-        <option value="$PROJECT_DIR$/src/Client/Client.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/MenCreature.java" />
+        <option value="$PROJECT_DIR$/src/Client/Group.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Carlson.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Kid.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Size.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Color.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Parent.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Dog.java" />
         <option value="$PROJECT_DIR$/src/Lab5/Lab5.java" />
+        <option value="$PROJECT_DIR$/src/Client/Client.java" />
       </list>
     </option>
   </component>
@@ -107,79 +135,12 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Lab5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab5" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab5" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab5" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="json-simple-1.1.jar" type="ab9368bb:PsiFileNode" />
-            </path>
-            <path>
-              <item name="Lab5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab5" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="json-simple-1.1.jar" type="ab9368bb:PsiFileNode" />
-              <item name="simple" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab5" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="json-simple-1.1.jar" type="ab9368bb:PsiFileNode" />
-              <item name="simple" type="462c0819:PsiDirectoryNode" />
-              <item name="parser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab5" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab5" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab5" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="Lab5" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554454898288" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554836026674" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -289,7 +250,11 @@
       <workItem from="1554124674563" duration="5641000" />
       <workItem from="1554398424895" duration="2619000" />
       <workItem from="1554446443679" duration="8080000" />
-      <workItem from="1554454906162" duration="1111000" />
+      <workItem from="1554454906162" duration="1219000" />
+      <workItem from="1554467263072" duration="3659000" />
+      <workItem from="1554824079935" duration="4036000" />
+      <workItem from="1554829705938" duration="2734000" />
+      <workItem from="1554872685444" duration="7826000" />
     </task>
     <task id="LOCAL-00001" summary=":)">
       <created>1549803792504</created>
@@ -312,11 +277,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549966008099</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add import and 6">
+      <created>1554456077887</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1554456077887</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132299000" />
+    <option name="totallyTimeSpent" value="150662000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -340,7 +312,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.6817539" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" weight="0.60113156" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -348,8 +320,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32956153" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49919224" visible="true" weight="0.14710042" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50080776" side_tool="true" weight="0.48514852" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4983845" visible="true" weight="0.28005657" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5016155" side_tool="true" weight="0.6817539" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.38330975" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -412,14 +384,15 @@
     <MESSAGE value=":)" />
     <MESSAGE value=":))" />
     <MESSAGE value="remove age" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove age" />
+    <MESSAGE value="add import and 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="add import and 6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Lab5/Lab5.java</url>
-          <line>413</line>
+          <line>308</line>
           <properties class="Lab5.Lab5" method="main">
             <option name="EMULATED" value="true" />
           </properties>
@@ -427,7 +400,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Client/Client.java</url>
-          <line>59</line>
+          <line>154</line>
           <properties class="Client.Client" method="main">
             <option name="EMULATED" value="true" />
           </properties>
@@ -437,28 +410,7 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Lab5/Color.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Lab5/Creature.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lab5/Dog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lab5/MenCreature.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="13" selection-start-column="13" selection-end-column="13" />
@@ -472,13 +424,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lab5/Parent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Lab5/StrangeMenCreature.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -486,31 +431,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lab5/KidNoLoveDogs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lab5/Size.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/src.zip!/java/util/function/BiConsumer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lab5/Kid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -535,13 +459,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lab5/Carlson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -638,33 +555,112 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lab5/Friend.java">
+    <entry file="file://$PROJECT_DIR$/src/Lab5/KidNoLoveDogs.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/rt.jar!/sun/nio/ch/Net.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        <state relative-caret-position="113">
+          <caret line="379" selection-start-line="379" selection-end-line="379" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/rt.jar!/sun/nio/ch/DatagramSocketAdaptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="127" selection-start-line="127" selection-end-line="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lab5/Carlson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lab5/Kid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lab5/Size.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lab5/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lab5/Parent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lab5/Dog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lab5/MenCreature.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Lab5/Lab5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2864">
-          <caret line="681" column="35" lean-forward="true" selection-start-line="681" selection-start-column="35" selection-end-line="681" selection-end-column="35" />
+        <state relative-caret-position="-5466">
+          <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#984#992#0" expanded="true" />
-            <element signature="e#1407#1419#0" expanded="true" />
-            <element signature="e#2577#2594#0" expanded="true" />
-            <element signature="e#2857#2863#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-546">
+          <caret line="172" column="36" lean-forward="true" selection-start-line="172" selection-start-column="36" selection-end-line="172" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lab5/Friend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="72" lean-forward="true" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

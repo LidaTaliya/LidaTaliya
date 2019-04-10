@@ -6,7 +6,7 @@ public class Dog implements Animal {
     String Breed;
     Double ChanceToAppear;
     final String WhoIsit="щенок";
-    Dog(Size var1, Color var2, String Breed1 ,double chance){
+   public Dog(Size var1, Color var2, String Breed1 ,double chance){
        this.size=toString(var1);
        this.color=toString(var2);
        this.Breed=Breed1;
