@@ -1,4 +1,6 @@
-package Lab5;
+package Client;
+
+import Lab5.MenCreature;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -7,11 +9,11 @@ public class Friend extends MenCreature implements Comparable<Friend>, Serializa
     private static final long serialVersionUID = 1L;
 
    public double ChanceToWalk;
-    public String number;
-    boolean isTheBestFriend;
+   public String number;
    public double DistanceFromSchool;
    public Date date;
-    Friend ( String name1, String carlson, double k, String num,double dist,Date date){
+   public boolean isTheBestFriend;
+   public Friend ( String name1, String carlson, double k, String num,double dist,Date date){
         this.name=name1;
         this.ChanceToWalk=k;
         this.number = num;
@@ -27,7 +29,7 @@ public class Friend extends MenCreature implements Comparable<Friend>, Serializa
             return true;
         } else {return false;}
     }
-    Friend(){}
+    public Friend(){}
     @Override
     public int compareTo(Friend o) {
         if (this.name.compareTo(o.name)==0){

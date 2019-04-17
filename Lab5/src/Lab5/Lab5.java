@@ -1,15 +1,14 @@
 package Lab5;
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
+import Client.Friend;
+import org.apache.commons.lang.SerializationUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.*;
 import java.nio.file.Path;
 import java.util.*;
+
 
 import java.io.*;
 import java.util.ArrayList;
@@ -301,10 +300,28 @@ public class Lab5 {
             DatagramPacket dp2 = new DatagramPacket(str.getBytes(), str.getBytes().length, incoming.getAddress(), incoming.getPort());
             server.send(dp2);
             server.send(Menu);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+    public static byte[] serialize(Object object) {
+        if (object == null) {
+            return null;
+        }
+        ByteArrayOutputStream baos = new ByteArrayOutputStream(1024);
+        try {
+            ObjectOutputStream oos = new ObjectOutputStream(baos);
+            oos.writeObject(object);
+            oos.flush();
+        }
+        catch (IOException ex) {
+            throw new IllegalArgumentException("Failed to serialize object of type: " + object.getClass(), ex);
+        }
+        System.out.println(Arrays.toString(baos.toByteArray()));
+        return baos.toByteArray();
+    }
+
 
     public static void main(String[] args) throws IOException {
 
@@ -416,15 +433,18 @@ public class Lab5 {
             }else if(s.equals("8")){
                         try {
                             for (Map.Entry<String, Friend> entry : friends1.entrySet()){
-                                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                              /*  ByteArrayOutputStream baos = new ByteArrayOutputStream();
                                 ObjectOutputStream oos = new ObjectOutputStream(baos);
                                     oos.writeObject(entry.getValue());
-                                    byte[] Buf = baos.toByteArray();
+                                    byte[] Buf = baos.toByteArray();*/
+                              //byte [] Buf=serialize(entry.getValue());
+                                byte[] Buf = SerializationUtils.serialize(entry.getValue());
                                     DatagramPacket packet = new DatagramPacket(Buf, Buf.length,incoming.getAddress(), incoming.getPort());
                                     servers.send(packet);
                                     System.out.println(entry.getValue().name+" отправлен(а)");
-                                oos.flush();
-                                oos.close();
+
+                                //oos.flush();
+                                //oos.close();
                             }
 
                         String end="End Sending";
