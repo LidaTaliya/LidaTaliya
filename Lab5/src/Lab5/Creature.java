@@ -1,6 +1,8 @@
 package  Lab5;
 
 
-interface Creature {
+import java.io.Serializable;
+
+public interface Creature{
    boolean walk();
     }

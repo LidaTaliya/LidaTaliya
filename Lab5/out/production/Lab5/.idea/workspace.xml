@@ -12,30 +12,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc9a5bfa-5d9d-44e6-b2c9-1d608f12fc48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/apache_commons_lang.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Lab5/Client/Client2$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Lab5/Client/Client2$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Lab5/Client/Client2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Client/Client2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Client/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Client/Client$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab5/Client/Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Client/Client$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab5/Client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Client/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Client/Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Client/Group.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/BestFriend.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/BestFriend.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/BestFriendDecorator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/BestFriendDecorator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Friend.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Kid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Kid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Client/Friend.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Client/Friend.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Creature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Creature.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/MenCreature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/MenCreature.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/BestFriend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/BestFriend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/BestFriendDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/BestFriendDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Friend.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Lab5/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Creature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/Friend.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/Kid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Kid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Lab5/Lab5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Lab5.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Lab5/MenCreature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/MenCreature.java" afterDir="false" />
     </list>
@@ -55,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Lab5/Lab5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
-              <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+            <state relative-caret-position="466">
+              <caret line="367" column="48" lean-forward="true" selection-start-line="367" selection-start-column="48" selection-end-line="367" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,20 +58,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Client/Group.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-555">
-              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1458">
-              <caret line="3" column="50" lean-forward="true" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+            <state relative-caret-position="359">
+              <caret line="266" column="26" selection-start-line="266" selection-start-column="26" selection-end-line="266" selection-end-column="26" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="method#StartStory#0;class#Client#0" />
               </folding>
             </state>
@@ -86,10 +71,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/apache-commons-lang.jar!/org/apache/commons/lang/SerializationUtils.class">
+        <entry file="file://$PROJECT_DIR$/src/Client/Client2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+            <state relative-caret-position="-2655">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#StartStory#0;class#Client2#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Lab5/ServerThread1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -127,23 +125,26 @@
         <option value="$PROJECT_DIR$/src/Lab5/Color.java" />
         <option value="$PROJECT_DIR$/src/Lab5/Parent.java" />
         <option value="$PROJECT_DIR$/src/Lab5/Dog.java" />
-        <option value="$PROJECT_DIR$/src/Lab5/Creature.java" />
         <option value="$PROJECT_DIR$/src/Lab5/Friend.java" />
-        <option value="$PROJECT_DIR$/src/Client/Client.java" />
-        <option value="$PROJECT_DIR$/src/Lab5/MenCreature.java" />
-        <option value="$PROJECT_DIR$/src/Lab5/Lab5.java" />
         <option value="$PROJECT_DIR$/src/Lab5/BestFriendDecorator.java" />
-        <option value="$PROJECT_DIR$/src/Client/Friend.java" />
         <option value="$PROJECT_DIR$/src/Lab5/BestFriend.java" />
         <option value="$PROJECT_DIR$/src/Lab5/Kid.java" />
         <option value="$PROJECT_DIR$/src/Client/Group.java" />
+        <option value="$PROJECT_DIR$/src/Client/Friend.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Creature.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/MenCreature.java" />
+        <option value="$PROJECT_DIR$/src/Client/Client2.java" />
+        <option value="$PROJECT_DIR$/src/Client/ServerThread.java" />
+        <option value="$PROJECT_DIR$/src/Client/Client.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Lab5.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/ServerThread1.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="27" />
-    <option name="width" value="645" />
-    <option name="height" value="706" />
+    <option name="y" value="210" />
+    <option name="width" value="1280" />
+    <option name="height" value="710" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -151,6 +152,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -159,35 +161,16 @@
               <item name="Lab5" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lab5" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Lab5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab5" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab5" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="apache-commons-lang.jar" type="ab9368bb:PsiFileNode" />
-            </path>
-            <path>
-              <item name="Lab5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab5" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="apache-commons-lang.jar" type="ab9368bb:PsiFileNode" />
-              <item name="lang" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555479986554" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556906624374" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -220,6 +203,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Client2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client.Client2" />
+      <module name="Lab5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" singleton="false" temporary="true">
       <envs>
         <env name="Friendss" value="$PROJECT_DIR$/../Friends.json" />
@@ -236,10 +232,12 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Client" />
+      <item itemvalue="Application.Client2" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Client2" />
         <item itemvalue="Application.Client" />
       </list>
     </recent_temporary>
@@ -304,7 +302,13 @@
       <workItem from="1554872685444" duration="8136000" />
       <workItem from="1555049416485" duration="4816000" />
       <workItem from="1555063722684" duration="6718000" />
-      <workItem from="1555429917444" duration="3524000" />
+      <workItem from="1555429917444" duration="6590000" />
+      <workItem from="1555671684609" duration="1628000" />
+      <workItem from="1555676751568" duration="4739000" />
+      <workItem from="1555744804403" duration="6435000" />
+      <workItem from="1556265126101" duration="459000" />
+      <workItem from="1556274718952" duration="4385000" />
+      <workItem from="1556876964808" duration="5401000" />
     </task>
     <task id="LOCAL-00001" summary=":)">
       <created>1549803792504</created>
@@ -338,7 +342,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166030000" />
+    <option name="totallyTimeSpent" value="192143000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -351,8 +355,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23182553" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25444266" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -361,15 +366,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" weight="0.49080622" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" weight="0.38330975" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32956153" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32956153" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49757674" visible="true" weight="0.69165486" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49757674" weight="0.60678923" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5024233" side_tool="true" weight="0.6280057" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.38330975" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -441,7 +446,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Lab5/Lab5.java</url>
-          <line>329</line>
+          <line>327</line>
           <properties class="Lab5.Lab5" method="main">
             <option name="EMULATED" value="true" />
           </properties>
@@ -449,7 +454,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Client/Client.java</url>
-          <line>180</line>
+          <line>177</line>
           <properties class="Client.Client" method="main">
             <option name="EMULATED" value="true" />
           </properties>
@@ -636,37 +641,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lab5/Creature.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lab5/Friend.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Friend.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lab5/MenCreature.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lab5/Friend.java" />
+    <entry file="file://$PROJECT_DIR$/src/Friend.java" />
     <entry file="file://$PROJECT_DIR$/src/Lab5/BestFriendDecorator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -692,6 +668,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/apache-commons-lang.jar!/org/apache/commons/lang/SerializationUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="90" column="1" lean-forward="true" selection-start-line="90" selection-start-column="1" selection-end-line="90" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/Group.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-555">
@@ -699,40 +682,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lab5/Creature.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lab5/MenCreature.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/Friend.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-152">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="60">
+          <caret line="7" column="69" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/ServerThread1.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="747" selection-start-line="747" selection-end-line="747" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/Client2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2655">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#StartStory#0;class#Client2#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="266" column="26" selection-start-line="266" selection-start-column="26" selection-end-line="266" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#StartStory#0;class#Client#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Lab5/Lab5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        <state relative-caret-position="466">
+          <caret line="367" column="48" lean-forward="true" selection-start-line="367" selection-start-column="48" selection-end-line="367" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/apache-commons-lang.jar!/org/apache/commons/lang/SerializationUtils.class">
+    <entry file="file://$PROJECT_DIR$/src/Lab5/ServerThread1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1458">
-          <caret line="3" column="50" lean-forward="true" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
-          <folding>
-            <element signature="method#StartStory#0;class#Client#0" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -766,6 +783,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
+          <last-edited>apache-commons-lang</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -802,7 +820,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>apache-commons-lang</last-edited>
+          <last-edited>json</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
