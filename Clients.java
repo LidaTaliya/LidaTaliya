@@ -1,30 +1,13 @@
-//package Lab5;
 import Client.Client;
 import Lab5.*;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Clients {
-static String[] str={"3","5"};
-static String[] str2={"6","1","4"};
-static String[] str3={"2","3","3"};
-  static Path path= Paths.get(System.getenv("Friendss"));
-   File file = path.toFile();
-    public static void main(String[] args) {
-        try {
-                Client cl = new Client(path);
-                cl.Connect();
-                cl.Start(str);
-                Client cl2=new Client(path);
-                cl2.Connect();
-                cl2.Start(str2);
-                Client cl3=new Client(path);
-                cl3.Connect();
-                cl3.Start(str3);
-            }catch(IOException e){
-                e.printStackTrace();
-            }
+    public static void main(String[] args){
+        new Thread(new Lab5()).start();
+        ReentrantLock lock=new ReentrantLock();
+        new Thread(new Client(lock,"4","3","5")).start();
+        new Thread(new Client(lock,"5","6","4","1")).start();
+        new Thread(new Client(lock,"3","7","5","2")).start();
     }
 }

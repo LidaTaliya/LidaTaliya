@@ -11,37 +11,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc9a5bfa-5d9d-44e6-b2c9-1d608f12fc48" name="Default Changelist" comment="add import and 6">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Lab5_jar/Lab5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Lab5_jar/Lab5.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Client/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Client/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Client/Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Client/Client$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Client/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Client/Client2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Client/Client2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Client/Client2$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Client/Client2$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Client/Client2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Client/Client2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Client/Friend.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Client/Group.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/BestFriend.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/BestFriend.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/BestFriendDecorator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/BestFriendDecorator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Kid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Kid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Lab5/ServerThread1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Lab5/ServerThread1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Friend.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Group.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/BestFriend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/BestFriend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/BestFriendDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/BestFriendDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/Kid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Kid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/Lab5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/Lab5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab5/ServerThread1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab5/ServerThread1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../META-INF/MANIFEST.MF" beforeDir="false" />
-    </list>
+    <list default="true" id="bc9a5bfa-5d9d-44e6-b2c9-1d608f12fc48" name="Default Changelist" comment="add import and 6" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -210,7 +180,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558620441591" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558620687519" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -377,7 +347,7 @@
       <workItem from="1558084476755" duration="933000" />
       <workItem from="1558097317483" duration="2939000" />
       <workItem from="1558354329228" duration="10129000" />
-      <workItem from="1558617135610" duration="2346000" />
+      <workItem from="1558617135610" duration="2591000" />
     </task>
     <task id="LOCAL-00001" summary=":)">
       <created>1549803792504</created>
@@ -411,7 +381,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217094000" />
+    <option name="totallyTimeSpent" value="217339000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
