@@ -1,6 +1,5 @@
 package Lab5;
 
-import Client.Friend;
 
 public class BestFriend extends BestFriendDecorator {
 

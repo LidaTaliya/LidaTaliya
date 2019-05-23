@@ -1,8 +1,8 @@
-package Client;
+package Lab5;
 
 import Lab5.Carlson;
 import Lab5.Dog;
-import Client.Friend;
+import Lab5.Friend;
 import Lab5.Kid;
 
 import java.util.Arrays;

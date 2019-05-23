@@ -1,4 +1,4 @@
-package Client;
+package Lab5;
 
 import Lab5.MenCreature;
 

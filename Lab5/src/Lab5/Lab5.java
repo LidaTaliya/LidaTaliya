@@ -1,10 +1,7 @@
 package Lab5;
 
-import Client.Friend;
-import org.apache.commons.lang.SerializationUtils;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.net.*;
 import java.nio.file.Path;
 import java.util.*;
@@ -17,37 +14,17 @@ import java.util.Scanner;
 import java.util.concurrent.ConcurrentHashMap;
 
 
-public class Lab5 {
+public class Lab5 implements Runnable{
 
-
-    //объявление нашей будущей коллекции друзей
     static Map<String, Friend> friends1 = new HashMap<String, Friend>() {
     };
     static Scanner scan = new Scanner(System.in);
     static Date date;
     static int countFriends;
     static ArrayList<String> StrFriends= new ArrayList<String>();
-
-
-    //указание путь к json файлу через переменную окружения
-
-
     static Path path;
     static File file;
-
-    //метод, чтобы прочитать json с помощью scanner(возвращает список, состоящий из json объектов)
-/*    private static ArrayList<JSONObject> ReadJSON(File file) throws FileNotFoundException, ParseException {
-        Scanner scanner = new Scanner(file);
-        ArrayList<JSONObject> json = new ArrayList<JSONObject>();
-        date = new Date();
-        while (scanner.hasNext()) {
-            JSONObject obj = (JSONObject) new JSONParser().parse(scanner.nextLine());
-            json.add(obj);
-        }
-        scanner.close();
-        return json;
-    }*/
-
+    static DatagramSocket servers;
 
     private static boolean isNumber(String str) {
         try {
@@ -68,7 +45,6 @@ public class Lab5 {
         }
         return true;
     }
-
 
     public static <K extends Comparable, V extends Comparable> Map<K, V> sortByValues(Map<K, V> map) {
         List<Map.Entry<K, V>> entries = new LinkedList<Map.Entry<K, V>>(map.entrySet());
@@ -146,22 +122,6 @@ public class Lab5 {
      * Чтобы выполнить эту команду, пользователю будет предложено ввети название переменной окружения
      * На вход в данный метод подаётся коллекция, в которую мы импортируем данные из файла.
      */
-  /*  public static void imports(Map<String, Friend> newMap) {
-        try {
-            friends1 = AddFromFile(file, friends1);
-            if (countFriends == 0) {
-                System.out.println("В коллекцию ничего не добавлено.");
-            } else {
-                System.out.println("Добавление успешно завершено. В коллекцию добавлено " + countFriends + " друзей.");
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println("Файл не найден :(");
-
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-    }
 
 
     /**
@@ -250,50 +210,27 @@ public class Lab5 {
 
     }
 
-
     private static String KidsKey(String number) {
         boolean c;
-        // String number = scan.nextLine();
         if (!isNumber(number)) {
-            // System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
             return "нет ключа";
         }
         c = friends1.entrySet().stream()
                 .anyMatch(x -> x.getKey().equals(number));
         if (c) {
-            // System.out.println("Вы ввели некорректный ключ или ребёнок с таким ключом уже существует.");
             return "нет ключа";
         }
         return number;
     }
 
-    private static String KidsName() {
-        String name = scan.nextLine();
-        boolean name1 = false;
-        name1 = friends1.entrySet().stream()
-                .anyMatch(x -> x.getValue().name.equals(name));
-        if (!name1) {
-            System.out.println("Вы ввели некорректное имя или ребёнка с таким именем не существует.");
-        }
-        return name;
-    }
-
-
-
     public static String Exchange(String str, DatagramSocket server, DatagramPacket incoming, InetAddress address, int port) {
         String s1 = null;
-        System.out.println(1);
         DatagramPacket dp = new DatagramPacket(str.getBytes(), str.getBytes().length, address, port);
         try {
-            System.out.println(2);
             server.send(dp);
-            System.out.println(3);
             server.receive(incoming);
-            System.out.println(4);
             byte[] data1 = incoming.getData();
-            System.out.println(5);
             s1 = new String(data1, 0, incoming.getLength());
-            System.out.println(6);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -302,11 +239,11 @@ public class Lab5 {
 
     public static void Sending(String str, DatagramSocket server, DatagramPacket incoming) {
         try {
-            DatagramPacket Menu = new DatagramPacket("menu".getBytes(), 4, incoming.getAddress(), incoming.getPort());
-            System.out.println(str);
+           // DatagramPacket Menu = new DatagramPacket("menu".getBytes(), 4, incoming.getAddress(), incoming.getPort());
+          //  System.out.println(str);
             DatagramPacket dp2 = new DatagramPacket(str.getBytes(), str.getBytes().length, incoming.getAddress(), incoming.getPort());
             server.send(dp2);
-            server.send(Menu);
+          //  server.send(Menu);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -331,27 +268,40 @@ public class Lab5 {
     }
 
 
-    public static void main(String[] args)   throws IOException {
+    public void run() {
+        try {
+            friends1 = new ConcurrentHashMap<String, Friend>() {
+            };
+            synchronized (friends1) {
+                servers = new DatagramSocket(5555);
+                try {
+                    byte[] buffer = new byte[65536];
+                    DatagramPacket incoming = new DatagramPacket(buffer, buffer.length);
 
-        friends1 = new ConcurrentHashMap<String, Friend>() {
-        };
-        synchronized (friends1) {
-            DatagramSocket servers = null;
-            try {
-                servers = new DatagramSocket(4444);
-                byte[] buffer = new byte[65536];
-                DatagramPacket incoming = new DatagramPacket(buffer, buffer.length);
 
+                    System.out.println("Ожидаем данные...");
 
-                System.out.println("Ожидаем данные...");
+                    servers.receive(incoming);
+                    byte[] data = incoming.getData();
+                    String s = new String(data, 0, incoming.getLength());
+                    if (s.equals("I'm a client!")) {
+                        System.out.println("Клиент подключен");
+                        ServerThread1 th1 = new ServerThread1(servers, incoming, incoming.getAddress(), incoming.getPort());
+                        new Thread(th1).start();
+                    }
 
-                
-                ServerThread1 th1=new ServerThread1(servers,incoming,incoming.getAddress(),incoming.getPort());
-                new Thread(th1).start();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
+               // BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+               // String exit = in.readLine();
+               // if (exit.equalsIgnoreCase("exit")) {
+                 //   servers.close();
+               // }
+            }
         }catch(IOException e){
             e.printStackTrace();
-                servers.close();}
         }
     }
         }

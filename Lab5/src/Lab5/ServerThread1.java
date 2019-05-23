@@ -1,12 +1,10 @@
 package Lab5;
 
-import Client.Friend;
+
 import org.apache.commons.lang.SerializationUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintStream;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
@@ -19,10 +17,7 @@ public class ServerThread1 extends Thread {
 
    private InetAddress addr;//адрес клиента
     private int port;
-    //private DatagramPacket incoming;
-   // byte[] buffer = new byte[65536];
     DatagramPacket incoming ;
-            //= new DatagramPacket(buffer, buffer.length);
     DatagramSocket servers;
 
 
@@ -40,7 +35,8 @@ public class ServerThread1 extends Thread {
             String s = new String(data, 0, incoming.getLength());
 
             if (s.equalsIgnoreCase("exit")) break;
-            System.out.println("Клиент выбрал команду " + s + ". Ожидаем выполнения...");
+            if (s.equals("Close Server")){servers.close();}
+          //  System.out.println("Клиент выбрал команду " + s + ". Ожидаем выполнения...");
 
             if (s.equals("1")) {
 
@@ -74,7 +70,7 @@ public class ServerThread1 extends Thread {
                     servers.receive(incoming);
                     byte[] data1 = incoming.getData();
                     String s1 = new String(data1, 0, incoming.getLength());
-                    System.out.println(s1);
+                   // System.out.println(s1);
                     if (!s1.equals("EndSending")) {
                         StrFriends.add(s1);
                     } else {
@@ -83,9 +79,9 @@ public class ServerThread1 extends Thread {
                 }
                 boolean b4 = AddFromFile(StrFriends);
                 friends1 = sortByValues(friends1);
-                friends1.entrySet().stream().forEach(
+             /*   friends1.entrySet().stream().forEach(
                         (friend) -> System.out.println(friend.getValue().name)
-                );
+                );*/
                 String imp;
                 if (b4) {
                     imp = "Добавление успешно завершено. В коллекцию добавлено " + countFriends + " друзей.";
@@ -112,31 +108,23 @@ public class ServerThread1 extends Thread {
                 }
                 Sending(sout6, servers, incoming);
             } else if (s.equals("7")) {
-                String sout6 = "Введите ключ ребенка";
-                String s6 = Exchange(sout6, servers, incoming, incoming.getAddress(), incoming.getPort());
-                boolean b6 = remove_greater_key(s6, friends1);
-                String sout7;
+                String sout8 = "Введите ключ ребенка";
+                String s7 = Exchange(sout8, servers, incoming, incoming.getAddress(), incoming.getPort());
+                boolean b6 = remove_greater_key(s7, friends1);
+                String sout9;
                 if (b6) {
-                    sout7 = "Удаление успешно завершено.";
+                    sout9 = "Удаление успешно завершено.";
                 } else {
-                    sout7 = "Возникла ошибка(Коллекция пуста, некорректный ключ или нет детей с ключом, выше заданного)";
+                    sout9 = "Возникла ошибка(Коллекция пуста, некорректный ключ или нет детей с ключом, выше заданного)";
                 }
-                Sending(sout7, servers, incoming);
+                Sending(sout9, servers, incoming);
             } else if (s.equals("8")) {
                 try {
                     for (Map.Entry<String, Friend> entry : friends1.entrySet()) {
-                              /*  ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                                ObjectOutputStream oos = new ObjectOutputStream(baos);
-                                    oos.writeObject(entry.getValue());
-                                    byte[] Buf = baos.toByteArray();*/
-                        //byte [] Buf=serialize(entry.getValue());
                         byte[] Buf = SerializationUtils.serialize(entry.getValue());
                         DatagramPacket packet = new DatagramPacket(Buf, Buf.length, incoming.getAddress(), incoming.getPort());
                         servers.send(packet);
                         System.out.println(entry.getValue().name + " отправлен(а)");
-
-                        //oos.flush();
-                        //oos.close();
                     }
 
                     String end = "End Sending";
@@ -151,8 +139,7 @@ public class ServerThread1 extends Thread {
             }
         }
     } catch (IOException e) {
-        System.out.println("ошибка(");
-        e.printStackTrace();
+        System.out.println("Сокет закрыт");
         System.exit(-1);
     }
 

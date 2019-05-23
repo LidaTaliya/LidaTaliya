@@ -1,0 +1,50 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LAB6">
+    <output-path>$PROJECT_DIR$/out/artifacts/LAB6</output-path>
+    <root id="archive" name="LAB6.jar">
+      <element id="directory" name="Lab5">
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/allclasses-frame.html" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/allclasses-noframe.html" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/Animal.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/BestFriend" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/BestFriend.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/BestFriendDecorator" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/BestFriendDecorator.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/Carlson.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/Color.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/constant-values.html" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/Creature.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/deprecated-list.html" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/Dog.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/Friend.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/Group.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/help-doc.html" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/index.html" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/Kid.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/KidNoLoveDogs.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5$1.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/Lab5$2.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/MenCreature.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/NoThinkSo.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/overview-tree.html" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/package-list" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/Parent.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/script.js" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/serialized-form.html" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/ServerThread1.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/Size.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/StrangeMenCreature.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Lab5/stylesheet.css" />
+      </element>
+      <element id="directory" name="Client">
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Client/Client$1.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Client/Client$2.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Client/Client.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Client/Client2$1.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Client/Client2$2.class" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/Lab5/Client/Client2.class" />
+      </element>
+    </root>
+  </artifact>
+</component>
