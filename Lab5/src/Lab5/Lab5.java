@@ -14,7 +14,7 @@ import java.util.Scanner;
 import java.util.concurrent.ConcurrentHashMap;
 
 
-public class Lab5 implements Runnable{
+public class Lab5 extends Thread{
 
     static Map<String, Friend> friends1 = new HashMap<String, Friend>() {
     };
@@ -33,6 +33,9 @@ public class Lab5 implements Runnable{
             return false;
         }
         return true;
+    }
+    public static DatagramSocket GetSocket(){
+        return servers;
     }
 
 

@@ -16,7 +16,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import static org.apache.commons.lang.SerializationUtils.*;
 
-public class Client implements Runnable {
+public class Client extends Thread {
     static Path path;
     static File file;
     static InetSocketAddress hostAddress;
@@ -265,27 +265,28 @@ return out;
            // imports(channel, hostAddress);
             l.lock();
             System.out.println(Thread.currentThread()+first+":"+Commands(first));
-            l.unlock();
-            Thread.sleep(1000);
-            l.lock();
+            //l.unlock();
+           // Thread.sleep(100);
+           // l.lock();
             System.out.println(Thread.currentThread()+second+":"+Commands(second));
             if (key!=null){
                 System.out.println(Thread.currentThread()+second+": "+key+" "+Commands(key));
             }
-            l.unlock();
-            Thread.sleep(1000);
-            l.lock();
+            //l.unlock();
+            //Thread.sleep(100);
+           // l.lock();
             System.out.println(Thread.currentThread()+third+":"+Commands(third));
             l.unlock();
-            Thread.sleep(1000);
+           // Thread.sleep(100);
 
-            channel.close();
+           // channel.close();
             in.close();
+            this.interrupt();
 
         }catch (IOException e){
             e.printStackTrace();
-        }catch(InterruptedException e){
-            e.printStackTrace();
+       // }catch(InterruptedException e){
+         //   e.printStackTrace();
         }
     }
 }
