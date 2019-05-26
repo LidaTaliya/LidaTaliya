@@ -12,7 +12,6 @@ public class Clients {
         //ReentrantLock lock3=new ReentrantLock();
         Client cl1 = new Client(lock1, "4", "3", "5");
         cl1.start();
-        cl1.join();
         //  lock1.lock();
         //  if(lock1.isLocked()) {
         Client cl2 = new Client(lock1, "3", "7", "5", "2");
