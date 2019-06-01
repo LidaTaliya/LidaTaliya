@@ -262,10 +262,9 @@ return out;
                 System.out.println("Проверьте переменную окружения.");
                 System.exit(0);
             }
-           // imports(channel, hostAddress);
             l.lock();
             System.out.println(Thread.currentThread()+first+":"+Commands(first));
-            //l.unlock();
+         //   l.unlock();
            // Thread.sleep(100);
            // l.lock();
             System.out.println(Thread.currentThread()+second+":"+Commands(second));
@@ -273,11 +272,10 @@ return out;
                 System.out.println(Thread.currentThread()+second+": "+key+" "+Commands(key));
             }
             //l.unlock();
-            //Thread.sleep(100);
-           // l.lock();
+           // Thread.sleep(100);
+            //l.lock();
             System.out.println(Thread.currentThread()+third+":"+Commands(third));
             l.unlock();
-           // Thread.sleep(100);
 
            // channel.close();
             in.close();
@@ -285,8 +283,8 @@ return out;
 
         }catch (IOException e){
             e.printStackTrace();
-       // }catch(InterruptedException e){
-         //   e.printStackTrace();
+      //  }catch(InterruptedException e){
+        //    e.printStackTrace();
         }
     }
 }
