@@ -8,12 +8,12 @@ public class Clients {
    static long start = System.currentTimeMillis();
 
     public static void main(String[] args) {
-       try {
+     //  try {
 
 
         new Thread(new Lab5()).start();
         ReentrantLock lock1 = new ReentrantLock();
-        Client cl1 = new Client(lock1, "4", "3", "5");
+  /*      Client cl1 = new Client(lock1, "4", "3", "5");
         cl1.start();
 
         Client cl2 = new Client(lock1, "3", "7", "5", "2");
@@ -25,14 +25,20 @@ public class Clients {
      //   cl3.join();
         cl3.start();
         cl3.join();
-
-
-        lock1.lock();
+*/
+        Client cl1 = new Client(lock1, "4", "3", "5");
+        cl1.run();
+        Client cl2 = new Client(lock1, "3", "7", "5", "2");
+        cl2.run();
+        Client cl3 = new Client(lock1, "5", "6", "4", "1");
+        cl3.run();
+        //lock1.lock();
         long time = System.currentTimeMillis() - start;
         System.out.println(time);
-        }
-        catch(InterruptedException e){
-        e.printStackTrace();}
+        System.exit(0);
+    //    }
+     //   catch(InterruptedException e){
+       // e.printStackTrace();}
 
 
     }

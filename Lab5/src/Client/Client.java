@@ -16,7 +16,8 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import static org.apache.commons.lang.SerializationUtils.*;
 
-public class Client extends Thread {
+public class Client implements Runnable {
+//public class Client{
     static Path path;
     static File file;
     static InetSocketAddress hostAddress;
@@ -262,24 +263,24 @@ return out;
                 System.out.println("Проверьте переменную окружения.");
                 System.exit(0);
             }
-            l.lock();
+           // l.lock();
             System.out.println(Thread.currentThread()+first+":"+Commands(first));
-         //   l.unlock();
+            //l.unlock();
            // Thread.sleep(100);
            // l.lock();
             System.out.println(Thread.currentThread()+second+":"+Commands(second));
             if (key!=null){
                 System.out.println(Thread.currentThread()+second+": "+key+" "+Commands(key));
             }
-            //l.unlock();
+          //  l.unlock();
            // Thread.sleep(100);
-            //l.lock();
+          //  l.lock();
             System.out.println(Thread.currentThread()+third+":"+Commands(third));
-            l.unlock();
+          //  l.unlock();
 
            // channel.close();
             in.close();
-            this.interrupt();
+           // this.interrupt();
 
         }catch (IOException e){
             e.printStackTrace();

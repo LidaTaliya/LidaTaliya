@@ -4,14 +4,12 @@ package Lab7;
 import org.apache.commons.lang.SerializationUtils;
 
 import javax.mail.MessagingException;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintStream;
+import java.io.*;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.util.Map;
 
@@ -56,21 +54,31 @@ public class ServerThread1 extends Thread {
             }
             String em1="Введите свой адрес электронной почты:";
             String em2=Exchange(em1,servers, incoming, incoming.getAddress(), incoming.getPort());
+            //  Email em=new Email(em2);
+            System.out.println(em2);
             Email em=new Email(em2);
+            boolean SuccelfullySent=false;
             try{
-            em.SendEmail();}
+                SuccelfullySent=em.SendEmail();}
             catch(MessagingException e){
                 System.out.println("Не удалось отправить сообщение");
+            }catch(NoSuchAlgorithmException e){
+                e.printStackTrace();
+            }catch(UnsupportedEncodingException e){
+                e.printStackTrace();
             }
-
+        //    catch (NullPointerException e){
+          //      e.printStackTrace();
+           // }
+if (SuccelfullySent){
         while (true) {
             servers.receive(incoming);
             byte[] data = incoming.getData();
             String s = new String(data, 0, incoming.getLength());
 
             if (s.equalsIgnoreCase("exit")) break;
-            System.out.println("Клиент выбрал команду " + s + ". Ожидаем выполнения...");
-
+          //  System.out.println("Клиент выбрал команду " + s + ". Ожидаем выполнения...");
+                System.out.println(s);
             if (s.equals("1")) {
 
                 String sout = "Введите через запятую информацию о добавляемом ребёнке: его имя,\"Карлсон\"(если он знаком с Карлсоном), вероятность пойти с Малышом, расстояние до школы и ключ. ";
@@ -153,18 +161,10 @@ public class ServerThread1 extends Thread {
             } else if (s.equals("8")) {
                 try {
                     for (Map.Entry<String, Friend> entry : friends1.entrySet()) {
-                              /*  ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                                ObjectOutputStream oos = new ObjectOutputStream(baos);
-                                    oos.writeObject(entry.getValue());
-                                    byte[] Buf = baos.toByteArray();*/
-                        //byte [] Buf=serialize(entry.getValue());
                         byte[] Buf = SerializationUtils.serialize(entry.getValue());
                         DatagramPacket packet = new DatagramPacket(Buf, Buf.length, incoming.getAddress(), incoming.getPort());
                         servers.send(packet);
                         System.out.println(entry.getValue().name + " отправлен(а)");
-
-                        //oos.flush();
-                        //oos.close();
                     }
 
                     String end = "End Sending";
@@ -177,7 +177,9 @@ public class ServerThread1 extends Thread {
                 }
 
             }
-        }
+        }}else{
+    System.out.println("Письмо не отправлено");
+}
     } catch(
     IOException e)
 

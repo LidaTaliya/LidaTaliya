@@ -208,7 +208,7 @@ private static void importFromFile(DatagramChannel channel,InetSocketAddress hos
         channel.send(b2,hostAddress);
 
             String s = "";
-            imports(channel, hostAddress);
+          //  imports(channel, hostAddress);
 
             while (true) {
 

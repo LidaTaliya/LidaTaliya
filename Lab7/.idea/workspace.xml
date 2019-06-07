@@ -11,7 +11,41 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc9a5bfa-5d9d-44e6-b2c9-1d608f12fc48" name="Default Changelist" comment="add import and 6" />
+    <list default="true" id="bc9a5bfa-5d9d-44e6-b2c9-1d608f12fc48" name="Default Changelist" comment="add import and 6">
+      <change beforePath="$PROJECT_DIR$/../Lab5/.idea/artifacts/6LAB.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/.idea/artifacts/Client_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/.idea/artifacts/Server_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/out/artifacts/6LAB/6.1lab.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/out/artifacts/6LAB/6.2lab.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/out/artifacts/LAB6/LAB6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/out/artifacts/Lab5_jar/Lab5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/out/production/Lab5/.idea/artifacts/6LAB.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/out/production/Lab5/.idea/artifacts/Client_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/out/production/Lab5/.idea/artifacts/Server_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/out/production/Lab5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/out/production/Lab5/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/out/production/Lab5/Client/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/out/production/Lab5/Client/Client$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/out/production/Lab5/Client/Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/out/production/Lab5/Client/Client$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/out/production/Lab5/Client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/out/production/Lab5/Client/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/out/production/Lab5/Client/Clients.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/out/production/Lab5/Client/Clients.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/out/production/Lab5/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/out/production/Lab5/src/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/src/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/src/Client/Clients.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/src/Client/Clients.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/src/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab7/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab7/Client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab7/Client/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab7/Lab7/Email.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab7/Lab7/Email.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab7/Lab7/Lab7$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab7/Lab7/Lab7$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab7/Lab7/Lab7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab7/Lab7/Lab7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab7/Lab7/ServerThread1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab7/Lab7/ServerThread1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab7/META-INF/Lab7.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab7/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab7/Email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab7/Lab7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab7/Lab7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab7/ServerThread1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab7/ServerThread1.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1044">
-              <caret line="208" selection-start-line="208" selection-end-line="208" />
+            <state relative-caret-position="2475">
+              <caret line="210" column="12" selection-start-line="210" selection-start-column="12" selection-end-line="210" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#StartStory#0;class#Client#0" />
@@ -41,17 +75,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Lab7/Lab7.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="974">
-              <caret line="353" column="47" selection-start-line="353" selection-start-column="47" selection-end-line="353" selection-end-column="47" />
+            <state relative-caret-position="4140">
+              <caret line="287" column="60" selection-start-line="287" selection-start-column="60" selection-end-line="287" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Lab7/ServerThread1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="51" column="27" lean-forward="true" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
+            <state relative-caret-position="277">
+              <caret line="61" selection-start-line="61" selection-end-line="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,24 +93,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Lab7/Friend.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Lab7/Email.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="239">
+              <caret line="96" column="32" lean-forward="true" selection-start-line="96" selection-start-column="32" selection-end-line="96" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#481#482#0" expanded="true" />
-                <element signature="e#509#510#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -142,9 +165,9 @@
         <option value="$PROJECT_DIR$/src/Client/Client2.java" />
         <option value="$PROJECT_DIR$/src/Lab7/Friend.java" />
         <option value="$PROJECT_DIR$/src/Lab7/Lab7.java" />
-        <option value="$PROJECT_DIR$/src/Lab7/Email.java" />
         <option value="$PROJECT_DIR$/src/Client/Client.java" />
         <option value="$PROJECT_DIR$/src/Lab7/ServerThread1.java" />
+        <option value="$PROJECT_DIR$/src/Lab7/Email.java" />
       </list>
     </option>
   </component>
@@ -160,7 +183,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -182,18 +204,25 @@
               <item name="Lab7" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lab7" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Lab7" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558085292826" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559640686334" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -341,6 +370,9 @@
       <workItem from="1558097279464" duration="624000" />
       <workItem from="1558354234832" duration="687000" />
       <workItem from="1559371226937" duration="864000" />
+      <workItem from="1559373177681" duration="10365000" />
+      <workItem from="1559657616880" duration="3401000" />
+      <workItem from="1559891903083" duration="1064000" />
     </task>
     <task id="LOCAL-00001" summary=":)">
       <created>1549803792504</created>
@@ -374,7 +406,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212356000" />
+    <option name="totallyTimeSpent" value="227186000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -389,7 +421,7 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29159936" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30613893" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -398,7 +430,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.47524753" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.35643566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -530,13 +562,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/rt.jar!/sun/nio/ch/Net.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="379" selection-start-line="379" selection-end-line="379" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/rt.jar!/sun/nio/ch/DatagramSocketAdaptor.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
@@ -699,54 +724,33 @@
     <entry file="file://$PROJECT_DIR$/lib/javamail-1.4.5/demo/webapp/src/taglib/demo/MessageTag.java" />
     <entry file="file://$PROJECT_DIR$/lib/javamail-1.4.5/demo/webapp/src/taglib/demo/MessageTEI.java" />
     <entry file="file://$PROJECT_DIR$/lib/javamail-1.4.5/demo/webapp/src/taglib/demo/ListMessagesTag.java" />
-    <entry file="jar://$PROJECT_DIR$/lib/javax.mail.jar!/javax/mail/Transport.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../Cli.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3540" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../Serv.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lab7/Email.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#481#482#0" expanded="true" />
-            <element signature="e#509#510#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../Cli.java" />
+    <entry file="file://$PROJECT_DIR$/../../../Serv.java" />
     <entry file="file://$PROJECT_DIR$/src/Lab7/Friend.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+        <state relative-caret-position="435">
+          <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lab7/Lab7.java">
+    <entry file="jar://$PROJECT_DIR$/lib/javax.mail.jar!/javax/mail/Transport.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="974">
-          <caret line="353" column="47" selection-start-line="353" selection-start-column="47" selection-end-line="353" selection-end-column="47" />
+        <state relative-caret-position="107">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/javax.mail.jar!/javax/mail/Service.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="167" selection-start-line="167" selection-end-line="167" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1044">
-          <caret line="208" selection-start-line="208" selection-end-line="208" />
+        <state relative-caret-position="2475">
+          <caret line="210" column="12" selection-start-line="210" selection-start-column="12" selection-end-line="210" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#StartStory#0;class#Client#0" />
@@ -754,10 +758,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lab7/Lab7.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4140">
+          <caret line="287" column="60" selection-start-line="287" selection-start-column="60" selection-end-line="287" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Lab7/ServerThread1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="51" column="27" lean-forward="true" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
+        <state relative-caret-position="277">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lab7/Email.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="96" column="32" lean-forward="true" selection-start-line="96" selection-start-column="32" selection-end-line="96" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

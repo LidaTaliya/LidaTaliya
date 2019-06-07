@@ -280,18 +280,12 @@ public class Lab7 {
 
     public static String Exchange(String str, DatagramSocket server, DatagramPacket incoming, InetAddress address, int port) {
         String s1 = null;
-        System.out.println(1);
         DatagramPacket dp = new DatagramPacket(str.getBytes(), str.getBytes().length, address, port);
         try {
-            System.out.println(2);
             server.send(dp);
-            System.out.println(3);
             server.receive(incoming);
-            System.out.println(4);
             byte[] data1 = incoming.getData();
-            System.out.println(5);
             s1 = new String(data1, 0, incoming.getLength());
-            System.out.println(6);
         } catch (IOException e) {
             e.printStackTrace();
         }
