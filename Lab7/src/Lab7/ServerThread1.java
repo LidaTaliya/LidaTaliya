@@ -11,14 +11,20 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
+import java.util.Arrays;
 import java.util.Map;
 
 import static Lab7.Lab7.*;
 
 public class ServerThread1 extends Thread {
-
+    Connection con;
+    String url = "jdbc:postgresql://localhost:5432/lida";
+    String login = "postgres";
+    String password = "postgres";
+    String RegLOGIN;
     private InetAddress addr;//адрес клиента
     private int port;
+    byte[] hash;
     //private DatagramPacket incoming;
     // byte[] buffer = new byte[65536];
     DatagramPacket incoming;
@@ -36,10 +42,7 @@ public class ServerThread1 extends Thread {
     public void run() {
         try {
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost:5432/lida";
-            String login = "postgres";
-            String password = "postgres";
-            Connection con = DriverManager.getConnection(url, login, password);
+            con = DriverManager.getConnection(url, login, password);
             try {
                 Statement stmt = con.createStatement();
                 ResultSet rs = stmt.executeQuery("SELECT * FROM CLIENTS");
@@ -50,28 +53,51 @@ public class ServerThread1 extends Thread {
                 rs.close();
                 stmt.close();
             } finally {
-                con.close();
+               // con.close();
             }
             String em1="Введите свой адрес электронной почты:";
-            String em2=Exchange(em1,servers, incoming, incoming.getAddress(), incoming.getPort());
+            RegLOGIN=Exchange(em1,servers, incoming, incoming.getAddress(), incoming.getPort());
             //  Email em=new Email(em2);
-            System.out.println(em2);
-            Email em=new Email(em2);
+            System.out.println(RegLOGIN);
+            Email em=new Email(RegLOGIN);
             boolean SuccelfullySent=false;
-            try{
-                SuccelfullySent=em.SendEmail();}
-            catch(MessagingException e){
-                System.out.println("Не удалось отправить сообщение");
-            }catch(NoSuchAlgorithmException e){
-                e.printStackTrace();
-            }catch(UnsupportedEncodingException e){
-                e.printStackTrace();
+                String pass=em.CreatePassword(5);
+                hash=em.DoHash(pass);
+              //  SuccelfullySent=em.SendEmail(pass);
+
+
+//if (SuccelfullySent){
+   // Statement stmt2 = con.createStatement();
+            PreparedStatement ps=con.prepareStatement("INSERT INTO Clients (login, password) VALUES (?,?);");
+            ps.setString(1,RegLOGIN);
+            ps.setBytes(2,hash);
+            int i=ps.executeUpdate();
+            String reg="Регистрация прошла успешно. Введите пароль: ";
+            String pas=Exchange(reg,servers, incoming, incoming.getAddress(), incoming.getPort());
+            byte[] hash2=Email.DoHash(pas);
+            String realPass=new String(hash2);
+            PreparedStatement ps2=con.prepareStatement("SELECT password FROM Clients WHERE login=?");
+            ps2.setString(1,RegLOGIN);
+            ResultSet registr=ps2.executeQuery();
+            String hash3=null;
+            if (registr.next()){
+               hash3 =registr.getString(1);
+               System.out.println(hash3);
             }
-        //    catch (NullPointerException e){
-          //      e.printStackTrace();
-           // }
-if (SuccelfullySent){
+            String sr;
+            while (realPass.equals(hash3)){
+                sr="Пароль неверный.";
+                DatagramPacket dp = new DatagramPacket(sr.getBytes(), sr.getBytes().length, incoming.getAddress(), incoming.getPort());
+                servers.send(dp);
+            }
+            sr="Вы успешно авторизованы.";
+            DatagramPacket dp = new DatagramPacket(sr.getBytes(), sr.getBytes().length, incoming.getAddress(), incoming.getPort());
+            servers.send(dp);
+
         while (true) {
+
+
+
             servers.receive(incoming);
             byte[] data = incoming.getData();
             String s = new String(data, 0, incoming.getLength());
@@ -177,9 +203,11 @@ if (SuccelfullySent){
                 }
 
             }
-        }}else{
+        }
+con.close();
+//}else{
     System.out.println("Письмо не отправлено");
-}
+//}
     } catch(
     IOException e)
 

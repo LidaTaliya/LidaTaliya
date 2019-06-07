@@ -11,21 +11,21 @@ import java.util.Properties;
 import java.util.Random;
 
 public class Email {
-    static Transport transport;
+   // static Transport transport;
     static Properties properties;
     static Session session;
     static MimeMessage message;
-    static  String to;//="lidiapetroshenok@gmail.com"; kolegova999@mail.ru
+    static  String to;//="lidiapetroshenok@gmail.com";// kolegova999@mail.ru
     static  String from = "r3140@mail.ru";
     static  String host = "smtp.mail.ru";// mail server host
     static int t1=50000;
     static int t2=50000;
-    String password;
+   // String password;
     public Email(String em) {
         this.to = em;
     }
 
-public  String CreatePassword(int len) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+public  String CreatePassword(int len) {
     System.out.println("Your Password: ");
     String charsCaps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     String nums = "0123456789";
@@ -37,64 +37,53 @@ public  String CreatePassword(int len) throws NoSuchAlgorithmException, Unsuppor
         password[i] = passSymbols.charAt(rnd.nextInt(passSymbols.length()));
     }
     //System.out.println("char: "+password);
-    MessageDigest md = MessageDigest.getInstance("SHA-1");
-    md.reset();
     String passwd = new String(password);
-    String salt = "*1#)3Ko(%";
-    String pepper = "*&^mVLC(#";
-    byte[] data = (pepper + passwd + salt).getBytes();
-    byte[] hashbytes = md.digest(data);
-    String parol=new String(hashbytes);
-    return parol;
+    //String parol=new String(hashbytes);
+    System.out.println(passwd);
+    return passwd;
+}
+public static byte[] DoHash(String pass){
+    byte[] hashbytes;
+    hashbytes=null;
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-1");
+            md.reset();
+            String salt = "*1#)3Ko(%";
+            String pepper = "*&^mVLC(#";
+            byte[] data = (pepper + pass + salt).getBytes();
+            hashbytes = md.digest(data);
+        }
+        catch(NoSuchAlgorithmException e){
+            e.printStackTrace();
+        }
+    return hashbytes;
 }
 
 
-public boolean SendEmail() throws MessagingException, NoSuchAlgorithmException, UnsupportedEncodingException{
-    /*    password=CreatePassword(10);
-        System.out.println(password);
-    System.out.println(to);
-    properties = System.getProperties();
-    properties.put("mail.smtp.host", host);
-    //properties.put("mail.smtp.starttls.enable", true);
-    properties.put("mail.smtp.connectiontimeout", t1);
-    properties.put("mail.smtp.timeout", t2);
-    properties.put("mail.smtp.auth", true); //"true"
-    properties.put("mail.smtp.port", 465); //"465"
-    session = Session.getDefaultInstance(properties, new javax.mail.Authenticator(){
-        protected PasswordAuthentication getPasswordAuthentication(){
-            return new PasswordAuthentication("r3140@mail.ru",
-                    "itmoshechka");
-        }
-    });
-    session.setDebug(true);
-        message = new MimeMessage(session);
-        message.setSender(new InternetAddress(from));
-        message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));
-        message.setSubject("Успешная регистрация", "KOI8-R");
-        message.setText("Hello, this is example of sending email  ");
-        System.out.println(message);
-        transport = session.getTransport("smtp");
-        transport.connect(host,from,"itmoshechka");
-        transport.sendMessage(message,message.getAllRecipients());
-        //transport.send(message);
-        System.out.println("message sent successfully....");
-        transport.close();
-    return true;*/
-    Properties prop = System.getProperties();
-    prop.setProperty("mail.smtp.host", host);
+public boolean SendEmail(String password){
+    Properties prop = new Properties();
+    System.out.println(password);
+    prop.put("mail.smtp.host", "smtp.mail.ru");
+   // prop.put("mail.debug", "true");
+    prop.put("mail.smtp.auth", "true");
+    prop.put("mail.smtp.user", from);
+    prop.put("mail.smtp.port", 465);
+    prop.put("mail.smtp.socketFactory.port", 465);
     //prop.put("mail.smtp.host", host);
-    Session sess = Session.getDefaultInstance(prop);
+    Session sess = Session.getInstance(prop,null);
+    //sess.setDebug(true);
     try {
         MimeMessage msg = new MimeMessage(sess);
         msg.setFrom(new InternetAddress(from));
         msg.addRecipient(Message.RecipientType.TO,
                 new InternetAddress(to));
         msg.setSubject("Your secret password");
-        msg.setText("Password: T&^9hs09\21");
-        transport = session.getTransport("smtp");
-        transport.connect(host,(Integer) prop.get("mail.smtp.port"),from,"itmoshechka");
-        transport.sendMessage(message,message.getAllRecipients());
-        transport.send(message);
+        msg.setText("Password: "+password);
+        Transport transport = sess.getTransport("smtps");
+        transport.connect(host,465,from,"itmoshechka");
+        msg.saveChanges();
+        transport.sendMessage(msg,msg.getAllRecipients());
+        //transport.send(msg);
         transport.close();
         //Transport.send(msg);
     } catch (MessagingException e) {
