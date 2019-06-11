@@ -9,6 +9,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -40,7 +41,7 @@ public class Client {
         }
         return friends;
     }
-    private static void StartStory(){
+    private static void StartStory() {
 
 
         Parent mother = new Parent("Мама", false);
@@ -86,6 +87,19 @@ public class Client {
         System.exit(0);
 
     }
+        private static ArrayList<String> WriteAsJson ( Map<String, Friend> ourMap){
+            ArrayList<String> Json=new ArrayList<String>();
+        String fr="";
+        for (Map.Entry<String, Friend> x: ourMap.entrySet()) {
+            if (x.getValue().MeetCarlson) {
+                fr = "{\"name\":\"" + x.getValue().name + "\",\"Carlson\":\"" + "Карлсон" + "\",\"ChanceToWalk\":\"" + x.getValue().ChanceToWalk + "\",\"number\":\"" + x.getValue().number + "\",\"DistanceFromSchool\":\"" + x.getValue().DistanceFromSchool+"\"}";
+            } else {
+                fr = "{\"name\":\"" + x.getValue().name + "\",\"Carlson\":\"" + "не Карлсон" + "\",\"ChanceToWalk\":\"" + x.getValue().ChanceToWalk + "\",\"number\":\"" + x.getValue().number + "\",\"DistanceFromSchool\":\"" + x.getValue().DistanceFromSchool+"\"}";
+            }
+            Json.add(fr);
+        }
+        return Json;
+        }
 
     private static void WriteInFile(Map<String, Friend> ourMap) throws IOException, FileNotFoundException {
         FileWriter fstream1 = new FileWriter(path.toFile());// конструктор с одним параметром - для перезаписи
@@ -174,9 +188,7 @@ private static void importFromFile(DatagramChannel channel,InetSocketAddress hos
             System.out.println("Сервер недоступен");
         }
     }
-
     public static void main(String[] args) throws IOException {
-
         friends1 = new ConcurrentHashMap<String, Friend>() {
         };
         try{
@@ -186,7 +198,6 @@ private static void importFromFile(DatagramChannel channel,InetSocketAddress hos
             System.out.println("Проверьте переменную окружения.");
             System.exit(0);
         }
-
 
       //  DatagramSocket fromserver = new DatagramSocket();
 
@@ -208,8 +219,8 @@ private static void importFromFile(DatagramChannel channel,InetSocketAddress hos
         channel.send(b2,hostAddress);
 
             String s = "";
-          //  imports(channel, hostAddress);
-
+            //imports(channel, hostAddress);
+            //menu();
             while (true) {
 
                 if (!s.equals("4")) {
@@ -252,10 +263,16 @@ private static void importFromFile(DatagramChannel channel,InetSocketAddress hos
                             (friend) -> System.out.println(friend.getValue().name)
                     );
                     WriteInFile(friends1);
+
+
+
+
+
+
+
+
                     friends = MakeArray();
                     StartStory();
-
-
                 }
                 byte[] buffer = new byte[65536];
                 String s1 = ReceiveData(channel, buffer);

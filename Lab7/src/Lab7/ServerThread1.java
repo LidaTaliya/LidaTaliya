@@ -24,7 +24,7 @@ public class ServerThread1 extends Thread {
     String RegLOGIN;
     private InetAddress addr;//адрес клиента
     private int port;
-    byte[] hash;
+    String hash;
     //private DatagramPacket incoming;
     // byte[] buffer = new byte[65536];
     DatagramPacket incoming;
@@ -38,7 +38,9 @@ public class ServerThread1 extends Thread {
         servers = socket;
         incoming = incoming1;
     }
+public void WritePassword(){
 
+}
     public void run() {
         try {
             Class.forName("org.postgresql.Driver");
@@ -57,47 +59,55 @@ public class ServerThread1 extends Thread {
             }
             String em1="Введите свой адрес электронной почты:";
             RegLOGIN=Exchange(em1,servers, incoming, incoming.getAddress(), incoming.getPort());
-            //  Email em=new Email(em2);
             System.out.println(RegLOGIN);
-            Email em=new Email(RegLOGIN);
-            boolean SuccelfullySent=false;
-                String pass=em.CreatePassword(5);
+            PreparedStatement ps0=con.prepareStatement("SELECT login FROM Clients WHERE login=?");
+            ps0.setString(1,RegLOGIN);
+            ResultSet logins=ps0.executeQuery();
+            String pas="";
+            if (!logins.next()){
+                Email em=new Email(RegLOGIN);
+                boolean SuccelfullySent=false;
+                String pass=Email.CreatePassword(8);
+                System.out.println(pass);
                 hash=em.DoHash(pass);
-              //  SuccelfullySent=em.SendEmail(pass);
-
-
-//if (SuccelfullySent){
-   // Statement stmt2 = con.createStatement();
-            PreparedStatement ps=con.prepareStatement("INSERT INTO Clients (login, password) VALUES (?,?);");
-            ps.setString(1,RegLOGIN);
-            ps.setBytes(2,hash);
-            int i=ps.executeUpdate();
-            String reg="Регистрация прошла успешно. Введите пароль: ";
-            String pas=Exchange(reg,servers, incoming, incoming.getAddress(), incoming.getPort());
-            byte[] hash2=Email.DoHash(pas);
-            String realPass=new String(hash2);
+                //em.SendEmail(hash);
+                PreparedStatement ps=con.prepareStatement("INSERT INTO Clients (login, password) VALUES (?,?);");
+                ps.setString(1,RegLOGIN);
+                ps.setString(2,hash);
+                int i=ps.executeUpdate();
+                if (i==1){
+                    String regi="Регистрация прошла успешно. Введите пароль, который мы выслали Вам на почту: ";
+                    pas=Exchange(regi,servers, incoming, incoming.getAddress(), incoming.getPort());
+                }
+            }else{
+                String cl="Введите пароль, высланный Вам на почту во время регистрации:";
+                pas=Exchange(cl,servers, incoming, incoming.getAddress(), incoming.getPort());
+            }
+            String ClientsPass=Email.DoHash(pas);
             PreparedStatement ps2=con.prepareStatement("SELECT password FROM Clients WHERE login=?");
             ps2.setString(1,RegLOGIN);
             ResultSet registr=ps2.executeQuery();
-            String hash3=null;
+            String BasePass=null;
             if (registr.next()){
-               hash3 =registr.getString(1);
-               System.out.println(hash3);
+                BasePass =registr.getString(1);
+               System.out.println(BasePass);
             }
             String sr;
-            while (realPass.equals(hash3)){
-                sr="Пароль неверный.";
-                DatagramPacket dp = new DatagramPacket(sr.getBytes(), sr.getBytes().length, incoming.getAddress(), incoming.getPort());
-                servers.send(dp);
+            while (!ClientsPass.equals(BasePass)){
+                sr="Пароль неверный. Повторите ввод или введите 'exit' для выхода";
+                String pas2=Exchange(sr,servers, incoming, incoming.getAddress(), incoming.getPort());
+                if (pas2.equalsIgnoreCase("exit")){
+                    System.exit(0);
+                }
+                ClientsPass=Email.DoHash(pas2);
+                System.out.println(ClientsPass);
             }
-            sr="Вы успешно авторизованы.";
+            sr="Вы успешно авторизованы. Нажмите 'Enter' для продолжения.";
             DatagramPacket dp = new DatagramPacket(sr.getBytes(), sr.getBytes().length, incoming.getAddress(), incoming.getPort());
             servers.send(dp);
-
+            DatagramPacket Menu = new DatagramPacket("menu".getBytes(), 4, incoming.getAddress(), incoming.getPort());
+            servers.send(Menu);
         while (true) {
-
-
-
             servers.receive(incoming);
             byte[] data = incoming.getData();
             String s = new String(data, 0, incoming.getLength());
@@ -191,6 +201,10 @@ public class ServerThread1 extends Thread {
                         DatagramPacket packet = new DatagramPacket(Buf, Buf.length, incoming.getAddress(), incoming.getPort());
                         servers.send(packet);
                         System.out.println(entry.getValue().name + " отправлен(а)");
+                        PreparedStatement ps=con.prepareStatement("INSERT INTO Collections (id, collection) SELECT Clients.id FROM Clients INNER JOIN Collections ON Clients.id=Collections.id WHERE login=? VALUES (Collection.id,?);");
+                        ps.setString(1,RegLOGIN);
+                        ps.setString(2,hash);
+                        int i=ps.executeUpdate();
                     }
 
                     String end = "End Sending";
@@ -201,6 +215,7 @@ public class ServerThread1 extends Thread {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
 
             }
         }

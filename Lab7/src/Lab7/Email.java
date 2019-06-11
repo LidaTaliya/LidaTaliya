@@ -25,7 +25,7 @@ public class Email {
         this.to = em;
     }
 
-public  String CreatePassword(int len) {
+public static String CreatePassword(int len) {
     System.out.println("Your Password: ");
     String charsCaps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     String nums = "0123456789";
@@ -39,24 +39,31 @@ public  String CreatePassword(int len) {
     //System.out.println("char: "+password);
     String passwd = new String(password);
     //String parol=new String(hashbytes);
-    System.out.println(passwd);
+    //System.out.println(passwd);
     return passwd;
 }
-public static byte[] DoHash(String pass){
+public static String DoHash(String pass){
     byte[] hashbytes;
+    StringBuffer code=new StringBuffer();
     hashbytes=null;
         try {
+
             MessageDigest md = MessageDigest.getInstance("SHA-1");
             md.reset();
             String salt = "*1#)3Ko(%";
             String pepper = "*&^mVLC(#";
             byte[] data = (pepper + pass + salt).getBytes();
             hashbytes = md.digest(data);
+            for (int i=0;i<hashbytes.length;++i){
+                code.append(Integer.toHexString(0x0100+hashbytes[i]&0x00FF).substring(1));
+            }
         }
+
         catch(NoSuchAlgorithmException e){
             e.printStackTrace();
         }
-    return hashbytes;
+   // System.out.println("Это пароль"+code.toString());
+    return code.toString();
 }
 
 

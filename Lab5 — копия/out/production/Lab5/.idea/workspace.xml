@@ -62,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Client/Clients.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="150">
+              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -161,12 +161,12 @@
         <option value="$PROJECT_DIR$/../../../../Lab6/Clients.java" />
         <option value="$PROJECT_DIR$/src/Client/Client.java" />
         <option value="$PROJECT_DIR$/src/Lab5/Lab5.java" />
-        <option value="$PROJECT_DIR$/src/Client/Clients.java" />
         <option value="$PROJECT_DIR$/src/Lab5/ServerThread1.java" />
+        <option value="$PROJECT_DIR$/src/Client/Clients.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="27" />
     <option name="width" value="1280" />
     <option name="height" value="710" />
@@ -356,7 +356,7 @@
       <workItem from="1558875322515" duration="2947000" />
       <workItem from="1559304287074" duration="4157000" />
       <workItem from="1559661420958" duration="1181000" />
-      <workItem from="1559830011696" duration="1452000" />
+      <workItem from="1559830011696" duration="2361000" />
     </task>
     <task id="LOCAL-00001" summary=":)">
       <created>1549803792504</created>
@@ -390,7 +390,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="234276000" />
+    <option name="totallyTimeSpent" value="235185000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -414,7 +414,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.572843" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" weight="0.6520509" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -776,8 +776,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/Clients.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="150">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

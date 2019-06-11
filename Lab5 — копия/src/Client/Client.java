@@ -265,14 +265,14 @@ return out;
             l.lock();
             System.out.println(Thread.currentThread()+first+":"+Commands(first));
             l.unlock();
-            Thread.sleep(100);
+            Thread.sleep(40);
             l.lock();
             System.out.println(Thread.currentThread()+second+":"+Commands(second));
             if (key!=null){
                 System.out.println(Thread.currentThread()+second+": "+key+" "+Commands(key));
             }
             l.unlock();
-            Thread.sleep(100);
+            Thread.sleep(40);
             l.lock();
             System.out.println(Thread.currentThread()+third+":"+Commands(third));
             l.unlock();
@@ -284,7 +284,7 @@ return out;
         }catch (IOException e){
             e.printStackTrace();
         }catch(InterruptedException e){
-            e.printStackTrace();
-        }
+            e.printStackTrace();}
+
     }
 }
