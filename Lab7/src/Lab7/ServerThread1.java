@@ -11,6 +11,7 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
 
@@ -22,6 +23,7 @@ public class ServerThread1 extends Thread {
     String login = "postgres";
     String password = "postgres";
     String RegLOGIN;
+    int id=0;
     private InetAddress addr;//адрес клиента
     private int port;
     String hash;
@@ -38,25 +40,12 @@ public class ServerThread1 extends Thread {
         servers = socket;
         incoming = incoming1;
     }
-public void WritePassword(){
 
-}
+
     public void run() {
         try {
             Class.forName("org.postgresql.Driver");
             con = DriverManager.getConnection(url, login, password);
-            try {
-                Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM CLIENTS");
-                while (rs.next()) {
-                    String str = rs.getString("login") + ":" + rs.getString(1);
-                    System.out.println(str);
-                }
-                rs.close();
-                stmt.close();
-            } finally {
-               // con.close();
-            }
             String em1="Введите свой адрес электронной почты:";
             RegLOGIN=Exchange(em1,servers, incoming, incoming.getAddress(), incoming.getPort());
             System.out.println(RegLOGIN);
@@ -70,11 +59,15 @@ public void WritePassword(){
                 String pass=Email.CreatePassword(8);
                 System.out.println(pass);
                 hash=em.DoHash(pass);
-                //em.SendEmail(hash);
+                SuccelfullySent=em.SendEmail(pass);
                 PreparedStatement ps=con.prepareStatement("INSERT INTO Clients (login, password) VALUES (?,?);");
                 ps.setString(1,RegLOGIN);
                 ps.setString(2,hash);
                 int i=ps.executeUpdate();
+
+                PreparedStatement pss2=con.prepareStatement("INSERT INTO Collections VALUES(?,null);");
+                pss2.setInt(1,id);
+                pss2.executeUpdate();
                 if (i==1){
                     String regi="Регистрация прошла успешно. Введите пароль, который мы выслали Вам на почту: ";
                     pas=Exchange(regi,servers, incoming, incoming.getAddress(), incoming.getPort());
@@ -83,6 +76,15 @@ public void WritePassword(){
                 String cl="Введите пароль, высланный Вам на почту во время регистрации:";
                 pas=Exchange(cl,servers, incoming, incoming.getAddress(), incoming.getPort());
             }
+
+            PreparedStatement pss=con.prepareStatement("SELECT id FROM Clients WHERE login=?;");
+            pss.setString(1,RegLOGIN);
+            ResultSet rss=pss.executeQuery();
+            if (rss.next()){
+                id=rss.getInt(1);
+            }
+            System.out.println("Это id "+id);
+
             String ClientsPass=Email.DoHash(pas);
             PreparedStatement ps2=con.prepareStatement("SELECT password FROM Clients WHERE login=?");
             ps2.setString(1,RegLOGIN);
@@ -103,10 +105,7 @@ public void WritePassword(){
                 System.out.println(ClientsPass);
             }
             sr="Вы успешно авторизованы. Нажмите 'Enter' для продолжения.";
-            DatagramPacket dp = new DatagramPacket(sr.getBytes(), sr.getBytes().length, incoming.getAddress(), incoming.getPort());
-            servers.send(dp);
-            DatagramPacket Menu = new DatagramPacket("menu".getBytes(), 4, incoming.getAddress(), incoming.getPort());
-            servers.send(Menu);
+            Sending(sr,servers,incoming);
         while (true) {
             servers.receive(incoming);
             byte[] data = incoming.getData();
@@ -142,7 +141,7 @@ public void WritePassword(){
             } else if (s.equals("3")) {
                 Sending(show(), servers, incoming);
             } else if (s.equals("4")) {
-                while (true) {
+               /* while (true) {
                     servers.receive(incoming);
                     byte[] data1 = incoming.getData();
                     String s1 = new String(data1, 0, incoming.getLength());
@@ -152,19 +151,42 @@ public void WritePassword(){
                     } else {
                         break;
                     }
+                }*/
+               PreparedStatement PSfindfriends =con.prepareStatement("SELECT collection FROM Collections WHERE id=?;");
+               PSfindfriends.setInt(1,id);
+               ResultSet RSfriends=PSfindfriends.executeQuery();
+               String AllFriends="";
+                boolean b4=false;
+               if (RSfriends.next()) {
+                   AllFriends = RSfriends.getString("collection");
+               }
+                try{
+               if (!AllFriends.equals(null)){
+                   String[] ArrayFr=null;
+
+                   ArrayFr = AllFriends.split("%\n%");
+                       for (int i = 0; i < ArrayFr.length; i++) {
+                           StrFriends.add(ArrayFr[i]);
+                       }
+                       b4 = AddFromFile(StrFriends);
+                       friends1 = sortByValues(friends1);
+                       friends1.entrySet().stream().forEach(
+                               (friend) -> System.out.println(friend.getValue().name)
+                       );}
+               else{
+                   b4=false;
+               }
                 }
-                boolean b4 = AddFromFile(StrFriends);
-                friends1 = sortByValues(friends1);
-                friends1.entrySet().stream().forEach(
-                        (friend) -> System.out.println(friend.getValue().name)
-                );
-                String imp;
-                if (b4) {
-                    imp = "Добавление успешно завершено. В коллекцию добавлено " + countFriends + " друзей.";
-                } else {
-                    imp = "В коллекцию ничего не добавлено";
+                 catch(NullPointerException e){
+                    b4=false;
                 }
-                Sending(imp, servers, incoming);
+                   String imp;
+                   if (b4) {
+                       imp = "Добавление успешно завершено. В коллекцию добавлено " + countFriends + " друзей.";
+                   } else {
+                       imp = "В коллекцию ничего не добавлено";
+                   }
+                   Sending(imp, servers, incoming);
 
             } else if (s.equals("5")) {
                 Sending(info(), servers, incoming);
@@ -194,29 +216,80 @@ public void WritePassword(){
                     sout7 = "Возникла ошибка(Коллекция пуста, некорректный ключ или нет детей с ключом, выше заданного)";
                 }
                 Sending(sout7, servers, incoming);
-            } else if (s.equals("8")) {
+            } else if (s.equals("9")) {
                 try {
                     for (Map.Entry<String, Friend> entry : friends1.entrySet()) {
                         byte[] Buf = SerializationUtils.serialize(entry.getValue());
                         DatagramPacket packet = new DatagramPacket(Buf, Buf.length, incoming.getAddress(), incoming.getPort());
                         servers.send(packet);
                         System.out.println(entry.getValue().name + " отправлен(а)");
-                        PreparedStatement ps=con.prepareStatement("INSERT INTO Collections (id, collection) SELECT Clients.id FROM Clients INNER JOIN Collections ON Clients.id=Collections.id WHERE login=? VALUES (Collection.id,?);");
-                        ps.setString(1,RegLOGIN);
-                        ps.setString(2,hash);
-                        int i=ps.executeUpdate();
                     }
-
                     String end = "End Sending";
                     DatagramPacket endSending = new DatagramPacket(end.getBytes(), end.getBytes().length, incoming.getAddress(), incoming.getPort());
                     servers.send(endSending);
                     System.out.println(end);
+                        ArrayList<String> strfr;
+                        strfr=WriteAsJson(friends1);
+                        String AllFriends="";
+                        for (String fr:strfr ){
+                            AllFriends=String.format("%s\n%s",AllFriends,fr);
+                        }
+                        System.out.println(AllFriends);
+                        //PreparedStatement ps=con.prepareStatement("INSERT INTO Collections (id, collection) SELECT Clients.id FROM Clients INNER JOIN Collections ON Clients.id=Collections.id WHERE login=? VALUES(Collection.id,?);");
+                        PreparedStatement ps=con.prepareStatement("UPDATE Collections SET collection=? WHERE id=?");
+                        System.out.println("Это id "+id);
+                        ps.setString(1,AllFriends);
+                        ps.setInt(2,id);
+                        int i=ps.executeUpdate();
+
 
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+            }else if(s.equals("8")) {
+                String log = "Введите логин пользователя, чью коллекцию вы хотите посмотреть";
 
+                String log2 = Exchange(log, servers, incoming, incoming.getAddress(), incoming.getPort());
 
+                System.out.println(log2);
+
+                PreparedStatement login = con.prepareStatement("SELECT collection FROM Collections INNER JOIN Clients ON Collections.id=Clients.id WHERE Clients.login=? ;");
+                login.setString(1, log2);
+                ResultSet RSanotherCol = login.executeQuery();
+                String another = "";
+                if (RSanotherCol.next()) {
+                    another = RSanotherCol.getString("collection");
+                }
+                System.out.println(another);
+
+                String[] AnotherFriends;
+
+                if (another.equals(null)||another.equals("")) {
+                    String end11 = "End Sending!";
+                    DatagramPacket endd = new DatagramPacket(end11.getBytes(), end11.getBytes().length, incoming.getAddress(), incoming.getPort());
+                    servers.send(endd);
+                    String pusto = "В коллекции пользователя " + log2 + " нет друзей, либо пользователь с таким логином не найден.";
+                    Sending(pusto, servers, incoming);
+                } else{
+                    AnotherFriends = another.split("\n");
+
+                String newFr = "Друзья, содержащиеся в коллекции пользователя " + log2 + " :";
+                DatagramPacket newfr = new DatagramPacket(newFr.getBytes(), newFr.getBytes().length, incoming.getAddress(), incoming.getPort());
+                servers.send(newfr);
+                for (int i = 1; i < AnotherFriends.length; i++) {
+                    int name = AnotherFriends[i].lastIndexOf("name");
+                    int carl = AnotherFriends[i].lastIndexOf("Carlson");
+                    String AnotherName = AnotherFriends[i].substring(name + 7, carl - 3);
+                    DatagramPacket frnew = new DatagramPacket(AnotherName.getBytes(), AnotherName.getBytes().length, incoming.getAddress(), incoming.getPort());
+                    servers.send(frnew);
+                }
+                String end1 = "End Sending!";
+                Sending(end1, servers, incoming);
+            }
+            }
+            else{
+                String what="Повторите ввод команды";
+                Sending(what,servers,incoming);
             }
         }
 con.close();

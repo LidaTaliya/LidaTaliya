@@ -16,12 +16,6 @@ public class Clients {
         cl2.run();
         Client cl3 = new Client(lock1, "5", "6", "4", "1");
         cl3.run();
-        Client cl4=new Client(lock1, "4", "3", "5");
-        Client cl5=new Client(lock1, "3", "4", "5");
-        Client cl6 = new Client(lock1, "5", "7", "4", "2");
-        cl4.run();
-        cl5.run();
-        cl6.run();
         long time = System.currentTimeMillis() - start;
         System.out.println(time);
         System.exit(0);

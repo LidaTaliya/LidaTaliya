@@ -101,50 +101,23 @@ public class Client {
         return Json;
         }
 
-    private static void WriteInFile(Map<String, Friend> ourMap) throws IOException, FileNotFoundException {
-        FileWriter fstream1 = new FileWriter(path.toFile());// конструктор с одним параметром - для перезаписи
-        BufferedWriter out1 = new BufferedWriter(fstream1); //  создаём буферезированный поток
-        out1.write(""); // очищаем, перезаписав поверх пустую строку
-        out1.close(); // закрываем
-
-        BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(path.toFile()));
-        ourMap.entrySet().stream()
-                .forEach(x -> {
-                    if (x.getValue().MeetCarlson) {
-                        String fr = "{\"name\":\"" + x.getValue().name + "\",\"Carlson\":\"" + "Карлсон" + "\",\"ChanceToWalk\":\"" + x.getValue().ChanceToWalk + "\",\"number\":\"" + x.getValue().number + "\",\"DistanceFromSchool\":\"" + x.getValue().DistanceFromSchool+"\"}";
-                        try {
-                            stream.write(fr.getBytes());
-                            stream.write(System.lineSeparator().getBytes());
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    } else {
-                        String fr = "{\"name\":\"" + x.getValue().name + "\",\"Carlson\":\"" + "не Карлсон" + "\",\"ChanceToWalk\":\"" + x.getValue().ChanceToWalk + "\",\"number\":\"" + x.getValue().number + "\",\"DistanceFromSchool\":\"" + x.getValue().DistanceFromSchool+"\"}";
-                        try {
-                            stream.write(fr.getBytes());
-                            stream.write(System.lineSeparator().getBytes());
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-        stream.close();
-    }
 private static void menu(){
       System.out.println("Выберите команду - введите число от 1 до 8:");
         System.out.println("1 - добавить нового друга по ключу");
         System.out.println("2 - удалить из коллекции друзей, превышающие заданные");
         System.out.println("3 - вывести в строковом представление всех друзей в коллекции");
-        System.out.println("4 - добавить в коллекцию все данные из файла");
+        System.out.println("4 - добавить в коллекцию всех друзей из своей базы");
         System.out.println("5 - вывести информацию о коллекции");
         System.out.println("6 - удалить из коллекции друга по ключу");
         System.out.println("7 - удалить из коллекции друзей, ключ которых превышает заданный");
-        System.out.println("8 - выход из меню (запуск программы)");
+        System.out.println("8 - просмотр коллекций по логину");
+        System.out.println("9 - выход из меню и сохранение коллекции в базу(запуск программы)");
 }
 
-private static void importFromFile(DatagramChannel channel,InetSocketAddress hostAddress) throws IOException,PortUnreachableException{
+private static void importFromFile(DatagramChannel channel,InetSocketAddress hostAddress) throws IOException{
     try{
         FileInputStream fr=new FileInputStream(file);
+
         BufferedReader br = new BufferedReader(new InputStreamReader(fr));
 
       //  byte[] str;
@@ -191,13 +164,13 @@ private static void importFromFile(DatagramChannel channel,InetSocketAddress hos
     public static void main(String[] args) throws IOException {
         friends1 = new ConcurrentHashMap<String, Friend>() {
         };
-        try{
+      /*  try{
             path= Paths.get(System.getenv("Friendss"));
             file = path.toFile();}
         catch (NullPointerException e){
             System.out.println("Проверьте переменную окружения.");
             System.exit(0);
-        }
+        }*/
 
       //  DatagramSocket fromserver = new DatagramSocket();
 
@@ -223,16 +196,33 @@ private static void importFromFile(DatagramChannel channel,InetSocketAddress hos
             //menu();
             while (true) {
 
-                if (!s.equals("4")) {
+            //    if (!s.equals("4")) {
                     ByteBuffer b = ByteBuffer.wrap(s.getBytes());
                     channel.send(b, hostAddress);
-                }
+            //    }
 
                 if (s.equalsIgnoreCase("exit")) break;
-                if (s.equals("4")) {
-                    imports(channel, hostAddress);
-                }
+              //  if (s.equals("4")) {
+               //     imports(channel, hostAddress);
+               // }
                 if (s.equals("8")) {
+                    byte[] buffer1 = new byte[65536];
+                    String s11 = ReceiveData(channel, buffer1);
+                    System.out.println(s11);
+                  s = in.readLine();
+                  ByteBuffer bss = ByteBuffer.wrap(s.getBytes());
+                  channel.send(bss,hostAddress);
+                    while (true) {
+                        byte[] buffer = new byte[65536];
+                        String s0 = ReceiveData(channel, buffer);
+                        if (s0.equals("End Sending!")) {
+                            break;
+                        }else{
+                            System.out.println(s0);
+                        }
+                    }
+                }
+                if (s.equals("9")) {
                     while (true) {
                         byte[] buffer = new byte[65536];
                         String s1 = ReceiveData(channel, buffer);
@@ -245,15 +235,12 @@ private static void importFromFile(DatagramChannel channel,InetSocketAddress hos
                         } else {
                             try {
                                 // Friend fr = (Friend) ois.readObject();
-
                                 Friend fr = (Friend) deserialize(buffer);
-
                                 boolean key = friends1.entrySet().stream()
                                         .anyMatch(x -> x.getValue().number.equals(fr.number));
                                 if (!key) {
                                     friends1.put(fr.number, fr);
                                 }
-
                             } catch (NoClassDefFoundError e) {
                                 e.printStackTrace();
                             }
@@ -262,14 +249,8 @@ private static void importFromFile(DatagramChannel channel,InetSocketAddress hos
                     friends1.entrySet().stream().forEach(
                             (friend) -> System.out.println(friend.getValue().name)
                     );
-                    WriteInFile(friends1);
-
-
-
-
-
-
-
+                  //  ArrayList<String> strFr=Lab7.WriteAsJson(friends1);
+//                    Lab7.WriteInFile(strFr,path);
 
                     friends = MakeArray();
                     StartStory();

@@ -15,20 +15,23 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab5/Client/Clients.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Client/Clients.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/Clients.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Clients.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab5 — копия/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5 — копия/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab5 — копия/out/production/Lab5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5 — копия/out/production/Lab5/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5 — копия/out/production/Lab5/Client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5 — копия/out/production/Lab5/Client/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab5 — копия/out/production/Lab5/Client/Clients.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5 — копия/out/production/Lab5/Client/Clients.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab5 — копия/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5 — копия/src/Client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab5 — копия/src/Client/Clients.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5 — копия/src/Client/Clients.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab7/out/production/Lab7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/out/production/Lab7/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab7/out/production/Lab7/Client/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/out/production/Lab7/Client/Client$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab7/out/production/Lab7/Client/Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/out/production/Lab7/Client/Client$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab7/out/production/Lab7/Client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/out/production/Lab7/Client/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab7/out/production/Lab7/Lab7/Email.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/out/production/Lab7/Lab7/Email.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab7/out/production/Lab7/Lab7/Lab7$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/out/production/Lab7/Lab7/Lab7$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab7/out/production/Lab7/Lab7/Lab7.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/out/production/Lab7/Lab7/Lab7.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab7/out/production/Lab7/Lab7/ServerThread1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/out/production/Lab7/Lab7/ServerThread1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab7/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/src/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab7/src/Lab7/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/src/Lab7/Email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab7/src/Lab7/Lab7.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/src/Lab7/Lab7.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab7/src/Lab7/ServerThread1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/src/Lab7/ServerThread1.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -47,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client/Clients.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+            <state relative-caret-position="131">
+              <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,7 +62,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Lab5/ServerThread1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="1470">
               <caret line="108" column="26" selection-start-line="108" selection-start-column="26" selection-end-line="108" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -71,8 +74,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="248" column="23" selection-start-line="248" selection-start-column="23" selection-end-line="248" selection-end-column="23" />
+            <state relative-caret-position="240">
+              <caret line="268" column="28" lean-forward="true" selection-start-line="268" selection-start-column="28" selection-end-line="268" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#StartStory#0;class#Client#0" />
@@ -132,13 +135,13 @@
         <option value="$PROJECT_DIR$/../../../../Clients.java" />
         <option value="$PROJECT_DIR$/../../../../Lab6/Clients.java" />
         <option value="$PROJECT_DIR$/src/Lab5/Lab5.java" />
-        <option value="$PROJECT_DIR$/src/Client/Client.java" />
         <option value="$PROJECT_DIR$/src/Client/Clients.java" />
+        <option value="$PROJECT_DIR$/src/Client/Client.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="27" />
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="710" />
   </component>
@@ -148,6 +151,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -174,8 +179,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -353,6 +356,9 @@
       <workItem from="1559304287074" duration="4157000" />
       <workItem from="1559661420958" duration="3601000" />
       <workItem from="1560251220192" duration="2953000" />
+      <workItem from="1560439895465" duration="2642000" />
+      <workItem from="1560767731770" duration="582000" />
+      <workItem from="1560870609697" duration="1055000" />
     </task>
     <task id="LOCAL-00001" summary=":)">
       <created>1549803792504</created>
@@ -386,7 +392,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238197000" />
+    <option name="totallyTimeSpent" value="242476000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -398,10 +404,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21082391" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22051696" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -410,7 +416,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" weight="0.48090523" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" weight="0.51768035" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -678,30 +684,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../Cli.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="255" column="35" lean-forward="true" selection-start-line="255" selection-start-column="35" selection-end-line="255" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../test()()().java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../Serv.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="286" column="23" lean-forward="true" selection-start-line="286" selection-start-column="23" selection-end-line="286" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../Cli.java" />
+    <entry file="file://$PROJECT_DIR$/../../../../test()()().java" />
+    <entry file="file://$PROJECT_DIR$/../../../../Serv.java" />
     <entry file="file://$PROJECT_DIR$/src/Lab5/Friend.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -747,20 +732,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Clients.java">
+    <entry file="file://$PROJECT_DIR$/src/Lab5/ServerThread1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+        <state relative-caret-position="1470">
+          <caret line="108" column="26" selection-start-line="108" selection-start-column="26" selection-end-line="108" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lab5/ServerThread1.java">
+    <entry file="file://$PROJECT_DIR$/src/Client/Clients.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="108" column="26" selection-start-line="108" selection-start-column="26" selection-end-line="108" selection-end-column="26" />
+        <state relative-caret-position="131">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -769,8 +754,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="248" column="23" selection-start-line="248" selection-start-column="23" selection-end-line="248" selection-end-column="23" />
+        <state relative-caret-position="240">
+          <caret line="268" column="28" lean-forward="true" selection-start-line="268" selection-start-column="28" selection-end-line="268" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#StartStory#0;class#Client#0" />

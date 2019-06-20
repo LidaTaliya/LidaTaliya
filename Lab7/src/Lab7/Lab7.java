@@ -55,8 +55,38 @@ public class Lab7 {
         }
         return true;
     }
+public static ArrayList<String> WriteAsJson(Map<String, Friend> ourMap){
+        ArrayList<String> str=new ArrayList<>();
+    ourMap.entrySet().stream()
+            .forEach(x -> {
+                if (x.getValue().MeetCarlson) {
+                    String fr = "{\"name\":\"" + x.getValue().name + "\",\"Carlson\":\"" + "Карлсон" + "\",\"ChanceToWalk\":\"" + x.getValue().ChanceToWalk + "\",\"number\":\"" + x.getValue().number + "\",\"DistanceFromSchool\":\"" + x.getValue().DistanceFromSchool+"\"}";
+                    str.add(fr);
+                } else {
+                    String fr = "{\"name\":\"" + x.getValue().name + "\",\"Carlson\":\"" + "не Карлсон" + "\",\"ChanceToWalk\":\"" + x.getValue().ChanceToWalk + "\",\"number\":\"" + x.getValue().number + "\",\"DistanceFromSchool\":\"" + x.getValue().DistanceFromSchool+"\"}";
+                    str.add(fr);
+                }
+            });
+    return str;
+}
+    public static void WriteInFile(ArrayList<String> str, Path path1) throws IOException, FileNotFoundException {
+        FileWriter fstream1 = new FileWriter(path1.toFile());// конструктор с одним параметром - для перезаписи
+        BufferedWriter out1 = new BufferedWriter(fstream1); //  создаём буферезированный поток
+        out1.write(""); // очищаем, перезаписав поверх пустую строку
+        out1.close(); // закрываем
 
-
+        BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(path1.toFile()));
+        str.stream()
+                .forEach(x -> {
+                    try{
+                        stream.write(x.getBytes());
+                        stream.write(System.lineSeparator().getBytes());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                });
+        stream.close();
+    }
     private static boolean isLetters(String str) {
         char[] chars = str.toCharArray();
         for (char c : chars) {
@@ -219,6 +249,9 @@ public class Lab7 {
 
     public static boolean AddFromFile(ArrayList<String> strfr){
         countFriends = 0;
+        if (strfr.isEmpty()){
+            return false;
+        }
       int name;
       int carl;
       int ctw;
@@ -245,7 +278,6 @@ public class Lab7 {
       }else{
           return false;
       }
-
     }
 
 

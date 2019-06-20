@@ -277,14 +277,14 @@ return out;
             System.out.println(Thread.currentThread()+third+":"+Commands(third));
             l.unlock();
 
-           // channel.close();
+            //channel.close();
             in.close();
             this.interrupt();
 
         }catch (IOException e){
             e.printStackTrace();
         }catch(InterruptedException e){
-            e.printStackTrace();}
+           e.printStackTrace();}
 
     }
 }
