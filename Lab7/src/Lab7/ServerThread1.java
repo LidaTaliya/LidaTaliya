@@ -59,15 +59,16 @@ public class ServerThread1 extends Thread {
                 String pass=Email.CreatePassword(8);
                 System.out.println(pass);
                 hash=em.DoHash(pass);
-                SuccelfullySent=em.SendEmail(pass);
+                //SuccelfullySent=em.SendEmail(pass);
                 PreparedStatement ps=con.prepareStatement("INSERT INTO Clients (login, password) VALUES (?,?);");
                 ps.setString(1,RegLOGIN);
                 ps.setString(2,hash);
                 int i=ps.executeUpdate();
 
-                PreparedStatement pss2=con.prepareStatement("INSERT INTO Collections VALUES(?,null);");
+/*
+              PreparedStatement pss2=con.prepareStatement("INSERT INTO Collections VALUES(?,null);");
                 pss2.setInt(1,id);
-                pss2.executeUpdate();
+                pss2.executeUpdate();*/
                 if (i==1){
                     String regi="Регистрация прошла успешно. Введите пароль, который мы выслали Вам на почту: ";
                     pas=Exchange(regi,servers, incoming, incoming.getAddress(), incoming.getPort());
@@ -83,6 +84,7 @@ public class ServerThread1 extends Thread {
             if (rss.next()){
                 id=rss.getInt(1);
             }
+
             System.out.println("Это id "+id);
 
             String ClientsPass=Email.DoHash(pas);
@@ -141,33 +143,21 @@ public class ServerThread1 extends Thread {
             } else if (s.equals("3")) {
                 Sending(show(), servers, incoming);
             } else if (s.equals("4")) {
-               /* while (true) {
-                    servers.receive(incoming);
-                    byte[] data1 = incoming.getData();
-                    String s1 = new String(data1, 0, incoming.getLength());
-                    System.out.println(s1);
-                    if (!s1.equals("EndSending")) {
-                        StrFriends.add(s1);
-                    } else {
-                        break;
-                    }
-                }*/
-               PreparedStatement PSfindfriends =con.prepareStatement("SELECT collection FROM Collections WHERE id=?;");
+               PreparedStatement PSfindfriends =con.prepareStatement("SELECT collection FROM Collections WHERE clients_id=?;");
                PSfindfriends.setInt(1,id);
                ResultSet RSfriends=PSfindfriends.executeQuery();
-               String AllFriends="";
-                boolean b4=false;
-               if (RSfriends.next()) {
-                   AllFriends = RSfriends.getString("collection");
-               }
-                try{
-               if (!AllFriends.equals(null)){
-                   String[] ArrayFr=null;
+               ResultSetMetaData rsmd=RSfriends.getMetaData();
 
-                   ArrayFr = AllFriends.split("%\n%");
-                       for (int i = 0; i < ArrayFr.length; i++) {
-                           StrFriends.add(ArrayFr[i]);
-                       }
+                int columnCount1=rsmd.getColumnCount();
+                boolean b4=false;
+                while (RSfriends.next()) {
+                    int j=1;
+                    while (j <= columnCount1) {
+                        StrFriends.add(RSfriends.getString(j++));
+                    }
+                }
+                try{
+               if (!StrFriends.isEmpty()){
                        b4 = AddFromFile(StrFriends);
                        friends1 = sortByValues(friends1);
                        friends1.entrySet().stream().forEach(
@@ -228,20 +218,17 @@ public class ServerThread1 extends Thread {
                     DatagramPacket endSending = new DatagramPacket(end.getBytes(), end.getBytes().length, incoming.getAddress(), incoming.getPort());
                     servers.send(endSending);
                     System.out.println(end);
+                    PreparedStatement del=con.prepareStatement("DELETE FROM Collections WHERE clients_id IN (SELECT id FROM Clients WHERE login=?);");
+                    del.setString(1,RegLOGIN);
+                    del.executeUpdate();
                         ArrayList<String> strfr;
                         strfr=WriteAsJson(friends1);
-                        String AllFriends="";
-                        for (String fr:strfr ){
-                            AllFriends=String.format("%s\n%s",AllFriends,fr);
-                        }
-                        System.out.println(AllFriends);
-                        //PreparedStatement ps=con.prepareStatement("INSERT INTO Collections (id, collection) SELECT Clients.id FROM Clients INNER JOIN Collections ON Clients.id=Collections.id WHERE login=? VALUES(Collection.id,?);");
-                        PreparedStatement ps=con.prepareStatement("UPDATE Collections SET collection=? WHERE id=?");
-                        System.out.println("Это id "+id);
-                        ps.setString(1,AllFriends);
-                        ps.setInt(2,id);
-                        int i=ps.executeUpdate();
-
+                    for(String mycol: strfr) {
+                        PreparedStatement ps = con.prepareStatement("INSERT INTO Collections Values(?,?);");
+                        ps.setInt(1,id);
+                        ps.setString(2,mycol);
+                        ps.executeUpdate();
+                    }
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -253,33 +240,34 @@ public class ServerThread1 extends Thread {
 
                 System.out.println(log2);
 
-                PreparedStatement login = con.prepareStatement("SELECT collection FROM Collections INNER JOIN Clients ON Collections.id=Clients.id WHERE Clients.login=? ;");
+                PreparedStatement login = con.prepareStatement("SELECT collection FROM Collections INNER JOIN Clients ON Collections.clients_id=Clients.id WHERE Clients.login=? ;");
                 login.setString(1, log2);
                 ResultSet RSanotherCol = login.executeQuery();
-                String another = "";
-                if (RSanotherCol.next()) {
-                    another = RSanotherCol.getString("collection");
+                ResultSetMetaData md=RSanotherCol.getMetaData();
+                int columnCount=md.getColumnCount();
+
+                ArrayList<String> AnotherFriends=new ArrayList<>();
+                while (RSanotherCol.next()) {
+                    int i=1;
+                    while (i <= columnCount) {
+                    AnotherFriends.add(RSanotherCol.getString(i++));
+                    }
                 }
-                System.out.println(another);
-
-                String[] AnotherFriends;
-
-                if (another.equals(null)||another.equals("")) {
+                if (AnotherFriends.isEmpty()) {
                     String end11 = "End Sending!";
                     DatagramPacket endd = new DatagramPacket(end11.getBytes(), end11.getBytes().length, incoming.getAddress(), incoming.getPort());
                     servers.send(endd);
                     String pusto = "В коллекции пользователя " + log2 + " нет друзей, либо пользователь с таким логином не найден.";
                     Sending(pusto, servers, incoming);
                 } else{
-                    AnotherFriends = another.split("\n");
-
                 String newFr = "Друзья, содержащиеся в коллекции пользователя " + log2 + " :";
                 DatagramPacket newfr = new DatagramPacket(newFr.getBytes(), newFr.getBytes().length, incoming.getAddress(), incoming.getPort());
                 servers.send(newfr);
-                for (int i = 1; i < AnotherFriends.length; i++) {
-                    int name = AnotherFriends[i].lastIndexOf("name");
-                    int carl = AnotherFriends[i].lastIndexOf("Carlson");
-                    String AnotherName = AnotherFriends[i].substring(name + 7, carl - 3);
+
+                for (String friend :AnotherFriends) {
+                    int name = friend.lastIndexOf("name");
+                    int carl = friend.lastIndexOf("Carlson");
+                    String AnotherName = friend.substring(name + 7, carl - 3);
                     DatagramPacket frnew = new DatagramPacket(AnotherName.getBytes(), AnotherName.getBytes().length, incoming.getAddress(), incoming.getPort());
                     servers.send(frnew);
                 }

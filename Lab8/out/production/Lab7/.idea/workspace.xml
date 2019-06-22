@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Current File" />
+  </component>
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Client:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bc9a5bfa-5d9d-44e6-b2c9-1d608f12fc48" name="Default Changelist" comment="add import and 6">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab7/out/production/Lab7/Lab7/Lab7$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/out/production/Lab7/Lab7/Lab7$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab7/out/production/Lab7/Lab7/Lab7.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/out/production/Lab7/Lab7/Lab7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab7/out/production/Lab7/Lab7/ServerThread1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/out/production/Lab7/Lab7/ServerThread1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab7/src/Lab7/Lab7.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/src/Lab7/Lab7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab7/src/Lab7/ServerThread1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/src/Lab7/ServerThread1.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="printScope" value="1" />
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/exportToHTML" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-215">
+              <caret line="174" column="23" selection-start-line="174" selection-start-column="23" selection-end-line="174" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#StartStory#0;class#Client#0" />
+                <element signature="e#6353#6354#0" expanded="true" />
+                <element signature="e#6377#6378#0" expanded="true" />
+                <element signature="e#6453#6454#0" expanded="true" />
+                <element signature="e#6487#6488#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Lab8/Friend.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Lab8/ServerThread1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Lab8/App.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-415">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_CHANGES_POLICY" value="SHELVE" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/Lab5/Main.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Animal.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/KidNoLoveDogs.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/NoThinkSo.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/StrangeMenCreature.java" />
+        <option value="$USER_HOME$/IdeaProjects/untitled/src/Lab3/Lab3.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/DataSource.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/FileDataSource.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/BedtFriendDecorator.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Client.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Carlson.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Size.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Color.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Parent.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Dog.java" />
+        <option value="$PROJECT_DIR$/src/Client/Group.java" />
+        <option value="$PROJECT_DIR$/src/Client/Friend.java" />
+        <option value="$PROJECT_DIR$/src/Client/ServerThread.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Group.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/BestFriendDecorator.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/BestFriend.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Kid.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/ServerThread1.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Lab5.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Friend.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/MenCreature.java" />
+        <option value="$PROJECT_DIR$/src/Lab5/Creature.java" />
+        <option value="$PROJECT_DIR$/src/Lab7/Animal.java" />
+        <option value="$PROJECT_DIR$/src/Lab7/BestFriend.java" />
+        <option value="$PROJECT_DIR$/src/Lab7/BestFriendDecorator.java" />
+        <option value="$PROJECT_DIR$/src/Lab7/Carlson.java" />
+        <option value="$PROJECT_DIR$/src/Lab7/Color.java" />
+        <option value="$PROJECT_DIR$/src/Lab7/Dog.java" />
+        <option value="$PROJECT_DIR$/src/Lab7/Kid.java" />
+        <option value="$PROJECT_DIR$/src/Lab7/KidNoLoveDogs.java" />
+        <option value="$PROJECT_DIR$/src/Lab7/NoThinkSo.java" />
+        <option value="$PROJECT_DIR$/src/Lab7/Parent.java" />
+        <option value="$PROJECT_DIR$/src/Lab7/Size.java" />
+        <option value="$PROJECT_DIR$/src/Lab7/StrangeMenCreature.java" />
+        <option value="$PROJECT_DIR$/src/Lab7/Group.java" />
+        <option value="$PROJECT_DIR$/src/Client/Client2.java" />
+        <option value="$PROJECT_DIR$/src/Lab7/Friend.java" />
+        <option value="$PROJECT_DIR$/src/Lab7/Email.java" />
+        <option value="$PROJECT_DIR$/src/Lab7/Lab7.java" />
+        <option value="$PROJECT_DIR$/src/Lab7/ServerThread1.java" />
+        <option value="$PROJECT_DIR$/src/Lab8/Friend.java" />
+        <option value="$PROJECT_DIR$/src/Lab8/ServerThread1.java" />
+        <option value="$PROJECT_DIR$/src/Client/Client.java" />
+        <option value="$PROJECT_DIR$/src/Lab8/App.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="710" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561205875981" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lab8.App" />
+      <module name="Lab7" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Lab8.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Client" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client.Client" />
+      <module name="Lab7" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Client2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client.Client2" />
+      <module name="Lab7" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" singleton="false" temporary="true">
+      <envs>
+        <env name="Friendss" value="$PROJECT_DIR$/../Friends.json" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="Lab8.Lab8" />
+      <module name="Lab7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Client" />
+      <item itemvalue="Application.Client2" />
+      <item itemvalue="Application.App" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.App" />
+        <item itemvalue="Application.Client2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bc9a5bfa-5d9d-44e6-b2c9-1d608f12fc48" name="Default Changelist" comment="" />
+      <created>1549692339530</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1549692339530</updated>
+      <workItem from="1549692343815" duration="1056000" />
+      <workItem from="1549785116843" duration="9526000" />
+      <workItem from="1549883979192" duration="1883000" />
+      <workItem from="1549902864462" duration="235000" />
+      <workItem from="1549903317254" duration="139000" />
+      <workItem from="1549903635667" duration="105000" />
+      <workItem from="1549903762129" duration="4961000" />
+      <workItem from="1549963092312" duration="2945000" />
+      <workItem from="1550171847893" duration="278000" />
+      <workItem from="1550232424059" duration="4747000" />
+      <workItem from="1550256741126" duration="252000" />
+      <workItem from="1550500010175" duration="6298000" />
+      <workItem from="1550584708744" duration="8292000" />
+      <workItem from="1550817668682" duration="10000" />
+      <workItem from="1550838274601" duration="2919000" />
+      <workItem from="1550947613732" duration="4906000" />
+      <workItem from="1551024285039" duration="4546000" />
+      <workItem from="1551097261684" duration="5700000" />
+      <workItem from="1551103828201" duration="476000" />
+      <workItem from="1551171361726" duration="2565000" />
+      <workItem from="1551369654424" duration="237000" />
+      <workItem from="1551370379756" duration="230000" />
+      <workItem from="1551443906762" duration="2355000" />
+      <workItem from="1552066866325" duration="4129000" />
+      <workItem from="1552541967896" duration="3121000" />
+      <workItem from="1552575316366" duration="3642000" />
+      <workItem from="1552645523640" duration="158000" />
+      <workItem from="1552645730880" duration="46000" />
+      <workItem from="1552645843533" duration="777000" />
+      <workItem from="1552651632237" duration="463000" />
+      <workItem from="1552653450277" duration="2042000" />
+      <workItem from="1553162250815" duration="12584000" />
+      <workItem from="1553195539591" duration="639000" />
+      <workItem from="1553235681260" duration="2074000" />
+      <workItem from="1553257720284" duration="1030000" />
+      <workItem from="1553445165340" duration="3525000" />
+      <workItem from="1553495340538" duration="1802000" />
+      <workItem from="1553509164973" duration="2319000" />
+      <workItem from="1553520734303" duration="4014000" />
+      <workItem from="1553599377745" duration="6794000" />
+      <workItem from="1554124674563" duration="5641000" />
+      <workItem from="1554398424895" duration="2619000" />
+      <workItem from="1554446443679" duration="8080000" />
+      <workItem from="1554454906162" duration="1219000" />
+      <workItem from="1554467263072" duration="3659000" />
+      <workItem from="1554824079935" duration="4036000" />
+      <workItem from="1554829705938" duration="2734000" />
+      <workItem from="1554872685444" duration="8136000" />
+      <workItem from="1555049416485" duration="4816000" />
+      <workItem from="1555063722684" duration="6718000" />
+      <workItem from="1555429917444" duration="6590000" />
+      <workItem from="1555671684609" duration="1628000" />
+      <workItem from="1555676751568" duration="4739000" />
+      <workItem from="1555744804403" duration="6435000" />
+      <workItem from="1556265126101" duration="459000" />
+      <workItem from="1556274718952" duration="4385000" />
+      <workItem from="1556876964808" duration="5401000" />
+      <workItem from="1557160900190" duration="3561000" />
+      <workItem from="1557413666191" duration="1174000" />
+      <workItem from="1557416528548" duration="492000" />
+      <workItem from="1557485601481" duration="1469000" />
+      <workItem from="1557559331771" duration="1908000" />
+      <workItem from="1557566120634" duration="9434000" />
+      <workItem from="1558097279464" duration="624000" />
+      <workItem from="1558354234832" duration="687000" />
+      <workItem from="1559371226937" duration="864000" />
+      <workItem from="1559373177681" duration="10365000" />
+      <workItem from="1559657616880" duration="3401000" />
+      <workItem from="1559891903083" duration="17995000" />
+      <workItem from="1560772497534" duration="25651000" />
+      <workItem from="1561201522762" duration="4152000" />
+    </task>
+    <task id="LOCAL-00001" summary=":)">
+      <created>1549803792504</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1549803792504</updated>
+    </task>
+    <task id="LOCAL-00002" summary=":))">
+      <created>1549803877521</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1549803877521</updated>
+    </task>
+    <task id="LOCAL-00003" summary="remove age">
+      <created>1549966008099</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1549966008099</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add import and 6">
+      <created>1554456077887</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1554456077887</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="273920000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.134895" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.3536068" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32956153" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32956153" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" x="21" y="185" width="1238" height="429" id="Terminal" order="10" sideWeight="0.49757674" weight="0.58981615" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5024233" side_tool="true" weight="0.6280057" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.38330975" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" x="0" y="0" width="270" height="521" id="Documentation" order="9" side_tool="true" weight="0.32956383" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2786753" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.04950495" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32956153" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32956153" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" x="21" y="185" width="1238" height="429" id="Terminal" order="10" sideWeight="0.49757674" weight="0.58981615" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5024233" side_tool="true" weight="0.6280057" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.38330975" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" x="0" y="0" width="270" height="521" id="Documentation" order="9" side_tool="true" weight="0.32956383" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value=":)" />
+    <MESSAGE value=":))" />
+    <MESSAGE value="remove age" />
+    <MESSAGE value="add import and 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="add import and 6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Client/Client.java</url>
+          <line>176</line>
+          <properties class="Client.Client" method="main">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Lab5/Lab7.java</url>
+          <line>344</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Lab5/Lab7.java</url>
+          <line>350</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Lab5/Lab7.java</url>
+          <line>345</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Lab5/Lab7.java</url>
+          <line>346</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Lab5/Lab7.java</url>
+          <line>347</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Lab5/Lab7.java</url>
+          <line>348</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Lab5/Lab7.java</url>
+          <line>349</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Lab5/Parent.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab5/Dog.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/rt.jar!/sun/nio/ch/IOUtil.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Friend.java" />
+    <entry file="jar://$PROJECT_DIR$/lib/apache-commons-lang.jar!/org/apache/commons/lang/SerializationUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="90" column="1" lean-forward="true" selection-start-line="90" selection-start-column="1" selection-end-line="90" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/Group.java" />
+    <entry file="file://$PROJECT_DIR$/src/Client/Friend.java" />
+    <entry file="file://$PROJECT_DIR$/src/Client/ServerThread1.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="747" selection-start-line="747" selection-end-line="747" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/src.zip!/java/net/DatagramSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="811" selection-start-line="811" selection-end-line="811" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lab5/Group.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab5/BestFriendDecorator.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab5/BestFriend.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab5/Kid.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab5/ServerThread1.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab5/Lab7.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab5/Friend.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab5/MenCreature.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab5/Creature.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab7/Animal.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab7/BestFriend.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab7/BestFriendDecorator.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab7/Color.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab7/Creature.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab7/Dog.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab7/KidNoLoveDogs.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab7/MenCreature.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab7/NoThinkSo.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab7/Parent.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab7/Size.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab7/Kid.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab7/Carlson.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab7/Group.java" />
+    <entry file="file://$PROJECT_DIR$/src/Client/Client2.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab7/StrangeMenCreature.java" />
+    <entry file="file://$PROJECT_DIR$/lib/javamail-1.4.5/demo/webapp/src/taglib/demo/MessageTag.java" />
+    <entry file="file://$PROJECT_DIR$/lib/javamail-1.4.5/demo/webapp/src/taglib/demo/MessageTEI.java" />
+    <entry file="file://$PROJECT_DIR$/lib/javamail-1.4.5/demo/webapp/src/taglib/demo/ListMessagesTag.java" />
+    <entry file="file://$PROJECT_DIR$/../../../Cli.java" />
+    <entry file="file://$PROJECT_DIR$/../../../Serv.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab7/Friend.java" />
+    <entry file="jar://$PROJECT_DIR$/lib/javax.mail.jar!/javax/mail/Transport.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/javax.mail.jar!/javax/mail/Service.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="167" selection-start-line="167" selection-end-line="167" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lab7/Email.java" />
+    <entry file="jar://$PROJECT_DIR$/lib/postgresql-42.2.5.jar!/org/postgresql/jdbc/PgPreparedStatement.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="119" selection-start-line="119" selection-end-line="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lab7/Lab7.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab7/ServerThread1.java" />
+    <entry file="file://$PROJECT_DIR$/src/Lab8/Friend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lab8/ServerThread1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lab8/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-415">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-215">
+          <caret line="174" column="23" selection-start-line="174" selection-start-column="23" selection-end-line="174" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#StartStory#0;class#Client#0" />
+            <element signature="e#6353#6354#0" expanded="true" />
+            <element signature="e#6377#6378#0" expanded="true" />
+            <element signature="e#6453#6454#0" expanded="true" />
+            <element signature="e#6487#6488#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArquillianSettingsConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>Client:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>apache-commons-lang</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Lab7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>javax.mail</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

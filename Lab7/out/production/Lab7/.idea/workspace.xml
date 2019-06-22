@@ -12,23 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc9a5bfa-5d9d-44e6-b2c9-1d608f12fc48" name="Default Changelist" comment="add import and 6">
-      <change beforePath="$PROJECT_DIR$/../Lab5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/out/production/Lab5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/out/production/Lab5/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/out/production/Lab5/Client/Clients.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/out/production/Lab5/Client/Clients.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/src/Client/Clients.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/src/Client/Clients.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5 — копия/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5 — копия/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5 — копия/out/production/Lab5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5 — копия/out/production/Lab5/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5 — копия/out/production/Lab5/Client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5 — копия/out/production/Lab5/Client/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5 — копия/out/production/Lab5/Client/Clients.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5 — копия/out/production/Lab5/Client/Clients.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5 — копия/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5 — копия/src/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5 — копия/src/Client/Clients.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5 — копия/src/Client/Clients.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab7/Client/Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab7/Client/Client$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab7/Client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab7/Client/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab7/Lab7/Email.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab7/Lab7/Email.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab7/Lab7/ServerThread1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab7/Lab7/ServerThread1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab7/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab7/Email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab7/Lab7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab7/Lab7.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Lab7/ServerThread1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab7/ServerThread1.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -47,11 +31,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="101" column="9" lean-forward="true" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+            <state relative-caret-position="-1763">
+              <caret line="112" column="63" selection-start-line="112" selection-start-column="63" selection-end-line="112" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2679#2687#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -60,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Lab7/Lab7.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4102">
-              <caret line="300" column="30" lean-forward="true" selection-start-line="300" selection-start-column="30" selection-end-line="300" selection-end-column="30" />
+            <state relative-caret-position="194">
+              <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -69,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Lab7/ServerThread1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="207" column="21" lean-forward="true" selection-start-line="207" selection-start-column="21" selection-end-line="207" selection-end-column="21" />
+            <state relative-caret-position="102">
+              <caret line="154" column="47" lean-forward="true" selection-start-line="154" selection-start-column="47" selection-end-line="154" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,12 +64,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Lab7/Email.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-81">
-              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+            <state relative-caret-position="-460">
+              <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#754#755#0" expanded="true" />
-                <element signature="e#782#783#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -151,9 +132,9 @@
         <option value="$PROJECT_DIR$/src/Lab7/Group.java" />
         <option value="$PROJECT_DIR$/src/Client/Client2.java" />
         <option value="$PROJECT_DIR$/src/Lab7/Friend.java" />
-        <option value="$PROJECT_DIR$/src/Lab7/Lab7.java" />
         <option value="$PROJECT_DIR$/src/Lab7/Email.java" />
         <option value="$PROJECT_DIR$/src/Client/Client.java" />
+        <option value="$PROJECT_DIR$/src/Lab7/Lab7.java" />
         <option value="$PROJECT_DIR$/src/Lab7/ServerThread1.java" />
       </list>
     </option>
@@ -169,7 +150,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -204,12 +184,13 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560277443641" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561142762923" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -360,6 +341,7 @@
       <workItem from="1559373177681" duration="10365000" />
       <workItem from="1559657616880" duration="3401000" />
       <workItem from="1559891903083" duration="17995000" />
+      <workItem from="1560772497534" duration="25651000" />
     </task>
     <task id="LOCAL-00001" summary=":)">
       <created>1549803792504</created>
@@ -393,7 +375,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244117000" />
+    <option name="totallyTimeSpent" value="269768000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -406,9 +388,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30613893" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13327949" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -417,7 +398,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" weight="0.42857143" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" weight="0.5318246" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -497,7 +478,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Client/Client.java</url>
-          <line>190</line>
+          <line>163</line>
           <properties class="Client.Client" method="main">
             <option name="EMULATED" value="true" />
           </properties>
@@ -549,13 +530,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/rt.jar!/sun/nio/ch/DatagramSocketAdaptor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="127" selection-start-line="127" selection-end-line="127" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Lab5/Carlson.java" />
     <entry file="file://$PROJECT_DIR$/src/Lab5/Size.java" />
     <entry file="file://$PROJECT_DIR$/src/Lab5/Color.java" />
@@ -736,38 +710,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Lab7/Email.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-81">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        <state relative-caret-position="-460">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#754#755#0" expanded="true" />
-            <element signature="e#782#783#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+    <entry file="jar://$PROJECT_DIR$/lib/postgresql-42.2.5.jar!/org/postgresql/jdbc/PgPreparedStatement.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="101" column="9" lean-forward="true" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2679#2687#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="93">
+          <caret line="119" selection-start-line="119" selection-end-line="119" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Lab7/Lab7.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4102">
-          <caret line="300" column="30" lean-forward="true" selection-start-line="300" selection-start-column="30" selection-end-line="300" selection-end-column="30" />
+        <state relative-caret-position="194">
+          <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1763">
+          <caret line="112" column="63" selection-start-line="112" selection-start-column="63" selection-end-line="112" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Lab7/ServerThread1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="207" column="21" lean-forward="true" selection-start-line="207" selection-start-column="21" selection-end-line="207" selection-end-column="21" />
+        <state relative-caret-position="102">
+          <caret line="154" column="47" lean-forward="true" selection-start-line="154" selection-start-column="47" selection-end-line="154" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

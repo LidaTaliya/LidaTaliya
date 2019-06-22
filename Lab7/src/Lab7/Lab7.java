@@ -65,10 +65,11 @@ public static ArrayList<String> WriteAsJson(Map<String, Friend> ourMap){
                 } else {
                     String fr = "{\"name\":\"" + x.getValue().name + "\",\"Carlson\":\"" + "не Карлсон" + "\",\"ChanceToWalk\":\"" + x.getValue().ChanceToWalk + "\",\"number\":\"" + x.getValue().number + "\",\"DistanceFromSchool\":\"" + x.getValue().DistanceFromSchool+"\"}";
                     str.add(fr);
-                }
-            });
+                System.out.println(fr);
+            }});
     return str;
-}
+
+    }
     public static void WriteInFile(ArrayList<String> str, Path path1) throws IOException, FileNotFoundException {
         FileWriter fstream1 = new FileWriter(path1.toFile());// конструктор с одним параметром - для перезаписи
         BufferedWriter out1 = new BufferedWriter(fstream1); //  создаём буферезированный поток
@@ -123,6 +124,7 @@ public static ArrayList<String> WriteAsJson(Map<String, Friend> ourMap){
     public static boolean insert(String fr){
         try {String[] fr1=fr.split(",");
         String key=KidsKey(fr1[4]);
+        date=OffsetDateTime.now();
         if (!key.equals("нет ключа")||isLetters(fr1[0])||isNumber(fr1[2])||isNumber(fr1[3])){
             Friend newFriend=new Friend(fr1[0],fr1[1],Double.parseDouble(fr1[2]),key,Double.parseDouble(fr1[3]),date);
             friends1.put(key,newFriend);

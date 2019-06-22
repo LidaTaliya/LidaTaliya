@@ -1,0 +1,272 @@
+package Client;
+
+import Lab8.*;
+import Lab8.Color;
+import org.apache.commons.lang.SerializationUtils;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.*;
+import java.net.*;
+import java.nio.ByteBuffer;
+import java.nio.channels.DatagramChannel;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+import static Lab8.Lab8.ReceiveData;
+import static org.apache.commons.lang.SerializationUtils.*;
+
+public class Client {
+   static InetSocketAddress hostAddress;
+   static DatagramChannel channel;
+   static Path path;
+   static File file;
+    static Map<String, Friend> friends1 = new HashMap<String, Friend>() {
+    };
+    static Friend[] friends;
+   static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    private static boolean isNumber(String str) {
+        try {
+            double d = Double.parseDouble(str);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+        return true;
+    }
+
+    private static Friend[] MakeArray() {
+        Friend[] friends = new Friend[(friends1.size())];
+        int i = 0;
+        for (Map.Entry<String, Friend> e : friends1.entrySet()) {
+            friends[i] = e.getValue();
+            i = i + 1;
+        }
+        return friends;
+    }
+    private static void StartStory() {
+
+
+        Parent mother = new Parent("Мама", false);
+        Kid kid = new Kid("Малыш", 0.8, true);
+        Dog pudel = new Dog(Size.S, Color.Black, "пудель", 0.9);
+        Carlson carlson = new Carlson("Карлсон", true);
+        mother.Breathe(kid);
+        mother.AttitudeToCarlson(kid);
+        Group g = new Group();
+        g.AddKid(kid);
+        g.AddPudel(pudel);
+        g.AddCarlson(carlson);
+        g.AddFriends(friends);
+        Friend[] FriendsWhoGo = g.WhoIsGoing();
+        g.AddFriendsWhoGo(FriendsWhoGo);
+        g.BeHappyToGoToSchool();
+        g.AllWalk();
+        kid.BeHappy(friends, carlson);
+        pudel.appear();
+        pudel.wantToGo(kid);
+        g.CrossTheStreet();
+        pudel.goToKid(kid);
+        pudel.toSniffTheKnees(kid);
+        pudel.toYelp();
+        try {
+            kid.BeHappyWithDog(pudel);
+        } catch (KidNoLoveDogs e) {
+            System.out.print(e.getMessage());
+        }
+        pudel.FeelTheAttitude(kid);
+        pudel.LoveEveryone(kid);
+        kid.LoveDog(pudel);
+        kid.ActionsWithDog(pudel);
+        kid.Sounds(pudel);
+        try {
+            pudel.ThinkSo();
+        } catch (NoThinkSo e) {
+            System.out.print(e.getMessage());
+        }
+        pudel.JumpAndYelp();
+        g.TurnToStreet();
+        pudel.Run();
+        System.exit(0);
+
+    }
+        private static ArrayList<String> WriteAsJson ( Map<String, Friend> ourMap){
+            ArrayList<String> Json=new ArrayList<String>();
+        String fr="";
+        for (Map.Entry<String, Friend> x: ourMap.entrySet()) {
+            if (x.getValue().MeetCarlson) {
+                fr = "{\"name\":\"" + x.getValue().name + "\",\"Carlson\":\"" + "Карлсон" + "\",\"ChanceToWalk\":\"" + x.getValue().ChanceToWalk + "\",\"number\":\"" + x.getValue().number + "\",\"DistanceFromSchool\":\"" + x.getValue().DistanceFromSchool+"\"}";
+            } else {
+                fr = "{\"name\":\"" + x.getValue().name + "\",\"Carlson\":\"" + "не Карлсон" + "\",\"ChanceToWalk\":\"" + x.getValue().ChanceToWalk + "\",\"number\":\"" + x.getValue().number + "\",\"DistanceFromSchool\":\"" + x.getValue().DistanceFromSchool+"\"}";
+            }
+            Json.add(fr);
+        }
+        return Json;
+        }
+
+private static void menu(){
+      System.out.println("Выберите команду - введите число от 1 до 8:");
+        System.out.println("1 - добавить нового друга по ключу");
+        System.out.println("2 - удалить из коллекции друзей, превышающие заданные");
+        System.out.println("3 - вывести в строковом представление всех друзей в коллекции");
+        System.out.println("4 - добавить в коллекцию всех друзей из своей базы");
+        System.out.println("5 - вывести информацию о коллекции");
+        System.out.println("6 - удалить из коллекции друга по ключу");
+        System.out.println("7 - удалить из коллекции друзей, ключ которых превышает заданный");
+        System.out.println("8 - просмотр коллекций по логину");
+        System.out.println("9 - выход из меню и сохранение коллекции в базу(запуск программы)");
+}
+
+private static void importFromFile(DatagramChannel channel,InetSocketAddress hostAddress) throws IOException{
+    try{
+        FileInputStream fr=new FileInputStream(file);
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(fr));
+
+      //  byte[] str;
+        ByteBuffer str;
+        String strLine;
+        while((strLine = br.readLine()) != null){
+            //str=strLine.getBytes();
+            str = ByteBuffer.wrap(strLine.getBytes());
+           // DatagramPacket export = new DatagramPacket(str, str.length, InetAddress.getByName("localhost"), 4444);
+            channel.send(str,hostAddress);
+        }
+        String EndSending="EndSending";
+        ByteBuffer end = ByteBuffer.wrap(EndSending.getBytes());
+        //DatagramPacket end=new DatagramPacket(str,str.length,InetAddress.getByName("localhost"),4444);
+        channel.send(end,hostAddress);
+
+    }
+    catch (FileNotFoundException e){
+        System.out.println("Файл не найден");
+        System.exit(0);
+    }catch (PortUnreachableException e){
+        System.out.println("Сервер недоступен");
+        System.exit(0);
+    }
+    }
+
+
+    private static void imports(DatagramChannel channel, InetSocketAddress hostAddress) throws IOException{
+        ByteBuffer b = ByteBuffer.wrap("4".getBytes());
+        channel.send(b,hostAddress);
+        try{
+            importFromFile(channel,hostAddress);}
+        catch(PortUnreachableException e){
+            System.out.println("Сервер недоступен");
+        }
+    }
+    public static InetSocketAddress GetInetSocketAddress(){
+        return hostAddress;
+    }
+    public static DatagramChannel GetDatagramChannel(){
+        return channel;
+    }
+    public static void main(String[] args) throws IOException {
+
+
+    if (args == null) {
+        hostAddress = new InetSocketAddress("localhost", 4444);
+    } else {
+        hostAddress = new InetSocketAddress("localhost", 4444);
+    }
+    channel = DatagramChannel.open();
+
+    channel.connect(hostAddress);
+
+
+        ByteBuffer b2 = ByteBuffer.wrap("I'm a client!".getBytes());
+        channel.send(b2, hostAddress);
+    friends1 = new ConcurrentHashMap<String, Friend>() {
+    };
+
+    App start = new App(channel, hostAddress);
+    start.SwingApp();
+
+   // String s = "";
+
+  /*  while (true) {
+
+        //    if (!s.equals("4")) {
+        ByteBuffer b = ByteBuffer.wrap(s.getBytes());
+        channel.send(b, hostAddress);
+        //    }
+
+        if (s.equalsIgnoreCase("exit")) break;
+        //  if (s.equals("4")) {
+        //     imports(channel, hostAddress);
+        // }
+        if (s.equals("8")) {
+           // byte[] buffer1 = new byte[65536];
+            String s11 = ReceiveData(channel);
+            System.out.println(s11);
+            s = in.readLine();
+            ByteBuffer bss = ByteBuffer.wrap(s.getBytes());
+            channel.send(bss, hostAddress);
+            while (true) {
+               // byte[] buffer = new byte[65536];
+                String s0 = ReceiveData(channel);
+                if (s0.equals("End Sending!")) {
+                    break;
+                } else {
+                    System.out.println(s0);
+                }
+            }
+        }
+        if (s.equals("9")) {
+            while (true) {
+                byte[] buffer = new byte[65536];
+                String s1 = ReceiveData(channel);
+                // ByteArrayInputStream bais = new ByteArrayInputStream(buffer);
+                //ObjectInputStream ois = new ObjectInputStream(bais);
+                // ois.close();
+                if (s1.equals("End Sending")) {
+                    System.out.println("Друзья переданы");
+                    break;
+                } else {
+                    try {
+                        // Friend fr = (Friend) ois.readObject();
+                        Friend fr = (Friend) deserialize(buffer);
+                        boolean key = friends1.entrySet().stream()
+                                .anyMatch(x -> x.getValue().number.equals(fr.number));
+                        if (!key) {
+                            friends1.put(fr.number, fr);
+                        }
+                    } catch (NoClassDefFoundError e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            friends1.entrySet().stream().forEach(
+                    (friend) -> System.out.println(friend.getValue().name)
+            );
+            //  ArrayList<String> strFr=Lab7.WriteAsJson(friends1);
+//                    Lab7.WriteInFile(strFr,path);
+
+            friends = MakeArray();
+            StartStory();
+        }
+        //byte[] buffer = new byte[65536];
+        String s1 = ReceiveData(channel);
+        if (s1.equals("menu")) {
+            menu();
+            //s=in.readLine();
+        } else {
+            System.out.println(s1);
+        }
+
+        s = in.readLine();
+    }
+*/
+    //channel.close();
+   // in.close();
+
+
+    }
+}
